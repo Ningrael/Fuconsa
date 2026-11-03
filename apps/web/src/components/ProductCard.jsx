@@ -30,7 +30,7 @@ function ProductImage({ item, lang }) {
   return (
     <div className="product-img-box">
       <img
-        src={item.imagePath}
+        src={`${item.imagePath}${item.imagePath.includes('?') ? '&' : '?'}v=2`}
         alt={item.id}
         className="product-img"
         loading="lazy"
