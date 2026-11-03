@@ -13,6 +13,7 @@ function CoverHeader({ title, totalItems, lang }) {
           src={withBase('/assets/brand/logo.png')}
           alt="Fuconsa"
           className="a4-cover-logo"
+          crossOrigin="anonymous"
           onError={(e) => { e.currentTarget.style.display = 'none'; }}
         />
         <div className="a4-cover-brand-text">

@@ -6,7 +6,7 @@ import { paginateSelection, paginateCatalog, DENSITY_MODES } from '../utils/pagi
 import { getTranslation, t } from '../i18n/translations.js';
 import { formatBoxPrice } from '../utils/formatters.js';
 import { PrintIcon } from './Icons.jsx';
-import { downloadA4Pdf, shareOrDownloadA4Pdf } from '../utils/pdfGenerator.js';
+import { downloadA4Pdf, shareOrDownloadA4Pdf, isIOSOrSafari } from '../utils/pdfGenerator.js';
 import { withBase } from '../utils/assetUrl.js';
 
 function A4ItemImage({ item, lang, name }) {
@@ -20,6 +20,7 @@ function A4ItemImage({ item, lang, name }) {
           src={withBase(item.imagePath)}
           alt={name}
           className="a4-item-img"
+          crossOrigin="anonymous"
           onError={() => setImgError(true)}
         />
       </div>
@@ -31,6 +32,7 @@ function A4ItemImage({ item, lang, name }) {
         src={withBase('/assets/brand/logo.png')}
         alt="Fuconsa"
         className="a4-placeholder-logo"
+        crossOrigin="anonymous"
         onError={(e) => {
           e.currentTarget.style.display = 'none';
         }}
@@ -123,6 +125,20 @@ function A4Page({ page, lang, title }) {
   );
 }
 
+function openPreWindow() {
+  if (!isIOSOrSafari() || typeof window === 'undefined') return null;
+  const win = window.open('about:blank', '_blank');
+  if (win && win.document) {
+    win.document.write(
+      '<div style="font-family:system-ui,-apple-system,sans-serif;padding:48px 24px;text-align:center;color:#0F2342;">' +
+      '<h2 style="margin:0 0 8px 0;font-size:20px;">Fuconsa</h2>' +
+      '<p style="margin:0;color:#64748B;font-size:14px;">Generando documento PDF...</p>' +
+      '</div>'
+    );
+  }
+  return win;
+}
+
 export function A4PrintDocument(props) {
   const { items, lang, title, onClose, documentMode = 'selection' } = props;
   const containerRef = useRef(null);
@@ -136,7 +152,8 @@ export function A4PrintDocument(props) {
     if (isBusy || !containerRef.current) return;
     setIsBusy(true);
     try {
-      await downloadA4Pdf(containerRef.current, `Fuconsa-${documentMode}.pdf`);
+      const preWin = openPreWindow();
+      await downloadA4Pdf(containerRef.current, `Fuconsa-${documentMode}.pdf`, preWin);
     } catch {
       window.print();
     } finally {
@@ -148,7 +165,8 @@ export function A4PrintDocument(props) {
     if (isBusy || !containerRef.current) return;
     setIsBusy(true);
     try {
-      await shareOrDownloadA4Pdf(containerRef.current, `Fuconsa-${documentMode}.pdf`, title);
+      const preWin = openPreWindow();
+      await shareOrDownloadA4Pdf(containerRef.current, `Fuconsa-${documentMode}.pdf`, title, preWin);
     } catch {
       window.print();
     } finally {

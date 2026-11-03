@@ -1,5 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { buildA4PdfFile, downloadA4Pdf, shareOrDownloadA4Pdf } from '../src/utils/pdfGenerator.js';
+import {
+  buildA4PdfFile,
+  downloadA4Pdf,
+  shareOrDownloadA4Pdf,
+  isIOSOrSafari,
+  openOrDownloadPdf
+} from '../src/utils/pdfGenerator.js';
 
 vi.mock('html2canvas', () => {
   return {
@@ -79,5 +85,37 @@ describe('pdfGenerator utility', () => {
     expect(ok).toBe(true);
     expect(mockPdfSave).toHaveBeenCalledWith('fallback.pdf');
     vi.unstubAllGlobals();
+  });
+
+  it('correctly detects iPad, iPhone and Safari environments', () => {
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Version/17.0 Safari/605.1.15',
+      platform: 'MacIntel',
+      maxTouchPoints: 5
+    });
+    expect(isIOSOrSafari()).toBe(true);
+
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15',
+      platform: 'iPhone',
+      maxTouchPoints: 1
+    });
+    expect(isIOSOrSafari()).toBe(true);
+
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
+      platform: 'Win32',
+      maxTouchPoints: 0
+    });
+    expect(isIOSOrSafari()).toBe(false);
+    vi.unstubAllGlobals();
+  });
+
+  it('routes to targetWindow when provided', () => {
+    const mockWindow = { location: { href: '' }, closed: false };
+    const mockBlob = new Blob(['sample']);
+    const ok = openOrDownloadPdf({}, mockBlob, 'file.pdf', mockWindow);
+    expect(ok).toBe(true);
+    expect(mockWindow.location.href).toContain('blob:');
   });
 });
