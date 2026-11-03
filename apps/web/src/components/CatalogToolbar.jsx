@@ -1,5 +1,6 @@
 import React from 'react';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
+import { SearchIcon, PrintIcon, ArrowLeftIcon } from './Icons.jsx';
 
 function LanguageSwitcher({ lang, onChangeLang }) {
   if (!onChangeLang) return null;
@@ -22,6 +23,7 @@ function LanguageSwitcher({ lang, onChangeLang }) {
 function SearchBox({ search, onChangeSearch, lang }) {
   return (
     <div className="search-input-wrapper">
+      <SearchIcon size={16} className="search-input-icon" />
       <input
         type="search"
         value={search}
@@ -30,6 +32,16 @@ function SearchBox({ search, onChangeSearch, lang }) {
         className="search-input"
         aria-label="Buscar productos"
       />
+      {search ? (
+        <button
+          type="button"
+          className="btn-clear-search"
+          onClick={() => onChangeSearch('')}
+          aria-label="Limpiar búsqueda"
+        >
+          ✕
+        </button>
+      ) : null}
     </div>
   );
 }
@@ -126,7 +138,8 @@ function PrintSectionAction({ onPrintSection, selectedCount = 0, lang }) {
       title={label}
       aria-label={t('printSectionA4', lang)}
     >
-      🖨️ {label}
+      <PrintIcon size={15} />
+      <span>{label}</span>
     </button>
   );
 }
@@ -138,7 +151,8 @@ export function CatalogToolbar(props) {
       <div className="toolbar-row">
         {props.onBackToHome ? (
           <button type="button" onClick={props.onBackToHome} className="btn-back-home">
-            {t('backToHome', lang)}
+            <ArrowLeftIcon size={14} />
+            <span>{t('backToHome', lang)}</span>
           </button>
         ) : null}
         <SearchBox search={search} onChangeSearch={onChangeSearch} lang={lang} />

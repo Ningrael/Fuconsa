@@ -4,18 +4,20 @@ import { SECTORS } from '../constants/sectors.js';
 import { downloadVCard } from '../utils/vcard.js';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
 import { LandingQRShowcase } from './LandingQRShowcase.jsx';
+import { WhatsAppIcon, PhoneIcon, VCardIcon, GridIcon } from './Icons.jsx';
 
-function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector, isLanding, onBackToHome }) {
+const LANG_NAMES = {
+  es: 'Español',
+  ca: 'Català',
+  en: 'English'
+};
+
+function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector }) {
   return (
     <div className="cover-top-bar">
-      <div className="cover-top-left">
-        {!isLanding && onBackToHome ? (
-          <button type="button" onClick={onBackToHome} className="btn-home-top">
-            {t('backToHome', lang)}
-          </button>
-        ) : (
-          <span className="cover-eyebrow">FUCONSA · CATÁLOGO OFICIAL B2B</span>
-        )}
+      <div className="cover-brand-strip">
+        <span className="cover-eyebrow-dot" aria-hidden="true" />
+        <span className="cover-eyebrow">FUCONSA · CATÁLOGO COMERCIAL MAYORISTA</span>
       </div>
       <div className="cover-top-right">
         <button
@@ -23,7 +25,8 @@ function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector, isLandi
           className={`btn-view-all-top ${currentSector === 'all' ? 'active' : ''}`}
           onClick={() => onSelectSector('')}
         >
-          📋 {t('allSectors', lang)}
+          <GridIcon size={14} />
+          <span>{t('allSectors', lang)}</span>
         </button>
         {onChangeLang ? (
           <div className="lang-switch top-lang-switch" role="group" aria-label="Selector de idioma superior">
@@ -33,6 +36,7 @@ function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector, isLandi
                 type="button"
                 className={`btn-lang ${lang === code ? 'active' : ''}`}
                 onClick={() => onChangeLang(code)}
+                title={LANG_NAMES[code]}
               >
                 {code.toUpperCase()}
               </button>
@@ -44,15 +48,10 @@ function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector, isLandi
   );
 }
 
-function CoverAvatar({ onBackToHome }) {
+function CoverAvatar() {
   const [imgError, setImgError] = useState(false);
   return (
-    <div
-      className="cover-avatar"
-      aria-label="Logo Fuconsa"
-      onClick={onBackToHome}
-      style={onBackToHome ? { cursor: 'pointer' } : undefined}
-    >
+    <div className="cover-avatar" aria-label="Logo Fuconsa">
       {!imgError ? (
         <img
           src="/assets/brand/logo.png"
@@ -76,11 +75,11 @@ function ContactButtons({ lang }) {
         rel="noopener noreferrer"
         className="btn-action btn-whatsapp"
       >
-        <span>💬</span>
+        <WhatsAppIcon size={16} />
         <span>{t('whatsappAction', lang)}</span>
       </a>
       <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="btn-action btn-call">
-        <span>📞</span>
+        <PhoneIcon size={16} />
         <span>{t('callAction', lang)}</span>
       </a>
       <button
@@ -88,7 +87,7 @@ function ContactButtons({ lang }) {
         onClick={() => downloadVCard()}
         className="btn-action btn-vcf"
       >
-        <span>📇</span>
+        <VCardIcon size={16} />
         <span>{t('saveContactAction', lang)}</span>
       </button>
     </div>
@@ -125,25 +124,23 @@ function SectorsList({ lang, currentSector, onSelectSector }) {
 }
 
 export function CoverQRCard(props) {
-  const { lang, onChangeLang, currentSector, onSelectSector, isLanding, onBackToHome } = props;
+  const { lang, onChangeLang, currentSector, onSelectSector, isLanding } = props;
   return (
-    <header className={`cover-card ${isLanding ? 'cover-landing' : ''}`}>
+    <header className={`cover-card ${isLanding ? 'cover-landing' : 'cover-compact'}`}>
       <TopLangBar
         lang={lang}
         onChangeLang={onChangeLang}
         currentSector={currentSector}
         onSelectSector={onSelectSector}
-        isLanding={isLanding}
-        onBackToHome={onBackToHome}
       />
       <div className="cover-top-row">
         <div className="cover-header">
-          <CoverAvatar onBackToHome={onBackToHome} />
+          <CoverAvatar />
           <div className="cover-info">
             <h1>{CONTACT_INFO.fullName}</h1>
             <p>{t('commercialRole', lang)}</p>
-            <span className="cover-phone-badge">
-              📱 {CONTACT_INFO.phoneDisplay} · ✉️ {CONTACT_INFO.email}
+            <span className="cover-phone-badge tabular-nums">
+              {CONTACT_INFO.phoneDisplay} · {CONTACT_INFO.email}
             </span>
           </div>
         </div>

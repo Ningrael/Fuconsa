@@ -79,7 +79,7 @@ describe('ProductCard Component', () => {
         onToggleSelect={() => {}}
       />
     );
-    const img = screen.getByAltText('TEST-01');
+    const img = screen.getByAltText('Lomo Bacalao');
     fireEvent.error(img);
     expect(screen.getByText('Imagen en preparación')).toBeInTheDocument();
   });

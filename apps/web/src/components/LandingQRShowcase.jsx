@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import QRCode from 'qrcode';
 import { CONTACT_INFO } from '../constants/contact.js';
 import { t } from '../i18n/translations.js';
+import { PhoneIcon } from './Icons.jsx';
 
 function useInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -68,7 +69,7 @@ export function LandingQRShowcase({ lang }) {
     QRCode.toString(currentUrl, {
       type: 'svg',
       margin: 1,
-      width: 220,
+      width: 200,
       color: { dark: '#0F172A', light: '#FFFFFF' }
     })
       .then((svg) => {
@@ -90,11 +91,12 @@ export function LandingQRShowcase({ lang }) {
           dangerouslySetInnerHTML={qrSvg ? { __html: qrSvg } : undefined}
         />
         <div className="qr-hero-text">
-          <span className="qr-badge">📱 ACCESO DIRECTO EN TU MÓVIL</span>
+          <span className="qr-badge">ACCESO DIRECTO EN MÓVIL · TARIFA DIGITAL</span>
           <h2>{t('qrSectionTitle', lang)}</h2>
           <p>{t('qrSectionDesc', lang)}</p>
-          <div className="qr-contact-pill">
-            📲 WhatsApp / Tel.: <strong>{CONTACT_INFO.phoneDisplay}</strong> · ✉️ {CONTACT_INFO.email}
+          <div className="qr-contact-pill tabular-nums">
+            <PhoneIcon size={14} />
+            <span>Atención directa: <strong>{CONTACT_INFO.phoneDisplay}</strong> · {CONTACT_INFO.email}</span>
           </div>
         </div>
       </div>

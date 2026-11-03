@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getTranslation, t } from '../i18n/translations.js';
 import { formatBoxPrice } from '../utils/formatters.js';
+import { PlusIcon, CheckIcon } from './Icons.jsx';
 
 function ProductPlaceholder({ lang }) {
   return (
@@ -13,13 +14,12 @@ function ProductPlaceholder({ lang }) {
           e.currentTarget.style.display = 'none';
         }}
       />
-      <span className="placeholder-cat-icon" aria-hidden="true">🏷️</span>
       <span className="photo-coming-soon-badge">{t('photoComingSoon', lang)}</span>
     </div>
   );
 }
 
-function ProductImage({ item, lang }) {
+function ProductImage({ item, lang, name }) {
   const [imgError, setImgError] = useState(false);
   const showPhoto = Boolean(item.hasPhoto && item.imagePath && !imgError);
 
@@ -31,7 +31,7 @@ function ProductImage({ item, lang }) {
     <div className="product-img-box">
       <img
         src={`${item.imagePath}${item.imagePath.includes('?') ? '&' : '?'}v=2`}
-        alt={item.id}
+        alt={name || item.id}
         className="product-img"
         loading="lazy"
         onError={() => setImgError(true)}
@@ -42,7 +42,7 @@ function ProductImage({ item, lang }) {
 
 function ProductPricing({ item }) {
   return (
-    <div className="tabular-nums">
+    <div className="price-stack tabular-nums">
       <div className="price-main">{item.priceText || '—'}</div>
       {item.boxPrice ? (
         <div className="price-box">{formatBoxPrice(item.boxPrice)}</div>
@@ -53,11 +53,15 @@ function ProductPricing({ item }) {
 
 export function ProductCard({ item, lang, isSelected, onToggleSelect }) {
   const name = getTranslation(item.name, lang);
+  const actionLabel = isSelected ? t('removeFromSelection', lang) : t('addToSelection', lang);
   return (
     <article className={`product-card ${isSelected ? 'selected' : ''}`}>
-      <ProductImage item={item} lang={lang} />
+      <ProductImage item={item} lang={lang} name={name} />
       <div className="product-card-body">
-        {item.brand ? <span className="product-brand">{item.brand}</span> : null}
+        <div className="product-meta-top">
+          {item.brand ? <span className="product-brand">{item.brand}</span> : <span />}
+          {item.id ? <span className="product-sku tabular-nums">{item.id}</span> : null}
+        </div>
         <h2 className="product-name">{name}</h2>
         {item.format ? <p className="product-format">{item.format}</p> : null}
         <div className="product-card-footer">
@@ -66,10 +70,10 @@ export function ProductCard({ item, lang, isSelected, onToggleSelect }) {
             type="button"
             className={`btn-add-select ${isSelected ? 'selected' : ''}`}
             onClick={() => onToggleSelect(item)}
-            title={isSelected ? t('removeFromSelection', lang) : t('addToSelection', lang)}
-            aria-label={isSelected ? t('removeFromSelection', lang) : t('addToSelection', lang)}
+            title={actionLabel}
+            aria-label={actionLabel}
           >
-            {isSelected ? '✓' : '+'}
+            {isSelected ? <CheckIcon size={18} /> : <PlusIcon size={18} />}
           </button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { A4PageFooter } from './A4PageFooter.jsx';
 import { paginateSelection, paginateCatalog, DENSITY_MODES } from '../utils/paginateA4.js';
 import { getTranslation, t } from '../i18n/translations.js';
 import { formatBoxPrice } from '../utils/formatters.js';
+import { PrintIcon } from './Icons.jsx';
 
 function A4ItemImage({ item, lang, name }) {
   const [imgError, setImgError] = useState(false);
@@ -81,7 +82,8 @@ function A4Controls({ onClose, lang }) {
   return (
     <div className="no-print print-controls-bar">
       <button type="button" onClick={() => window.print()} className="btn-primary">
-        🖨️ {t('printSheet', lang)}
+        <PrintIcon size={15} />
+        <span>{t('printSheet', lang)}</span>
       </button>
       <button type="button" onClick={onClose} className="btn-secondary">
         ✕ {t('closePreview', lang)}

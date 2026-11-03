@@ -43,4 +43,13 @@ describe('CoverQRCard Component', () => {
     fireEvent.click(horecaChip);
     expect(handleSelect).toHaveBeenCalledWith('horeca');
   });
+
+  it('applies cover-landing class on landing and cover-compact inside catalog', () => {
+    const { container, rerender } = render(
+      <CoverQRCard lang="es" currentSector="" onSelectSector={() => {}} isLanding={true} />
+    );
+    expect(container.querySelector('header')).toHaveClass('cover-landing');
+    rerender(<CoverQRCard lang="es" currentSector="horeca" onSelectSector={() => {}} isLanding={false} />);
+    expect(container.querySelector('header')).toHaveClass('cover-compact');
+  });
 });

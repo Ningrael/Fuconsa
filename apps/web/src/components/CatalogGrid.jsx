@@ -2,13 +2,15 @@ import React from 'react';
 import { ProductCard } from './ProductCard.jsx';
 import { CompactTable } from './CompactTable.jsx';
 import { t } from '../i18n/translations.js';
+import { RetryIcon } from './Icons.jsx';
 
 function OfflineNotice({ lang, onRetry }) {
   return (
     <div className="offline-notice-banner" role="status">
-      <span className="offline-notice-text">⚠️ {t('offlineNotice', lang)}</span>
+      <span className="offline-notice-text">{t('offlineNotice', lang)}</span>
       <button type="button" onClick={onRetry} className="btn-secondary btn-retry-offline">
-        🔄 {t('retry', lang)}
+        <RetryIcon size={13} />
+        <span>{t('retry', lang)}</span>
       </button>
     </div>
   );
@@ -17,7 +19,7 @@ function OfflineNotice({ lang, onRetry }) {
 function EmptyState({ lang }) {
   return (
     <div className="empty-state">
-      <p style={{ fontSize: '16px', fontWeight: '600' }}>{t('noProductsFound', lang)}</p>
+      <p className="empty-state-title">{t('noProductsFound', lang)}</p>
     </div>
   );
 }

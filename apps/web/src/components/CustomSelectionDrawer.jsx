@@ -1,5 +1,6 @@
 import React from 'react';
 import { t } from '../i18n/translations.js';
+import { PrintIcon } from './Icons.jsx';
 
 export function CustomSelectionDrawer(props) {
   const { count, lang, onClear, onOpenPrint } = props;
@@ -8,7 +9,7 @@ export function CustomSelectionDrawer(props) {
   return (
     <aside className="selection-drawer no-print" aria-label="Bandeja de selección personalizada">
       <div className="selection-info">
-        <span className="selection-badge">{count}</span>
+        <span className="selection-badge tabular-nums">{count}</span>
         <strong>{t('customSelection', lang)}</strong>
       </div>
       <div className="selection-actions">
@@ -24,7 +25,8 @@ export function CustomSelectionDrawer(props) {
           onClick={onOpenPrint}
           className="btn-primary"
         >
-          <span>🖨️</span> {t('printSheet', lang)}
+          <PrintIcon size={15} />
+          <span>{t('printSheet', lang)}</span>
         </button>
       </div>
     </aside>

@@ -52,7 +52,7 @@ describe('App Full Integration Flow', () => {
     const addBtns = screen.getAllByRole('button', { name: /añadir a selección/i });
     fireEvent.click(addBtns[0]);
     expect(screen.getByText('Selección a Medida')).toBeInTheDocument();
-    const printBtn = screen.getByRole('button', { name: /^🖨️ imprimir a4$/i });
+    const printBtn = screen.getByRole('button', { name: /^imprimir a4$/i });
     fireEvent.click(printBtn);
     expect(screen.getByText('FUCONSA')).toBeInTheDocument();
     const closeBtn = screen.getByRole('button', { name: /cerrar/i });

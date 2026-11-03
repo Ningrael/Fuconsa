@@ -8,12 +8,12 @@
 
 - **Repositorio GitHub:** [https://github.com/Ningrael/Fuconsa](https://github.com/Ningrael/Fuconsa)
 - **Ramas:** `main` (despliegue en VPS) y `development` (desarrollo e integración).
-- **Cobertura de Pruebas:** 68/68 pruebas automatizadas en verde (100% éxito en `lib`, `api` y `web`).
+- **Cobertura de Pruebas:** 69/69 pruebas automatizadas en verde (100% éxito en `lib`, `api` y `web`).
 - **Servidores Locales Activos:** API en `http://localhost:4000` y Web en `http://localhost:5173`.
 
 ---
 
-## 2. Hitos Completados (Etapas 1 a 6)
+## 2. Hitos Completados (Etapas 1 a 8)
 
 1. **Extracción y Normalización (Etapa 1):** 762 productos clasificados en 4 sectores (Horeca, Supermercados, Latinos, Açaí) con 506 fotografías optimizadas en WebP.
 2. **Identidad Visual (Etapa 2):** Tokens de diseño editorial gastronómico, paleta cromática, CSS centralizado y logo oficial.
@@ -25,6 +25,11 @@
    - `docker-compose.yml` blindado con `restart: always`, healthchecks y rotación de logs.
    - Repositorio público creado en GitHub (`Ningrael/Fuconsa`) con ramas `main` y `development`.
    - Script de arranque unificado `npm run start:local`.
+7. **Estudio Fotográfico WebP (Etapa 7):** Recorte y realce de las 506 imágenes de catálogo a `640×480`.
+8. **Rediseño Editorial B2B y Accesibilidad WCAG AA (Etapa 8):**
+   - Eliminación de degradados difusos y emojis informales; incorporación de iconografía vectorial SVG (`Icons.jsx`).
+   - Portada comercial inteligente en doble estado (`cover-landing` vs. `cover-compact`) y barra de subcategorías con scroll horizontal para maximizar el área visible en móviles.
+   - Fichas de producto con botón táctil `48×48 px`, código de referencia (`SKU`), precios tabulares protagonistas y textos alternativos localizados.
 
 ---
 

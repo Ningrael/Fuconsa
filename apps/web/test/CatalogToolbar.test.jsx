@@ -23,21 +23,25 @@ describe('CatalogToolbar Component', () => {
     expect(setLang).toHaveBeenCalledWith('ca');
   });
 
-  it('updates search query on typing', () => {
+  it('updates search query on typing and allows clearing search', () => {
     const setSearch = vi.fn();
     render(
       <CatalogToolbar
         lang="es"
         onChangeLang={() => {}}
-        search=""
+        search="Bacalao"
         onChangeSearch={setSearch}
         onlyWithPhoto={false}
         onTogglePhoto={() => {}}
       />
     );
     const input = screen.getByRole('searchbox');
-    fireEvent.change(input, { target: { value: 'Bacalao' } });
-    expect(setSearch).toHaveBeenCalledWith('Bacalao');
+    fireEvent.change(input, { target: { value: 'Merluza' } });
+    expect(setSearch).toHaveBeenCalledWith('Merluza');
+
+    const clearBtn = screen.getByRole('button', { name: /limpiar búsqueda/i });
+    fireEvent.click(clearBtn);
+    expect(setSearch).toHaveBeenCalledWith('');
   });
 
   it('toggles onlyWithPhoto checkbox', () => {
