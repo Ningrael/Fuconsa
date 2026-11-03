@@ -26,6 +26,7 @@ function CatalogSection(props) {
         viewMode={viewMode}
         onChangeViewMode={setViewMode}
         onPrintSection={onPrintSection}
+        selectedCount={selection.count}
       />
       <CatalogGrid
         items={catalog.items}
@@ -73,16 +74,18 @@ export function App() {
   return (
     <ErrorBoundary lang={lang}>
       <div className="app-container" data-sector={catalog.sector || 'all'}>
-        <CoverQRCard lang={lang} currentSector={catalog.sector} onSelectSector={catalog.setSector} />
-        <CatalogSection
-          catalog={catalog}
-          selection={selection}
-          lang={lang}
-          setLang={setLang}
-          viewMode={viewMode}
-          setViewMode={setViewMode}
-          onPrintSection={() => openPrint('section')}
-        />
+        <div className={showPrintModal ? 'no-print' : ''}>
+          <CoverQRCard lang={lang} currentSector={catalog.sector} onSelectSector={catalog.setSector} />
+          <CatalogSection
+            catalog={catalog}
+            selection={selection}
+            lang={lang}
+            setLang={setLang}
+            viewMode={viewMode}
+            setViewMode={setViewMode}
+            onPrintSection={() => openPrint(selection.count > 0 ? 'selection' : 'section')}
+          />
+        </div>
         <CustomSelectionDrawer
           count={selection.count}
           lang={lang}

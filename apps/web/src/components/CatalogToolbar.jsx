@@ -87,16 +87,20 @@ function ViewModeSwitcher(props) {
   );
 }
 
-function PrintSectionAction({ onPrintSection, lang }) {
+function PrintSectionAction({ onPrintSection, selectedCount = 0, lang }) {
   if (!onPrintSection) return null;
+  const label = selectedCount > 0
+    ? `${t('customSelection', lang)} (${selectedCount}) · ${t('printSheet', lang)}`
+    : t('printSectionA4', lang);
   return (
     <button
       type="button"
       onClick={onPrintSection}
-      className="btn-print-section"
-      title={t('printSectionA4', lang)}
+      className={`btn-print-section ${selectedCount > 0 ? 'has-selection' : ''}`}
+      title={label}
+      aria-label={t('printSectionA4', lang)}
     >
-      🖨️ {t('printSectionA4', lang)}
+      🖨️ {label}
     </button>
   );
 }
@@ -118,7 +122,11 @@ export function CatalogToolbar(props) {
           onChangeViewMode={props.onChangeViewMode}
           lang={lang}
         />
-        <PrintSectionAction onPrintSection={props.onPrintSection} lang={lang} />
+        <PrintSectionAction
+          onPrintSection={props.onPrintSection}
+          selectedCount={props.selectedCount}
+          lang={lang}
+        />
       </div>
     </div>
   );
