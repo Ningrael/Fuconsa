@@ -11,6 +11,7 @@
     "start:api": "npm start --prefix apps/api",
     "start:web": "npm run dev --prefix apps/web",
     "start:local": "node scripts/start-local.js",
+    "build": "npm run build --prefix apps/web",
     "test:lib": "npm test --prefix packages/lib",
     "test:api": "npm test --prefix apps/api",
     "test:web": "npm test --prefix apps/web",
