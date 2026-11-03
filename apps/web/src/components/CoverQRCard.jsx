@@ -5,22 +5,32 @@ import { downloadVCard } from '../utils/vcard.js';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
 import { LandingQRShowcase } from './LandingQRShowcase.jsx';
 
-function TopLangBar({ lang, onChangeLang }) {
-  if (!onChangeLang) return null;
+function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector }) {
   return (
     <div className="cover-top-bar">
       <span className="cover-eyebrow">FUCONSA · CATÁLOGO OFICIAL B2B</span>
-      <div className="lang-switch top-lang-switch" role="group" aria-label="Selector de idioma superior">
-        {SUPPORTED_LANGUAGES.map((code) => (
-          <button
-            key={code}
-            type="button"
-            className={`btn-lang ${lang === code ? 'active' : ''}`}
-            onClick={() => onChangeLang(code)}
-          >
-            {code.toUpperCase()}
-          </button>
-        ))}
+      <div className="cover-top-right">
+        <button
+          type="button"
+          className={`btn-view-all-top ${currentSector === 'all' ? 'active' : ''}`}
+          onClick={() => onSelectSector('')}
+        >
+          📋 {t('allSectors', lang)}
+        </button>
+        {onChangeLang ? (
+          <div className="lang-switch top-lang-switch" role="group" aria-label="Selector de idioma superior">
+            {SUPPORTED_LANGUAGES.map((code) => (
+              <button
+                key={code}
+                type="button"
+                className={`btn-lang ${lang === code ? 'active' : ''}`}
+                onClick={() => onChangeLang(code)}
+              >
+                {code.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   );
@@ -72,62 +82,45 @@ function ContactButtons({ lang }) {
   );
 }
 
-function SectorsList({ lang, currentSector, onSelectSector, onSelectSubcategory }) {
+function SectorsList({ lang, currentSector, onSelectSector }) {
   return (
     <nav className="sectors-nav" aria-label="Sectores comerciales">
-      <button
-        type="button"
-        className={`sector-chip sector-chip-all ${currentSector === 'all' ? 'active' : ''}`}
-        onClick={() => onSelectSector('')}
-      >
-        <span className="sector-chip-title">{t('allSectors', lang)}</span>
-      </button>
       {SECTORS.map((sec) => (
-        <div key={sec.id} className="sector-card-group">
-          <button
-            type="button"
-            className={`sector-chip sector-card-${sec.id} ${currentSector === sec.id ? 'active' : ''}`}
-            onClick={() => onSelectSector(sec.id)}
-          >
-            <span className="sector-chip-text">
-              <span className="sector-chip-title">{t(sec.key, lang)}</span>
-              {sec.tag ? <small className="sector-chip-sub" aria-hidden="true">{sec.tag}</small> : null}
-            </span>
-            {sec.img ? (
-              <img
-                src={sec.img}
-                alt=""
-                aria-hidden="true"
-                className="sector-chip-thumb"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-              />
-            ) : null}
-          </button>
-          {onSelectSubcategory && sec.subcategories && sec.subcategories.length > 1 ? (
-            <div className="sector-sub-pills">
-              {sec.subcategories.map((sub) => (
-                <button
-                  key={sub}
-                  type="button"
-                  className="subcat-pill"
-                  onClick={() => onSelectSubcategory(sec.id, sub)}
-                >
-                  {sub}
-                </button>
-              ))}
-            </div>
+        <button
+          key={sec.id}
+          type="button"
+          className={`sector-chip sector-card-${sec.id} ${currentSector === sec.id ? 'active' : ''}`}
+          onClick={() => onSelectSector(sec.id)}
+        >
+          <span className="sector-chip-text">
+            <span className="sector-chip-title">{t(sec.key, lang)}</span>
+            {sec.tag ? <small className="sector-chip-sub" aria-hidden="true">{sec.tag}</small> : null}
+          </span>
+          {sec.img ? (
+            <img
+              src={sec.img}
+              alt=""
+              aria-hidden="true"
+              className="sector-chip-thumb"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
           ) : null}
-        </div>
+        </button>
       ))}
     </nav>
   );
 }
 
 export function CoverQRCard(props) {
-  const { lang, onChangeLang, currentSector, onSelectSector, onSelectSubcategory, isLanding } = props;
+  const { lang, onChangeLang, currentSector, onSelectSector, isLanding } = props;
   return (
     <header className={`cover-card ${isLanding ? 'cover-landing' : ''}`}>
-      <TopLangBar lang={lang} onChangeLang={onChangeLang} />
+      <TopLangBar
+        lang={lang}
+        onChangeLang={onChangeLang}
+        currentSector={currentSector}
+        onSelectSector={onSelectSector}
+      />
       <div className="cover-top-row">
         <div className="cover-header">
           <CoverAvatar />
@@ -145,7 +138,6 @@ export function CoverQRCard(props) {
         lang={lang}
         currentSector={currentSector}
         onSelectSector={onSelectSector}
-        onSelectSubcategory={onSelectSubcategory}
       />
       {isLanding ? <LandingQRShowcase lang={lang} /> : null}
     </header>
