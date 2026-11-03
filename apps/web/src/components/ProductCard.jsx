@@ -54,15 +54,17 @@ function ProductPricing({ item }) {
 export function ProductCard({ item, lang, isSelected, onToggleSelect }) {
   const name = getTranslation(item.name, lang);
   const actionLabel = isSelected ? t('removeFromSelection', lang) : t('addToSelection', lang);
+
   return (
     <article className={`product-card ${isSelected ? 'selected' : ''}`}>
       <ProductImage item={item} lang={lang} name={name} />
       <div className="product-card-body">
-        <div className="product-meta-top">
-          {item.brand ? <span className="product-brand">{item.brand}</span> : <span />}
-          {item.id ? <span className="product-sku tabular-nums">{item.id}</span> : null}
-        </div>
-        <h2 className="product-name">{name}</h2>
+        {item.brand ? (
+          <div className="product-meta-top">
+            <span className="product-brand">{item.brand}</span>
+          </div>
+        ) : null}
+        <h2 className="product-name" title={name}>{name}</h2>
         {item.format ? <p className="product-format">{item.format}</p> : null}
         <div className="product-card-footer">
           <ProductPricing item={item} />

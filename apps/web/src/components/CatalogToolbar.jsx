@@ -128,14 +128,14 @@ function ViewModeSwitcher(props) {
 function PrintSectionAction({ onPrintSection, selectedCount = 0, lang }) {
   if (!onPrintSection) return null;
   const label = selectedCount > 0
-    ? `${t('customSelection', lang)} (${selectedCount}) · ${t('printSheet', lang)}`
+    ? `${t('customSelection', lang)} (${selectedCount})`
     : t('printSectionA4', lang);
   return (
     <button
       type="button"
       onClick={onPrintSection}
       className={`btn-print-section ${selectedCount > 0 ? 'has-selection' : ''}`}
-      title={label}
+      title={t('printSectionA4', lang)}
       aria-label={t('printSectionA4', lang)}
     >
       <PrintIcon size={15} />
@@ -148,7 +148,7 @@ export function CatalogToolbar(props) {
   const { lang, search, onChangeSearch, section, onChangeSection, sections } = props;
   return (
     <div className="toolbar-container">
-      <div className="toolbar-row">
+      <div className="toolbar-row toolbar-row-main">
         {props.onBackToHome ? (
           <button type="button" onClick={props.onBackToHome} className="btn-back-home">
             <ArrowLeftIcon size={14} />
@@ -156,23 +156,25 @@ export function CatalogToolbar(props) {
           </button>
         ) : null}
         <SearchBox search={search} onChangeSearch={onChangeSearch} lang={lang} />
-        <SectionFilter section={section} onChangeSection={onChangeSection} sections={sections} lang={lang} />
-        <LanguageSwitcher lang={lang} onChangeLang={props.onChangeLang} />
-      </div>
-      <SubcategoryChips section={section} onChangeSection={onChangeSection} sections={sections} lang={lang} />
-      <div className="toolbar-row toolbar-row-actions">
-        <ViewModeSwitcher
-          onlyWithPhoto={props.onlyWithPhoto}
-          onTogglePhoto={props.onTogglePhoto}
-          viewMode={props.viewMode}
-          onChangeViewMode={props.onChangeViewMode}
-          lang={lang}
-        />
         <PrintSectionAction
           onPrintSection={props.onPrintSection}
           selectedCount={props.selectedCount}
           lang={lang}
         />
+        <LanguageSwitcher lang={lang} onChangeLang={props.onChangeLang} />
+      </div>
+      <div className="toolbar-row toolbar-row-filters">
+        <SubcategoryChips section={section} onChangeSection={onChangeSection} sections={sections} lang={lang} />
+        <div className="toolbar-secondary-tools">
+          <SectionFilter section={section} onChangeSection={onChangeSection} sections={sections} lang={lang} />
+          <ViewModeSwitcher
+            onlyWithPhoto={props.onlyWithPhoto}
+            onTogglePhoto={props.onTogglePhoto}
+            viewMode={props.viewMode}
+            onChangeViewMode={props.onChangeViewMode}
+            lang={lang}
+          />
+        </div>
       </div>
     </div>
   );

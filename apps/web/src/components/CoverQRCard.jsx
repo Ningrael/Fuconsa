@@ -17,7 +17,7 @@ function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector }) {
     <div className="cover-top-bar">
       <div className="cover-brand-strip">
         <span className="cover-eyebrow-dot" aria-hidden="true" />
-        <span className="cover-eyebrow">FUCONSA · CATÁLOGO COMERCIAL MAYORISTA</span>
+        <span className="cover-eyebrow">FUCONSA · CATÁLOGO COMERCIAL B2B</span>
       </div>
       <div className="cover-top-right">
         <button
@@ -75,11 +75,11 @@ function ContactButtons({ lang }) {
         rel="noopener noreferrer"
         className="btn-action btn-whatsapp"
       >
-        <WhatsAppIcon size={16} />
+        <WhatsAppIcon size={15} />
         <span>{t('whatsappAction', lang)}</span>
       </a>
       <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="btn-action btn-call">
-        <PhoneIcon size={16} />
+        <PhoneIcon size={15} />
         <span>{t('callAction', lang)}</span>
       </a>
       <button
@@ -87,7 +87,7 @@ function ContactButtons({ lang }) {
         onClick={() => downloadVCard()}
         className="btn-action btn-vcf"
       >
-        <VCardIcon size={16} />
+        <VCardIcon size={15} />
         <span>{t('saveContactAction', lang)}</span>
       </button>
     </div>

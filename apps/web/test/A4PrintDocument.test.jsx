@@ -46,10 +46,13 @@ describe('A4PrintDocument Component', () => {
         onClose={() => {}}
       />
     );
-    expect(screen.getByText('FUCONSA')).toBeInTheDocument();
-    expect(screen.getByText('Matías Sosa Marrazzo')).toBeInTheDocument();
+    expect(screen.getAllByText('FUCONSA').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('Matías Sosa Marrazzo').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText('PROPUESTA COMERCIAL Y SELECCIÓN DE PRODUCTOS')).toBeInTheDocument();
     expect(screen.getByText('Açaí Cubeta 5kg')).toBeInTheDocument();
     expect(screen.getByText(/Página 1 \/ 1/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /descargar pdf/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /compartir pdf/i })).toBeInTheDocument();
   });
 
   it('provides print and close triggers', () => {

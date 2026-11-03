@@ -1,0 +1,106 @@
+/* Carátula Comercial A4 (Página 1) */
+.a4-cover-sheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 6px solid var(--brand-primary);
+  background: #FFFFFF;
+}
+
+.a4-cover-header {
+  border-bottom: 2px solid #E2E8F0;
+  padding-bottom: 5mm;
+  margin-bottom: 5mm;
+}
+
+.a4-cover-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4mm;
+}
+
+.a4-cover-logo { height: 14mm; max-width: 45mm; object-fit: contain; }
+.a4-cover-brand-title { font-size: 20pt; font-weight: 900; color: var(--brand-primary); letter-spacing: -0.5px; line-height: 1; }
+.a4-cover-brand-sub { font-size: 8.5pt; font-weight: 600; color: var(--brand-muted); margin-top: 1mm; }
+
+.a4-cover-proposal-box {
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-left: 4px solid var(--brand-primary);
+  padding: 4mm 6mm;
+  border-radius: 4px;
+}
+.a4-cover-proposal-tag { font-size: 8pt; font-weight: 800; letter-spacing: 1px; color: #64748B; display: block; }
+.a4-cover-title { font-size: 15pt; font-weight: 800; color: var(--brand-text); margin: 1.5mm 0; letter-spacing: -0.3px; }
+.a4-cover-items-count { font-size: 8.5pt; color: var(--brand-primary); font-weight: 600; }
+
+.a4-cover-rep-card {
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  padding: 3.5mm 5mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5mm;
+}
+.a4-cover-rep-eyebrow { font-size: 7.5pt; font-weight: 800; letter-spacing: 0.8px; color: #64748B; }
+.a4-cover-rep-name { font-size: 12pt; font-weight: 800; color: var(--brand-primary); margin-top: 1mm; }
+.a4-cover-rep-role { font-size: 8.5pt; color: #475569; font-weight: 500; }
+.a4-cover-rep-contact { text-align: right; font-size: 8pt; color: #334155; line-height: 1.35; }
+
+.a4-cover-sectors { margin-bottom: 5mm; }
+.a4-cover-sectors-label { font-size: 7.5pt; font-weight: 800; letter-spacing: 0.8px; color: #64748B; margin-bottom: 2.5mm; }
+.a4-cover-sectors-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5mm; }
+.a4-cover-sector-box {
+  border: 1px solid #E2E8F0;
+  border-left-width: 4px;
+  background: #FFFFFF;
+  padding: 2.5mm 3.5mm;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5mm;
+}
+.a4-cover-sector-box strong { font-size: 8.5pt; color: var(--brand-text); }
+.a4-cover-sector-box small { font-size: 7pt; color: #64748B; line-height: 1.2; }
+
+.a4-border-horeca { border-left-color: #0284C7; }
+.a4-border-supermercados { border-left-color: #253B91; }
+.a4-border-latinos { border-left-color: #D97706; }
+.a4-border-acai { border-left-color: #9333EA; }
+
+.a4-cover-qr-box {
+  background: #0F172A;
+  color: #FFFFFF;
+  border-radius: 6px;
+  padding: 4mm 5mm;
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+  margin-bottom: 3mm;
+}
+.a4-cover-qr-frame {
+  background: #FFFFFF;
+  padding: 1.5mm;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.a4-cover-qr-img { width: 30mm; height: 30mm; object-fit: contain; display: block; }
+.a4-cover-qr-placeholder { width: 30mm; height: 30mm; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #0F172A; }
+.a4-cover-qr-badge { font-size: 7.5pt; font-weight: 800; letter-spacing: 1px; color: #38BDF8; display: block; margin-bottom: 1mm; }
+.a4-cover-qr-info h2 { font-size: 10.5pt; font-weight: 800; color: #FFFFFF; margin: 0 0 1mm 0; }
+.a4-cover-qr-info p { font-size: 7.5pt; color: #CBD5E1; margin: 0; line-height: 1.3; }
+
+.a4-cover-footer {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 3mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7.5pt;
+  color: #94A3B8;
+}

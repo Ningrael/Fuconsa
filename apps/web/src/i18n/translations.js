@@ -104,19 +104,44 @@ export const DICTIONARY = Object.freeze({
     en: 'Save direct shortcut on your phone?'
   },
   installAppBtn: {
-    es: '📲 Instalar Acceso Directo',
-    ca: '📲 Instal·lar Accés Directe',
-    en: '📲 Install Web App'
+    es: 'Instalar Acceso Directo',
+    ca: 'Instal·lar Accés Directe',
+    en: 'Install Web App'
   },
   installIosHint: {
-    es: 'En iPhone/iPad: toca el botón Compartir (⬆️) de Safari y elige «Añadir a pantalla de inicio».',
-    ca: 'A iPhone/iPad: toca el botó Compartir (⬆️) de Safari i tria «Afegir a la pantalla d’inici».',
-    en: 'On iPhone/iPad: tap Share (⬆️) in Safari and select "Add to Home Screen".'
+    es: 'En iPhone/iPad: toca el botón Compartir de Safari y elige «Añadir a pantalla de inicio».',
+    ca: 'A iPhone/iPad: toca el botó Compartir de Safari i tria «Afegir a la pantalla d’inici».',
+    en: 'On iPhone/iPad: tap Share in Safari and select "Add to Home Screen".'
   },
   backToHome: {
-    es: '🏠 Volver al Inicio / QR',
-    ca: '🏠 Tornar a l’Inici / QR',
-    en: '🏠 Back to Home / QR'
+    es: 'Inicio / Sectores',
+    ca: 'Inici / Sectors',
+    en: 'Home / Sectors'
+  },
+  downloadPdf: {
+    es: '📥 Descargar PDF',
+    ca: '📥 Descarregar PDF',
+    en: '📥 Download PDF'
+  },
+  sharePdf: {
+    es: '📲 Compartir PDF',
+    ca: '📲 Compartir PDF',
+    en: '📲 Share PDF'
+  },
+  generatingPdf: {
+    es: '⏳ Generando PDF...',
+    ca: '⏳ Generant PDF...',
+    en: '⏳ Generating PDF...'
+  },
+  coverProposalLabel: {
+    es: 'PROPUESTA COMERCIAL Y SELECCIÓN DE PRODUCTOS',
+    ca: 'PROPOSTA COMERCIAL I SELECCIÓ DE PRODUCTES',
+    en: 'COMMERCIAL PROPOSAL & PRODUCT SELECTION'
+  },
+  coverItemsIncluded: {
+    es: 'referencias seleccionadas en este documento',
+    ca: 'referències seleccionades en aquest document',
+    en: 'selected items included in this document'
   }
 });
 

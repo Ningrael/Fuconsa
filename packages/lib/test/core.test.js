@@ -130,3 +130,13 @@ test('dictionary provides all Etapa 5 keys across es, ca and en', () => {
     }
   }
 });
+
+test('dictionary provides all Etapa 8 keys across es, ca and en', () => {
+  const keys = ['downloadPdf', 'sharePdf', 'generatingPdf', 'coverProposalLabel', 'coverItemsIncluded'];
+  for (const k of keys) {
+    for (const lang of ['es', 'ca', 'en']) {
+      const val = t(k, lang);
+      assert.ok(val && val !== k, `Missing translation for key ${k} in ${lang}`);
+    }
+  }
+});

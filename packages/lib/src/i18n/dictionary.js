@@ -75,6 +75,31 @@ export const DICTIONARY = Object.freeze({
     es: 'Ha ocurrido un problema inesperado',
     ca: "S'ha produït un problema inesperat",
     en: 'An unexpected problem has occurred'
+  },
+  downloadPdf: {
+    es: '📥 Descargar PDF',
+    ca: '📥 Descarregar PDF',
+    en: '📥 Download PDF'
+  },
+  sharePdf: {
+    es: '📲 Compartir PDF',
+    ca: '📲 Compartir PDF',
+    en: '📲 Share PDF'
+  },
+  generatingPdf: {
+    es: '⏳ Generando PDF...',
+    ca: '⏳ Generant PDF...',
+    en: '⏳ Generating PDF...'
+  },
+  coverProposalLabel: {
+    es: 'PROPUESTA COMERCIAL Y SELECCIÓN DE PRODUCTOS',
+    ca: 'PROPOSTA COMERCIAL I SELECCIÓ DE PRODUCTES',
+    en: 'COMMERCIAL PROPOSAL & PRODUCT SELECTION'
+  },
+  coverItemsIncluded: {
+    es: 'referencias seleccionadas en este documento',
+    ca: 'referències seleccionades en aquest document',
+    en: 'selected items included in this document'
   }
 });
 

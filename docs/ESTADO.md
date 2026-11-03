@@ -8,7 +8,7 @@
 
 - **Repositorio GitHub:** [https://github.com/Ningrael/Fuconsa](https://github.com/Ningrael/Fuconsa)
 - **Ramas:** `main` (despliegue en VPS) y `development` (desarrollo e integración).
-- **Cobertura de Pruebas:** 69/69 pruebas automatizadas en verde (100% éxito en `lib`, `api` y `web`).
+- **Cobertura de Pruebas:** 70/70 pruebas automatizadas en verde (100% éxito en `lib`, `api` y `web`).
 - **Servidores Locales Activos:** API en `http://localhost:4000` y Web en `http://localhost:5173`.
 
 ---
@@ -26,10 +26,13 @@
    - Repositorio público creado en GitHub (`Ningrael/Fuconsa`) con ramas `main` y `development`.
    - Script de arranque unificado `npm run start:local`.
 7. **Estudio Fotográfico WebP (Etapa 7):** Recorte y realce de las 506 imágenes de catálogo a `640×480`.
-8. **Rediseño Editorial B2B y Accesibilidad WCAG AA (Etapa 8):**
-   - Eliminación de degradados difusos y emojis informales; incorporación de iconografía vectorial SVG (`Icons.jsx`).
-   - Portada comercial inteligente en doble estado (`cover-landing` vs. `cover-compact`) y barra de subcategorías con scroll horizontal para maximizar el área visible en móviles.
-   - Fichas de producto con botón táctil `48×48 px`, código de referencia (`SKU`), precios tabulares protagonistas y textos alternativos localizados.
+8. **Transformación Gourmet B2B de Alto Impacto (Etapa 8):**
+   - Supresión de fondos de fango/marrón; estandarización con el Azul Marino Fuconsa (`#0F2342`) y fondo blanco puro luminoso.
+   - Eliminación de slugs técnicos internos (`productos-latinos-...`) en tarjetas comerciales.
+   - Fichas de producto de alto impacto visual con fotografía ampliada, tipografía contrastada y botón ergonómico de 44px.
+   - Barra de herramientas despejada sin duplicidades ni sobrecarga cognitiva.
+   - Carátula comercial A4 de presentación ejecutiva de 1 página.
+   - Modularidad estricta (100% de archivos en `apps/web/src` con ≤ 182 líneas).
 
 ---
 
