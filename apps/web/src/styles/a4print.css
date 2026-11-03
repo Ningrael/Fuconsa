@@ -1,0 +1,148 @@
+.a4-header {
+  border-bottom: 2px solid var(--brand-primary);
+  padding-bottom: 8mm;
+  margin-bottom: 6mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.a4-brand-title {
+  font-size: 20pt;
+  font-weight: 800;
+  color: var(--brand-primary);
+  letter-spacing: -0.5px;
+}
+
+.a4-brand-sub {
+  font-size: 9.5pt;
+  color: var(--brand-muted);
+  margin-top: 2px;
+}
+
+.a4-contact-box {
+  text-align: right;
+  font-size: 8.5pt;
+  color: var(--brand-text);
+  line-height: 1.35;
+}
+
+.a4-contact-name {
+  font-weight: 700;
+  color: var(--brand-primary);
+}
+
+.a4-body {
+  flex: 1;
+}
+
+.a4-grid-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 58mm;
+  gap: 6mm;
+}
+
+.a4-grid-high {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 40mm;
+  gap: 4mm;
+}
+
+.a4-item-card {
+  border: 1px solid #CBD5E1;
+  border-radius: 3px;
+  padding: 3mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+}
+
+.a4-item-img {
+  width: 100%;
+  height: 24mm;
+  object-fit: contain;
+  margin-bottom: 2mm;
+}
+
+.a4-item-placeholder {
+  height: 24mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2mm;
+  background: #F8FAFC;
+  border-radius: 2px;
+  margin-bottom: 2mm;
+}
+
+.a4-placeholder-logo {
+  max-height: 12mm;
+  max-width: 32mm;
+  object-fit: contain;
+}
+
+.a4-placeholder-badge {
+  font-size: 6.5pt;
+  color: #64748B;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.a4-item-title {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--brand-text);
+  line-height: 1.2;
+}
+
+.a4-item-meta {
+  font-size: 7.5pt;
+  color: var(--brand-muted);
+  margin-top: 1mm;
+}
+
+.a4-item-price {
+  font-size: 11pt;
+  font-weight: 800;
+  color: var(--brand-primary);
+  text-align: right;
+  margin-top: 2mm;
+}
+
+.a4-table-body {
+  margin-top: 4mm;
+  flex: 1;
+}
+
+.a4-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 7.5pt;
+}
+
+.a4-data-table th,
+.a4-data-table td {
+  padding: 2mm 1.5mm;
+  border-bottom: 0.5px solid #E2E8F0;
+  text-align: left;
+}
+
+.a4-data-table th {
+  background: #F1F5F9;
+  font-weight: 700;
+  color: var(--brand-primary, #0F172A);
+}
+
+.a4-footer {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 4mm;
+  margin-top: 6mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+  color: var(--brand-muted);
+}

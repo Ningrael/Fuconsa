@@ -1,0 +1,17 @@
+{
+  "name": "@fuconsa/lib",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./styles/brand.css": "./styles/brand.css",
+    "./data/catalog.json": "./data/catalog.json"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  }
+}

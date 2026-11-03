@@ -1,0 +1,80 @@
+/* Fuconsa · Hoja Maestra de Estilos e Identidad de Marca (SSOT) */
+:root {
+  /* Identidad Cromática Real Fuconsa (#253B91, 228° en círculo cromático) */
+  --brand-primary: #253B91;
+  --brand-secondary: #0284C7;
+  --brand-accent-culinary: #C87413;
+  --brand-bg-screen: #F8F9FC;
+  --brand-bg-print: #FFFFFF;
+  --brand-text: #141A29;
+  --brand-muted: #64708A;
+  --brand-border: #E8ECF4;
+
+  /* Acentos de Sector Comercial */
+  --brand-accent-horeca: #253B91;
+  --brand-accent-super: #0284C7;
+  --brand-accent-latinos: #D97706;
+  --brand-accent-acai: #5B1B52;
+  --brand-accent-acai-leaf: #15803D;
+
+  /* Fichas y Contenedores */
+  --card-radius: 12px;
+  --card-border: 1px solid #E8ECF4;
+  --card-shadow: 0 1px 3px rgba(20, 26, 41, 0.05);
+
+  /* Tipografía y Números Tabulares */
+  --font-family-base: 'Plus Jakarta Sans', Inter, -apple-system, sans-serif;
+  --font-numeric-variant: tabular-nums;
+}
+
+/* Reglas de Alineación Numérica para Precios y Códigos */
+.tabular-nums,
+.font-tabular,
+.price-value,
+.code-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Estilo Editorial Luminoso */
+.catalog-item-card {
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  background-color: #FFFFFF;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Tokens de Sector Dinámicos */
+[data-sector="horeca"] { --sector-color: var(--brand-accent-horeca); }
+[data-sector="supermercados"] { --sector-color: var(--brand-accent-super); }
+[data-sector="latinos"] { --sector-color: var(--brand-accent-latinos); }
+[data-sector="acai"] { --sector-color: var(--brand-accent-acai); }
+
+/* Especificaciones Físicas de Impresión A4 */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background-color: var(--brand-bg-print) !important;
+    color: var(--brand-text) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page-a4 {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    break-after: page;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+}

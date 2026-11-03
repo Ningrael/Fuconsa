@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#253B91"/>
+      <stop offset="100%" stop-color="#1E2E70"/>
+    </linearGradient>
+    <filter id="shadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo de tarjeta -->
+  <rect width="400" height="400" rx="16" fill="url(#bgGrad)" stroke="#E2E8F0" stroke-width="1.5"/>
+
+  <!-- Emblema de marca FUCONSA -->
+  <g transform="translate(200, 75)" text-anchor="middle">
+    <text font-family="'Plus Jakarta Sans', Inter, -apple-system, sans-serif" font-size="22" font-weight="800" fill="url(#primaryGrad)" letter-spacing="4">FUCONSA</text>
+    <text y="18" font-family="'Plus Jakarta Sans', Inter, -apple-system, sans-serif" font-size="10" font-weight="600" fill="#0284C7" letter-spacing="2">DISTRIBUCIÓN ALIMENTARIA</text>
+  </g>
+
+  <!-- Silueta gastronómica sobria (Campana de degustación) -->
+  <g transform="translate(200, 195)" filter="url(#shadow)">
+    <!-- Plato base -->
+    <rect x="-70" y="22" width="140" height="6" rx="3" fill="#94A3B8"/>
+    <rect x="-85" y="27" width="170" height="4" rx="2" fill="#CBD5E1"/>
+
+    <!-- Campana cloche -->
+    <path d="M -60 20 C -60 -40, 60 -40, 60 20 Z" fill="#253B91" fill-opacity="0.08" stroke="#253B91" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Destello sutil en campana -->
+    <path d="M -40 10 C -40 -20, -10 -35, 10 -35" stroke="#0284C7" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+    <!-- Asa superior -->
+    <circle cx="0" cy="-45" r="7" fill="#C87413"/>
+    <circle cx="0" cy="-45" r="4" fill="#FFFFFF"/>
+    <rect x="-2" y="-38" width="4" height="6" fill="#C87413"/>
+  </g>
+
+  <!-- Sello de estado profesional -->
+  <g transform="translate(200, 305)">
+    <!-- Píldora de estado -->
+    <rect x="-135" y="-14" width="270" height="28" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#shadow)"/>
+    <circle cx="-115" cy="0" r="4" fill="#C87413"/>
+    <text x="-103" y="4" font-family="'Plus Jakarta Sans', Inter, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#334155">Imagen en preparación</text>
+    <text x="50" y="4" font-family="'Plus Jakarta Sans', Inter, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">|</text>
+    <text x="60" y="4" font-family="'Plus Jakarta Sans', Inter, -apple-system, sans-serif" font-size="11" font-weight="500" fill="#64748B">Consultar formato</text>
+  </g>
+
+  <!-- Pie de tarjeta sobrio -->
+  <text x="200" y="360" text-anchor="middle" font-family="'Plus Jakarta Sans', Inter, -apple-system, sans-serif" font-size="10.5" font-weight="500" fill="#94A3B8">
+    Referencia comercial activa · Fuconsa Selección
+  </text>
+</svg>

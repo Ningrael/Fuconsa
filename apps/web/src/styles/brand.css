@@ -1,0 +1,44 @@
+:root {
+  --brand-primary: #0F2942;
+  --brand-secondary: #1E4976;
+  --brand-bg-screen: #F8FAFC;
+  --brand-bg-print: #FFFFFF;
+  --brand-text: #1E293B;
+  --brand-muted: #64748B;
+  --brand-accent-horeca: #0F2942;
+  --brand-accent-super: #1E4976;
+  --brand-accent-latinos: #B45309;
+  --brand-accent-acai: #4A154B;
+  --brand-accent-acai-alt: #2E6F40;
+  --card-radius: 4px;
+  --card-border: #E2E8F0;
+  --card-shadow: 0 1px 3px rgba(15, 41, 66, 0.06);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--brand-bg-screen);
+  color: var(--brand-text);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "fuconsa-catalogo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "start:api": "npm start --prefix apps/api",
+    "start:web": "npm run dev --prefix apps/web",
+    "start:local": "node scripts/start-local.js",
+    "test:lib": "npm test --prefix packages/lib",
+    "test:api": "npm test --prefix apps/api",
+    "test:web": "npm test --prefix apps/web",
+    "test": "npm run test:lib && npm run test:api && npm run test:web"
+  }
+}

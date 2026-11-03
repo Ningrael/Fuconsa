@@ -1,0 +1,67 @@
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    width: 210mm;
+    margin: 0;
+    padding: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .a4-sheet {
+    page-break-after: always;
+    break-after: page;
+    width: 210mm;
+    min-height: 297mm;
+    height: 297mm;
+    padding: 12mm 15mm;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FFFFFF;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none;
+  }
+
+  .print-preview-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 41, 66, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .a4-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 12mm 15mm;
+    background: #FFFFFF;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+}
