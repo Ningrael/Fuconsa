@@ -11,7 +11,7 @@ OUT_DATA_DIR = ROOT_DIR / "packages" / "lib" / "data"
 OUT_ASSETS_DIR = ROOT_DIR / "packages" / "lib" / "assets" / "products"
 CATALOG_JSON_PATH = OUT_DATA_DIR / "catalog.json"
 
-BASE_URL = ""
+BASE_URL = "https://www.fucon.es"
 
 CATEGORIES = [
     {

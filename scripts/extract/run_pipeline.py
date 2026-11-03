@@ -45,7 +45,7 @@ def main() -> None:
     pdf_images = load_all_pdf_images()
     print(f"   Fotos rescatadas de PDFs: {len(pdf_images)}", flush=True)
 
-    print("2. Extrayendo productos del catálogo web (ES y CA)...", flush=True)
+    print("2. Extrayendo productos de la web de origen fucon.es (ES y CA)...", flush=True)
     web_items = scrape_all_web_products()
     print(f"   Productos extraídos de la web: {len(web_items)}", flush=True)
 

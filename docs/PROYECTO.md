@@ -37,7 +37,7 @@ Resuelve dos necesidades operativas con una sola fuente de datos:
 
 - **Materiales de partida:**
   - Carpeta compartida en Google Drive (`G:\.shortcut-targets-by-id\1EuLIFEMakda8UH4wvG5fPzeU0ztYlqrU\Creación de catálogos para Antigravity`) con tarifas Excel (`precios-horeca.xlsx`, `precios-supermercados.xlsx`), base inicial `productos-normalizados.csv` (451 registros) y los 4 PDFs previos de donde se rescatarán los activos gráficos y fotografías ya recortadas.
-  - Catálogo público oficial Fuconsa (en español y catalán) para enriquecer imágenes y nombres.
+  - Catálogo web de origen `https://www.fucon.es/` (en español y catalán) para enriquecer imágenes y nombres.
 - **Infraestructura y despliegue:**
   - Alojado en la VPS existente del usuario (donde opera OpenClaw), accesible inicialmente mediante la dirección IP de la VPS.
   - Sincronizado a través de un repositorio en la cuenta de GitHub `Ningrael`.

@@ -1,4 +1,4 @@
-"""Web scraper for Fuconsa Spanish and Catalan catalogs."""
+"""Web scraper for fucon.es Spanish and Catalan catalogs."""
 import re
 import urllib.request
 import urllib.parse
