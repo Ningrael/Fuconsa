@@ -138,7 +138,7 @@ export function CatalogToolbar(props) {
       <div className="toolbar-row">
         {props.onBackToHome ? (
           <button type="button" onClick={props.onBackToHome} className="btn-back-home">
-            ← Inicio
+            {t('backToHome', lang)}
           </button>
         ) : null}
         <SearchBox search={search} onChangeSearch={onChangeSearch} lang={lang} />

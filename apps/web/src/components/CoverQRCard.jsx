@@ -5,10 +5,18 @@ import { downloadVCard } from '../utils/vcard.js';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
 import { LandingQRShowcase } from './LandingQRShowcase.jsx';
 
-function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector }) {
+function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector, isLanding, onBackToHome }) {
   return (
     <div className="cover-top-bar">
-      <span className="cover-eyebrow">FUCONSA · CATÁLOGO OFICIAL B2B</span>
+      <div className="cover-top-left">
+        {!isLanding && onBackToHome ? (
+          <button type="button" onClick={onBackToHome} className="btn-home-top">
+            {t('backToHome', lang)}
+          </button>
+        ) : (
+          <span className="cover-eyebrow">FUCONSA · CATÁLOGO OFICIAL B2B</span>
+        )}
+      </div>
       <div className="cover-top-right">
         <button
           type="button"
@@ -36,10 +44,15 @@ function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector }) {
   );
 }
 
-function CoverAvatar() {
+function CoverAvatar({ onBackToHome }) {
   const [imgError, setImgError] = useState(false);
   return (
-    <div className="cover-avatar" aria-label="Logo Fuconsa">
+    <div
+      className="cover-avatar"
+      aria-label="Logo Fuconsa"
+      onClick={onBackToHome}
+      style={onBackToHome ? { cursor: 'pointer' } : undefined}
+    >
       {!imgError ? (
         <img
           src="/assets/brand/logo.png"
@@ -112,7 +125,7 @@ function SectorsList({ lang, currentSector, onSelectSector }) {
 }
 
 export function CoverQRCard(props) {
-  const { lang, onChangeLang, currentSector, onSelectSector, isLanding } = props;
+  const { lang, onChangeLang, currentSector, onSelectSector, isLanding, onBackToHome } = props;
   return (
     <header className={`cover-card ${isLanding ? 'cover-landing' : ''}`}>
       <TopLangBar
@@ -120,10 +133,12 @@ export function CoverQRCard(props) {
         onChangeLang={onChangeLang}
         currentSector={currentSector}
         onSelectSector={onSelectSector}
+        isLanding={isLanding}
+        onBackToHome={onBackToHome}
       />
       <div className="cover-top-row">
         <div className="cover-header">
-          <CoverAvatar />
+          <CoverAvatar onBackToHome={onBackToHome} />
           <div className="cover-info">
             <h1>{CONTACT_INFO.fullName}</h1>
             <p>{t('commercialRole', lang)}</p>

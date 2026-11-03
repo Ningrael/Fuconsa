@@ -112,6 +112,11 @@ export const DICTIONARY = Object.freeze({
     es: 'En iPhone/iPad: toca el botón Compartir (⬆️) de Safari y elige «Añadir a pantalla de inicio».',
     ca: 'A iPhone/iPad: toca el botó Compartir (⬆️) de Safari i tria «Afegir a la pantalla d’inici».',
     en: 'On iPhone/iPad: tap Share (⬆️) in Safari and select "Add to Home Screen".'
+  },
+  backToHome: {
+    es: '🏠 Volver al Inicio / QR',
+    ca: '🏠 Tornar a l’Inici / QR',
+    en: '🏠 Back to Home / QR'
   }
 });
 

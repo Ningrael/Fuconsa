@@ -95,6 +95,7 @@ export function App() {
             onSelectSector={handleSelectSector}
             onSelectSubcategory={handleSelectSubcategory}
             isLanding={!hasEnteredCatalog}
+            onBackToHome={() => setHasEnteredCatalog(false)}
           />
           {hasEnteredCatalog ? (
             <CatalogSection
