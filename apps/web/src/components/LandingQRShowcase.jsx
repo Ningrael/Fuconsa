@@ -94,7 +94,7 @@ export function LandingQRShowcase({ lang }) {
           <h2>{t('qrSectionTitle', lang)}</h2>
           <p>{t('qrSectionDesc', lang)}</p>
           <div className="qr-contact-pill">
-            <strong>{CONTACT_INFO.fullName}</strong> · {CONTACT_INFO.phoneDisplay}
+            📲 WhatsApp / Tel.: <strong>{CONTACT_INFO.phoneDisplay}</strong> · ✉️ {CONTACT_INFO.email}
           </div>
         </div>
       </div>
