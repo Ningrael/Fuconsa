@@ -60,15 +60,31 @@
   background: #FFFFFF;
 }
 
-.a4-item-img {
+.a4-item-img-wrap {
   width: 100%;
-  height: 24mm;
-  object-fit: contain;
+  height: 26mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 2mm;
+  background: #FFFFFF;
+}
+
+.a4-grid-high .a4-item-img-wrap {
+  height: 18mm;
+}
+
+.a4-item-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .a4-item-placeholder {
-  height: 24mm;
+  height: 26mm;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,10 +96,17 @@
   margin-bottom: 2mm;
 }
 
+.a4-grid-high .a4-item-placeholder {
+  height: 18mm;
+}
+
 .a4-placeholder-logo {
   max-height: 10mm;
   max-width: 28mm;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  display: block;
 }
 
 .a4-placeholder-badge {

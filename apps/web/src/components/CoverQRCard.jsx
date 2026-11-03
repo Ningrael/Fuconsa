@@ -1,157 +1,29 @@
-import React, { useState } from 'react';
-import { CONTACT_INFO } from '../constants/contact.js';
-import { SECTORS } from '../constants/sectors.js';
-import { downloadVCard } from '../utils/vcard.js';
-import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
-import { LandingQRShowcase } from './LandingQRShowcase.jsx';
-import { WhatsAppIcon, PhoneIcon, VCardIcon, GridIcon } from './Icons.jsx';
+import React from 'react';
+import { LandingVCard } from './LandingVCard.jsx';
+import { CatalogMasthead } from './CatalogMasthead.jsx';
 
-const LANG_NAMES = {
-  es: 'Español',
-  ca: 'Català',
-  en: 'English'
-};
-
-function TopLangBar({ lang, onChangeLang, currentSector, onSelectSector }) {
-  return (
-    <div className="cover-top-bar">
-      <div className="cover-brand-strip">
-        <span className="cover-eyebrow-dot" aria-hidden="true" />
-        <span className="cover-eyebrow">FUCONSA · CATÁLOGO COMERCIAL B2B</span>
-      </div>
-      <div className="cover-top-right">
-        <button
-          type="button"
-          className={`btn-view-all-top ${currentSector === 'all' ? 'active' : ''}`}
-          onClick={() => onSelectSector('')}
-        >
-          <GridIcon size={14} />
-          <span>{t('allSectors', lang)}</span>
-        </button>
-        {onChangeLang ? (
-          <div className="lang-switch top-lang-switch" role="group" aria-label="Selector de idioma superior">
-            {SUPPORTED_LANGUAGES.map((code) => (
-              <button
-                key={code}
-                type="button"
-                className={`btn-lang ${lang === code ? 'active' : ''}`}
-                onClick={() => onChangeLang(code)}
-                title={LANG_NAMES[code]}
-              >
-                {code.toUpperCase()}
-              </button>
-            ))}
-          </div>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
-function CoverAvatar() {
-  const [imgError, setImgError] = useState(false);
-  return (
-    <div className="cover-avatar" aria-label="Logo Fuconsa">
-      {!imgError ? (
-        <img
-          src="/assets/brand/logo.png"
-          alt="Fuconsa"
-          className="cover-logo-img"
-          onError={() => setImgError(true)}
-        />
-      ) : (
-        <span className="cover-logo-fallback">FUCONSA</span>
-      )}
-    </div>
-  );
-}
-
-function ContactButtons({ lang }) {
-  return (
-    <div className="contact-actions">
-      <a
-        href={CONTACT_INFO.whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-action btn-whatsapp"
-      >
-        <WhatsAppIcon size={15} />
-        <span>{t('whatsappAction', lang)}</span>
-      </a>
-      <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="btn-action btn-call">
-        <PhoneIcon size={15} />
-        <span>{t('callAction', lang)}</span>
-      </a>
-      <button
-        type="button"
-        onClick={() => downloadVCard()}
-        className="btn-action btn-vcf"
-      >
-        <VCardIcon size={15} />
-        <span>{t('saveContactAction', lang)}</span>
-      </button>
-    </div>
-  );
-}
-
-function SectorsList({ lang, currentSector, onSelectSector }) {
-  return (
-    <nav className="sectors-nav" aria-label="Sectores comerciales">
-      {SECTORS.map((sec) => (
-        <button
-          key={sec.id}
-          type="button"
-          className={`sector-chip sector-card-${sec.id} ${currentSector === sec.id ? 'active' : ''}`}
-          onClick={() => onSelectSector(sec.id)}
-        >
-          <span className="sector-chip-text">
-            <span className="sector-chip-title">{t(sec.key, lang)}</span>
-            {sec.tag ? <small className="sector-chip-sub" aria-hidden="true">{sec.tag}</small> : null}
-          </span>
-          {sec.img ? (
-            <img
-              src={sec.img}
-              alt=""
-              aria-hidden="true"
-              className="sector-chip-thumb"
-              onError={(e) => { e.currentTarget.style.display = 'none'; }}
-            />
-          ) : null}
-        </button>
-      ))}
-    </nav>
-  );
-}
+export { LandingVCard, CatalogMasthead };
 
 export function CoverQRCard(props) {
-  const { lang, onChangeLang, currentSector, onSelectSector, isLanding } = props;
+  const { lang, onChangeLang, currentSector, onSelectSector, isLanding = true, onBackToHome } = props;
+  const isLandingMode = isLanding !== false;
   return (
-    <header className={`cover-card ${isLanding ? 'cover-landing' : 'cover-compact'}`}>
-      <TopLangBar
-        lang={lang}
-        onChangeLang={onChangeLang}
-        currentSector={currentSector}
-        onSelectSector={onSelectSector}
-      />
-      <div className="cover-top-row">
-        <div className="cover-header">
-          <CoverAvatar />
-          <div className="cover-info">
-            <h1>{CONTACT_INFO.fullName}</h1>
-            <p>{t('commercialRole', lang)}</p>
-            <span className="cover-phone-badge tabular-nums">
-              {CONTACT_INFO.phoneDisplay} · {CONTACT_INFO.email}
-            </span>
-          </div>
-        </div>
-        <ContactButtons lang={lang} />
-      </div>
-      <SectorsList
-        lang={lang}
-        currentSector={currentSector}
-        onSelectSector={onSelectSector}
-      />
-      {isLanding ? <LandingQRShowcase lang={lang} /> : null}
+    <header className={`cover-card ${isLandingMode ? 'cover-landing' : 'cover-compact'}`}>
+      {isLandingMode ? (
+        <LandingVCard
+          lang={lang}
+          onChangeLang={onChangeLang}
+          onSelectSector={onSelectSector}
+        />
+      ) : (
+        <CatalogMasthead
+          lang={lang}
+          onChangeLang={onChangeLang}
+          currentSector={currentSector}
+          onSelectSector={onSelectSector}
+          onBackToHome={onBackToHome}
+        />
+      )}
     </header>
   );
 }

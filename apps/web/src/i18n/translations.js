@@ -28,6 +28,7 @@ export const DICTIONARY = Object.freeze({
   addToSelection: { es: 'Añadir a selección', ca: 'Afegir a selecció', en: 'Add to selection' },
   removeFromSelection: { es: 'Quitar', ca: 'Treure', en: 'Remove' },
   printSheet: { es: 'Imprimir A4', ca: 'Imprimir A4', en: 'Print A4' },
+  createPdf: { es: 'Crear PDF', ca: 'Crear PDF', en: 'Create PDF' },
   clearSelection: { es: 'Vaciar', ca: 'Buidar', en: 'Clear' },
   colCode: { es: 'Cód.', ca: 'Codi', en: 'Code' },
   colProduct: { es: 'Producto', ca: 'Producte', en: 'Product' },
@@ -59,9 +60,9 @@ export const DICTIONARY = Object.freeze({
     en: 'Photo coming soon'
   },
   printSectionA4: {
-    es: 'Imprimir Sección A4',
-    ca: 'Imprimir Secció A4',
-    en: 'Print Section A4'
+    es: 'Crear PDF',
+    ca: 'Crear PDF',
+    en: 'Create PDF'
   },
   errorBoundaryTitle: {
     es: 'Se ha producido un error inesperado al cargar la vista',
@@ -89,19 +90,19 @@ export const DICTIONARY = Object.freeze({
     en: 'For immediate technical or commercial assistance:'
   },
   qrSectionTitle: {
-    es: 'Escanea este código QR con tu móvil',
-    ca: 'Escaneja aquest codi QR amb el teu mòbil',
-    en: 'Scan this QR code with your mobile'
+    es: 'Escanea mi contacto',
+    ca: 'Escaneja el meu contacte',
+    en: 'Scan my contact'
   },
   qrSectionDesc: {
-    es: 'Llévate el catálogo interactivo completo de Fuconsa y el contacto directo de Matías Sosa en tu bolsillo.',
-    ca: 'Emporta’t el catàleg interactiu complet de Fuconsa i el contacte directe de Matías Sosa a la butxaca.',
-    en: 'Take the full interactive Fuconsa catalog and Matías Sosa direct contact in your pocket.'
+    es: 'Guarda mi tarjeta directa y el catálogo en tu móvil.',
+    ca: 'Desa la meva targeta directa i el catàleg al teu mòbil.',
+    en: 'Save my direct card and the catalog on your phone.'
   },
   installAppTitle: {
-    es: '¿Quieres guardar el acceso directo en tu móvil?',
-    ca: 'Vols desar l’accés directe al teu mòbil?',
-    en: 'Save direct shortcut on your phone?'
+    es: 'Acceso directo en tu móvil',
+    ca: 'Accés directe al mòbil',
+    en: 'Shortcut on your phone'
   },
   installAppBtn: {
     es: 'Instalar Acceso Directo',
@@ -109,29 +110,34 @@ export const DICTIONARY = Object.freeze({
     en: 'Install Web App'
   },
   installIosHint: {
-    es: 'En iPhone/iPad: toca el botón Compartir de Safari y elige «Añadir a pantalla de inicio».',
-    ca: 'A iPhone/iPad: toca el botó Compartir de Safari i tria «Afegir a la pantalla d’inici».',
-    en: 'On iPhone/iPad: tap Share in Safari and select "Add to Home Screen".'
+    es: 'En Safari: toca Compartir y elige «Añadir a pantalla de inicio».',
+    ca: 'A Safari: toca Compartir i tria «Afegir a la pantalla d’inici».',
+    en: 'In Safari: tap Share and select "Add to Home Screen".'
   },
   backToHome: {
-    es: 'Inicio / Sectores',
-    ca: 'Inici / Sectors',
-    en: 'Home / Sectors'
+    es: 'Inicio',
+    ca: 'Inici',
+    en: 'Home'
+  },
+  enterCatalog: {
+    es: 'Entrar al Catálogo',
+    ca: 'Entrar al Catàleg',
+    en: 'Enter Catalog'
   },
   downloadPdf: {
-    es: '📥 Descargar PDF',
-    ca: '📥 Descarregar PDF',
-    en: '📥 Download PDF'
+    es: 'Descargar PDF',
+    ca: 'Descarregar PDF',
+    en: 'Download PDF'
   },
   sharePdf: {
-    es: '📲 Compartir PDF',
-    ca: '📲 Compartir PDF',
-    en: '📲 Share PDF'
+    es: 'Compartir PDF',
+    ca: 'Compartir PDF',
+    en: 'Share PDF'
   },
   generatingPdf: {
-    es: '⏳ Generando PDF...',
-    ca: '⏳ Generant PDF...',
-    en: '⏳ Generating PDF...'
+    es: 'Generando PDF...',
+    ca: 'Generant PDF...',
+    en: 'Generating PDF...'
   },
   coverProposalLabel: {
     es: 'PROPUESTA COMERCIAL Y SELECCIÓN DE PRODUCTOS',

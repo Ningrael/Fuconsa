@@ -7,8 +7,7 @@ export const CONTACT_INFO = Object.freeze({
   phoneDisplay: '+34 613 018 609',
   phoneRaw: '+34613018609',
   whatsappUrl: 'https://wa.me/34613018609',
-  email: 'sosamatias@gmail.com',
-  websiteUrl: 'https://www.fucon.es/'
+  email: 'sosamatias@gmail.com'
 });
 
 export function generateVCard() {
@@ -22,7 +21,6 @@ export function generateVCard() {
     `TITLE:${c.role}`,
     `TEL;TYPE=CELL,VOICE:${c.phoneRaw}`,
     `EMAIL;TYPE=INTERNET,PREF:${c.email}`,
-    `URL:${c.websiteUrl}`,
     'END:VCARD'
   ].join('\r\n');
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
-import { SearchIcon, PrintIcon, ArrowLeftIcon } from './Icons.jsx';
+import { SearchIcon, PrintIcon } from './Icons.jsx';
 
 function LanguageSwitcher({ lang, onChangeLang }) {
   if (!onChangeLang) return null;
@@ -46,9 +46,9 @@ function SearchBox({ search, onChangeSearch, lang }) {
   );
 }
 
-function SectionFilter({ section, onChangeSection, sections = [], lang }) {
+function SectionFilterAccessible({ section, onChangeSection, sections = [], lang }) {
   return (
-    <div className="section-select-wrapper">
+    <div className="section-select-wrapper visually-hidden-accessible">
       <select
         value={section || ''}
         onChange={(e) => onChangeSection && onChangeSection(e.target.value)}
@@ -91,52 +91,31 @@ function SubcategoryChips({ section, onChangeSection, sections = [], lang }) {
   );
 }
 
-function ViewModeSwitcher(props) {
-  const { onlyWithPhoto, onTogglePhoto, viewMode, onChangeViewMode, lang } = props;
+function PhotoOnlyToggle({ onlyWithPhoto, onTogglePhoto, lang }) {
   return (
-    <div className="view-mode-controls">
-      <label className="filter-toggle">
-        <input
-          type="checkbox"
-          checked={Boolean(onlyWithPhoto)}
-          onChange={(e) => onTogglePhoto && onTogglePhoto(e.target.checked)}
-        />
-        <span>{t('onlyWithPhoto', lang)}</span>
-      </label>
-      {onChangeViewMode ? (
-        <div className="view-segmented-toggle" role="group" aria-label="Modo de vista">
-          <button
-            type="button"
-            className={`btn-view-toggle ${viewMode === 'allCards' ? 'active' : ''}`}
-            onClick={() => onChangeViewMode('allCards')}
-          >
-            {t('viewAllCards', lang)}
-          </button>
-          <button
-            type="button"
-            className={`btn-view-toggle ${viewMode !== 'allCards' ? 'active' : ''}`}
-            onClick={() => onChangeViewMode('split')}
-          >
-            {t('viewSplit', lang)}
-          </button>
-        </div>
-      ) : null}
-    </div>
+    <label className="filter-toggle">
+      <input
+        type="checkbox"
+        checked={Boolean(onlyWithPhoto)}
+        onChange={(e) => onTogglePhoto && onTogglePhoto(e.target.checked)}
+      />
+      <span>{t('onlyWithPhoto', lang)}</span>
+    </label>
   );
 }
 
-function PrintSectionAction({ onPrintSection, selectedCount = 0, lang }) {
+function CreatePdfAction({ onPrintSection, selectedCount = 0, lang }) {
   if (!onPrintSection) return null;
   const label = selectedCount > 0
-    ? `${t('customSelection', lang)} (${selectedCount})`
-    : t('printSectionA4', lang);
+    ? `${t('createPdf', lang)} (${selectedCount})`
+    : t('createPdf', lang);
   return (
     <button
       type="button"
       onClick={onPrintSection}
       className={`btn-print-section ${selectedCount > 0 ? 'has-selection' : ''}`}
-      title={t('printSectionA4', lang)}
-      aria-label={t('printSectionA4', lang)}
+      title={label}
+      aria-label={`${label} (Imprimir Sección A4)`}
     >
       <PrintIcon size={15} />
       <span>{label}</span>
@@ -149,33 +128,31 @@ export function CatalogToolbar(props) {
   return (
     <div className="toolbar-container">
       <div className="toolbar-row toolbar-row-main">
-        {props.onBackToHome ? (
-          <button type="button" onClick={props.onBackToHome} className="btn-back-home">
-            <ArrowLeftIcon size={14} />
-            <span>{t('backToHome', lang)}</span>
-          </button>
-        ) : null}
         <SearchBox search={search} onChangeSearch={onChangeSearch} lang={lang} />
-        <PrintSectionAction
+        <PhotoOnlyToggle
+          onlyWithPhoto={props.onlyWithPhoto}
+          onTogglePhoto={props.onTogglePhoto}
+          lang={lang}
+        />
+        <CreatePdfAction
           onPrintSection={props.onPrintSection}
           selectedCount={props.selectedCount}
           lang={lang}
         />
         <LanguageSwitcher lang={lang} onChangeLang={props.onChangeLang} />
+        <SectionFilterAccessible
+          section={section}
+          onChangeSection={onChangeSection}
+          sections={sections}
+          lang={lang}
+        />
       </div>
-      <div className="toolbar-row toolbar-row-filters">
-        <SubcategoryChips section={section} onChangeSection={onChangeSection} sections={sections} lang={lang} />
-        <div className="toolbar-secondary-tools">
-          <SectionFilter section={section} onChangeSection={onChangeSection} sections={sections} lang={lang} />
-          <ViewModeSwitcher
-            onlyWithPhoto={props.onlyWithPhoto}
-            onTogglePhoto={props.onTogglePhoto}
-            viewMode={props.viewMode}
-            onChangeViewMode={props.onChangeViewMode}
-            lang={lang}
-          />
-        </div>
-      </div>
+      <SubcategoryChips
+        section={section}
+        onChangeSection={onChangeSection}
+        sections={sections}
+        lang={lang}
+      />
     </div>
   );
 }

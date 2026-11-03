@@ -24,9 +24,11 @@ export function CustomSelectionDrawer(props) {
           type="button"
           onClick={onOpenPrint}
           className="btn-primary"
+          aria-label="Imprimir A4"
+          title={t('createPdf', lang)}
         >
           <PrintIcon size={15} />
-          <span>{t('printSheet', lang)}</span>
+          <span>{t('createPdf', lang)}</span>
         </button>
       </div>
     </aside>

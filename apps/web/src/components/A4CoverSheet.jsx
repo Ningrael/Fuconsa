@@ -41,7 +41,6 @@ function CoverRepCard({ lang }) {
       <div className="a4-cover-rep-contact tabular-nums">
         <div><strong>Tel / WhatsApp:</strong> {CONTACT_INFO.phoneDisplay}</div>
         <div><strong>Email:</strong> {CONTACT_INFO.email}</div>
-        <div><strong>Web:</strong> {CONTACT_INFO.websiteUrl}</div>
       </div>
     </div>
   );
@@ -88,10 +87,12 @@ export function A4CoverSheet({ lang, title, totalItems = 0 }) {
   useEffect(() => {
     const currentUrl = typeof window !== 'undefined' && window.location?.origin
       ? window.location.origin
-      : 'https://fucon.es';
-    QRCode.toDataURL(currentUrl, { width: 320, margin: 1 })
-      .then(setQrUrl)
-      .catch(() => {});
+      : '';
+    if (currentUrl) {
+      QRCode.toDataURL(currentUrl, { width: 320, margin: 1 })
+        .then(setQrUrl)
+        .catch(() => {});
+    }
   }, []);
 
   return (
@@ -102,7 +103,6 @@ export function A4CoverSheet({ lang, title, totalItems = 0 }) {
       <CoverQRSection qrUrl={qrUrl} lang={lang} />
       <footer className="a4-cover-footer tabular-nums">
         <span>Fuconsa · {t('disclaimerVat', lang)}</span>
-        <span>Atención directa: {CONTACT_INFO.phoneDisplay}</span>
       </footer>
     </section>
   );

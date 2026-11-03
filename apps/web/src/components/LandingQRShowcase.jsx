@@ -62,7 +62,7 @@ export function LandingQRShowcase({ lang }) {
   const [qrSvg, setQrSvg] = useState('');
   const currentUrl = typeof window !== 'undefined' && window.location?.origin
     ? window.location.origin
-    : 'https://fucon.es';
+    : '';
 
   useEffect(() => {
     let active = true;

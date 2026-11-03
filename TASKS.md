@@ -6,7 +6,7 @@ Las Etapas 1 a 8 están completadas y verificadas con **75/75 pruebas automatiza
 
 ## Completadas (Etapas 1 a 8)
 
-- [x] **ETAPA 1:** Extracción de `fucon.es`, tarifas Excel y fotos (`762` productos, `506` con fotografía WebP).
+- [x] **ETAPA 1:** Extracción de catálogo oficial Fuconsa, tarifas Excel y fotos (`762` productos, `506` con fotografía WebP).
 - [x] **ETAPA 2:** Identidad Visual base (`logo.png`, `tokens.json`, `brand.css`, `docs/IDENTIDAD_VISUAL.md`).
 - [x] **ETAPA 3:** Librería Core (`packages/lib/src/`) y Backend (`apps/api/`).
 - [x] **ETAPA 4:** Aplicación Web (`apps/web/`), Impresión A4 y Selección a Medida.

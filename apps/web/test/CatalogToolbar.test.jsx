@@ -79,9 +79,8 @@ describe('CatalogToolbar Component', () => {
     expect(setSection).toHaveBeenCalledWith('Congelados');
   });
 
-  it('triggers onPrintSection and viewMode changes', () => {
+  it('triggers onPrintSection action', () => {
     const printSection = vi.fn();
-    const setViewMode = vi.fn();
     render(
       <CatalogToolbar
         lang="es"
@@ -89,16 +88,10 @@ describe('CatalogToolbar Component', () => {
         search=""
         onChangeSearch={() => {}}
         onPrintSection={printSection}
-        viewMode="split"
-        onChangeViewMode={setViewMode}
       />
     );
-    const printBtn = screen.getByRole('button', { name: /imprimir sección a4/i });
+    const printBtn = screen.getByRole('button', { name: /crear pdf/i });
     fireEvent.click(printBtn);
     expect(printSection).toHaveBeenCalled();
-
-    const allCardsBtn = screen.getByRole('button', { name: /vista tarjetas \(todos\)/i });
-    fireEvent.click(allCardsBtn);
-    expect(setViewMode).toHaveBeenCalledWith('allCards');
   });
 });

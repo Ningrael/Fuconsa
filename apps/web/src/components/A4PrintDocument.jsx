@@ -14,12 +14,14 @@ function A4ItemImage({ item, lang, name }) {
 
   if (showPhoto) {
     return (
-      <img
-        src={item.imagePath}
-        alt={name}
-        className="a4-item-img"
-        onError={() => setImgError(true)}
-      />
+      <div className="a4-item-img-wrap">
+        <img
+          src={item.imagePath}
+          alt={name}
+          className="a4-item-img"
+          onError={() => setImgError(true)}
+        />
+      </div>
     );
   }
   return (

@@ -37,7 +37,7 @@ describe('A4PrintDocument Component', () => {
     }
   ];
 
-  it('renders A4 sheet header, item and footer', () => {
+  it('renders A4 sheet header, item and footer without fucon.es or footer phones', () => {
     render(
       <A4PrintDocument
         items={selectedItems}
@@ -51,6 +51,7 @@ describe('A4PrintDocument Component', () => {
     expect(screen.getByText('PROPUESTA COMERCIAL Y SELECCIÓN DE PRODUCTOS')).toBeInTheDocument();
     expect(screen.getByText('Açaí Cubeta 5kg')).toBeInTheDocument();
     expect(screen.getByText(/Página 1 \/ 1/)).toBeInTheDocument();
+    expect(screen.queryByText(/fucon\.es/i)).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /descargar pdf/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /compartir pdf/i })).toBeInTheDocument();
   });
