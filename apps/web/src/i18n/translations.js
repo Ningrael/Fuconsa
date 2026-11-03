@@ -87,6 +87,31 @@ export const DICTIONARY = Object.freeze({
     es: 'Para asistencia técnica o comercial inmediata:',
     ca: 'Per a assistència tècnica o comercial immediata:',
     en: 'For immediate technical or commercial assistance:'
+  },
+  qrSectionTitle: {
+    es: 'Escanea este código QR con tu móvil',
+    ca: 'Escaneja aquest codi QR amb el teu mòbil',
+    en: 'Scan this QR code with your mobile'
+  },
+  qrSectionDesc: {
+    es: 'Llévate el catálogo interactivo completo de Fuconsa y el contacto directo de Matías Sosa en tu bolsillo.',
+    ca: 'Emporta’t el catàleg interactiu complet de Fuconsa i el contacte directe de Matías Sosa a la butxaca.',
+    en: 'Take the full interactive Fuconsa catalog and Matías Sosa direct contact in your pocket.'
+  },
+  installAppTitle: {
+    es: '¿Quieres guardar el acceso directo en tu móvil?',
+    ca: 'Vols desar l’accés directe al teu mòbil?',
+    en: 'Save direct shortcut on your phone?'
+  },
+  installAppBtn: {
+    es: '📲 Instalar Acceso Directo',
+    ca: '📲 Instal·lar Accés Directe',
+    en: '📲 Install Web App'
+  },
+  installIosHint: {
+    es: 'En iPhone/iPad: toca el botón Compartir (⬆️) de Safari y elige «Añadir a pantalla de inicio».',
+    ca: 'A iPhone/iPad: toca el botó Compartir (⬆️) de Safari i tria «Afegir a la pantalla d’inici».',
+    en: 'On iPhone/iPad: tap Share (⬆️) in Safari and select "Add to Home Screen".'
   }
 });
 

@@ -1,4 +1,4 @@
-/* Resilience, Industrial Placeholders and View Controls */
+/* Resilience, Industrial Placeholders, View Controls and QR/PWA Showcase */
 
 .error-boundary-screen {
   min-height: 100vh;
@@ -31,164 +31,49 @@
   margin-bottom: 16px;
 }
 
-.error-boundary-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--brand-primary, #0F172A);
-  margin-bottom: 12px;
-}
+.error-boundary-title { font-size: 18px; font-weight: 700; color: var(--brand-primary, #0F172A); margin-bottom: 12px; }
+.error-boundary-desc { font-size: 13px; color: var(--brand-muted, #64748B); margin-bottom: 16px; }
+.error-boundary-contact { display: flex; flex-direction: column; gap: 6px; padding: 12px; background: #F8FAFC; border-radius: 4px; margin-bottom: 20px; font-size: 13px; }
+.error-contact-link { color: var(--brand-primary, #0F172A); text-decoration: none; font-weight: 600; }
+.error-retry-btn { width: 100%; }
 
-.error-boundary-desc {
-  font-size: 13px;
-  color: var(--brand-muted, #64748B);
-  margin-bottom: 16px;
-}
+.product-placeholder-box { flex-direction: column; gap: 8px; background: #F8FAFC; padding: 12px; }
+.placeholder-brand-logo { max-height: 38px; max-width: 110px; object-fit: contain; }
+.placeholder-cat-icon { font-size: 18px; opacity: 0.8; }
+.photo-coming-soon-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748B; background: #E2E8F0; padding: 3px 8px; border-radius: 3px; }
 
-.error-boundary-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 12px;
-  background: #F8FAFC;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  font-size: 13px;
-}
+.cover-logo-img { max-width: 85%; max-height: 85%; object-fit: contain; }
+.cover-logo-fallback { font-size: 13px; font-weight: 800; letter-spacing: 1px; }
 
-.error-contact-link {
-  color: var(--brand-primary, #0F172A);
-  text-decoration: none;
-  font-weight: 600;
-}
+.section-select-wrapper { min-width: 180px; }
+.section-select { width: 100%; padding: 9px 12px; border: 1px solid var(--card-border, #CBD5E1); border-radius: 10px; font-size: 13px; background: #FFFFFF; }
+.view-mode-controls { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.view-segmented-toggle { display: inline-flex; border: 1px solid var(--card-border, #CBD5E1); border-radius: 8px; overflow: hidden; }
+.btn-view-toggle { padding: 6px 12px; border: none; background: #FFFFFF; font-size: 12px; font-weight: 700; color: #64748B; cursor: pointer; }
+.btn-view-toggle.active { background: var(--sector-accent, #0284C7); color: #FFFFFF; }
 
-.error-retry-btn {
-  width: 100%;
-}
+.btn-print-section { padding: 9px 16px; background: #FFFFFF; border: 1.5px solid var(--sector-accent, #0284C7); color: var(--sector-accent, #0284C7); border-radius: 10px; font-size: 13px; font-weight: 800; cursor: pointer; transition: all 0.15s ease; }
+.btn-print-section.has-selection { background: var(--sector-accent, #0284C7); color: #FFFFFF; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3); }
+.btn-print-section:hover { transform: translateY(-1px); }
 
-.product-placeholder-box {
-  flex-direction: column;
-  gap: 8px;
-  background: #F8FAFC;
-  padding: 12px;
-}
+.offline-notice-banner { background: #FEF3C7; border: 1px solid #F59E0B; padding: 10px 14px; border-radius: 10px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.offline-notice-text { font-size: 13px; color: #92400E; font-weight: 600; }
+.btn-retry-offline { padding: 4px 10px; font-size: 12px; font-weight: 600; }
 
-.placeholder-brand-logo {
-  max-height: 38px;
-  max-width: 110px;
-  object-fit: contain;
-}
+/* Landing QR Showcase & PWA Install Banner */
+.landing-qr-showcase { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.18); display: flex; flex-direction: column; gap: 18px; }
+.install-pwa-banner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: rgba(15, 23, 42, 0.55); border: 1px solid rgba(125, 211, 252, 0.35); border-radius: 16px; padding: 14px 20px; backdrop-filter: blur(12px); }
+.install-pwa-info strong { font-size: 14.5px; color: #FFFFFF; }
+.install-ios-hint { font-size: 12.5px; color: #BAE6FD; margin-top: 4px; }
+.install-pwa-actions { display: flex; align-items: center; gap: 10px; }
+.btn-install-pwa { padding: 9px 18px; border-radius: 10px; border: none; background: #38BDF8; color: #0F172A; font-size: 13px; font-weight: 800; box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35); }
+.btn-dismiss-pwa { background: transparent; border: 1px solid rgba(255, 255, 255, 0.25); color: #FFFFFF; width: 32px; height: 32px; border-radius: 8px; font-size: 13px; }
 
-.placeholder-cat-icon {
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-.photo-coming-soon-badge {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #64748B;
-  background: #E2E8F0;
-  padding: 3px 8px;
-  border-radius: 3px;
-}
-
-.cover-logo-img {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
-}
-
-.cover-logo-fallback {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.section-select-wrapper {
-  min-width: 180px;
-}
-
-.section-select {
-  width: 100%;
-  padding: 9px 12px;
-  border: 1px solid var(--card-border, #CBD5E1);
-  border-radius: var(--card-radius, 4px);
-  font-size: 13px;
-  background: #FFFFFF;
-}
-
-.view-mode-controls {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.view-segmented-toggle {
-  display: inline-flex;
-  border: 1px solid var(--card-border, #CBD5E1);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.btn-view-toggle {
-  padding: 5px 12px;
-  border: none;
-  background: #FFFFFF;
-  font-size: 12px;
-  font-weight: 600;
-  color: #64748B;
-  cursor: pointer;
-}
-
-.btn-view-toggle.active {
-  background: var(--brand-primary, #0F172A);
-  color: #FFFFFF;
-}
-
-.btn-print-section {
-  padding: 9px 16px;
-  background: #FFFFFF;
-  border: 1.5px solid var(--sector-accent, #0284C7);
-  color: var(--sector-accent, #0284C7);
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.btn-print-section.has-selection {
-  background: var(--sector-accent, #0284C7);
-  color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-}
-
-.btn-print-section:hover {
-  transform: translateY(-1px);
-}
-
-.offline-notice-banner {
-  background: #FEF3C7;
-  border: 1px solid #F59E0B;
-  padding: 10px 14px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.offline-notice-text {
-  font-size: 13px;
-  color: #92400E;
-  font-weight: 600;
-}
-
-.btn-retry-offline {
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: 600;
-}
+.qr-hero-box { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 28px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 20px; padding: 26px 32px; backdrop-filter: blur(12px); }
+.qr-svg-frame { width: 210px; height: 210px; background: #FFFFFF; padding: 12px; border-radius: 18px; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.qr-svg-frame svg { width: 100%; height: 100%; display: block; }
+.qr-hero-text { max-width: 480px; }
+.qr-badge { display: inline-block; font-size: 11px; font-weight: 800; color: #0F172A; background: #7DD3FC; padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; letter-spacing: 0.8px; }
+.qr-hero-text h2 { font-size: 24px; font-weight: 800; color: #FFFFFF; line-height: 1.2; margin-bottom: 8px; }
+.qr-hero-text p { font-size: 14.5px; color: rgba(255, 255, 255, 0.88); line-height: 1.45; margin-bottom: 14px; }
+.qr-contact-pill { display: inline-block; background: rgba(15, 23, 42, 0.45); border: 1px solid rgba(255, 255, 255, 0.2); padding: 6px 14px; border-radius: 999px; font-size: 13px; color: #E0F2FE; }

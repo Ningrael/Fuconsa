@@ -3,6 +3,7 @@ import { CONTACT_INFO } from '../constants/contact.js';
 import { SECTORS } from '../constants/sectors.js';
 import { downloadVCard } from '../utils/vcard.js';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
+import { LandingQRShowcase } from './LandingQRShowcase.jsx';
 
 function TopLangBar({ lang, onChangeLang }) {
   if (!onChangeLang) return null;
@@ -146,6 +147,7 @@ export function CoverQRCard(props) {
         onSelectSector={onSelectSector}
         onSelectSubcategory={onSelectSubcategory}
       />
+      {isLanding ? <LandingQRShowcase lang={lang} /> : null}
     </header>
   );
 }
