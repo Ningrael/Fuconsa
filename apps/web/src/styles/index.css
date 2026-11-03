@@ -3,7 +3,8 @@
 @import './components.css';
 @import './toolbar.css';
 @import './productCard.css';
-@import './headerAndVCard.css';
+@import './vcard.css';
+@import './masthead.css';
 @import './drawerAndTable.css';
 @import './a4print.css';
 @import './resilience.css';
