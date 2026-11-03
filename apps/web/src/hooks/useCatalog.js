@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { FALLBACK_CATALOG } from '../data/fallbackCatalog.js';
+import { withBase } from '../utils/assetUrl.js';
 import { normalizeSearchText } from '../utils/formatters.js';
 import { getTranslation } from '../i18n/translations.js';
 
@@ -42,7 +43,7 @@ function useCatalogFetch() {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 6000);
     try {
-      const res = await fetch('/api/catalog', { signal: controller.signal });
+      const res = await fetch(withBase('/api/catalog'), { signal: controller.signal });
       clearTimeout(timeoutId);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();

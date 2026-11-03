@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QRCode from 'qrcode';
+import { withBase } from '../utils/assetUrl.js';
 import { CONTACT_INFO } from '../constants/contact.js';
 import { SECTORS } from '../constants/sectors.js';
 import { t } from '../i18n/translations.js';
@@ -9,7 +10,7 @@ function CoverHeader({ title, totalItems, lang }) {
     <div className="a4-cover-header">
       <div className="a4-cover-brand">
         <img
-          src="/assets/brand/logo.png"
+          src={withBase('/assets/brand/logo.png')}
           alt="Fuconsa"
           className="a4-cover-logo"
           onError={(e) => { e.currentTarget.style.display = 'none'; }}
@@ -86,7 +87,7 @@ export function A4CoverSheet({ lang, title, totalItems = 0 }) {
 
   useEffect(() => {
     const currentUrl = typeof window !== 'undefined' && window.location?.origin
-      ? window.location.origin
+      ? window.location.href.split('#')[0].split('?')[0]
       : '';
     if (currentUrl) {
       QRCode.toDataURL(currentUrl, { width: 320, margin: 1 })

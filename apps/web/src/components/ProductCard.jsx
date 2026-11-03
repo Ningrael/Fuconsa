@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { getTranslation, t } from '../i18n/translations.js';
 import { formatBoxPrice } from '../utils/formatters.js';
 import { PlusIcon, CheckIcon } from './Icons.jsx';
+import { withBase } from '../utils/assetUrl.js';
 
 function ProductPlaceholder({ lang }) {
   return (
     <div className="product-img-box product-placeholder-box">
       <img
-        src="/assets/brand/logo.png"
+        src={withBase('/assets/brand/logo.png')}
         alt="Fuconsa"
         className="placeholder-brand-logo"
         onError={(e) => {
@@ -30,7 +31,7 @@ function ProductImage({ item, lang, name }) {
   return (
     <div className="product-img-box">
       <img
-        src={`${item.imagePath}${item.imagePath.includes('?') ? '&' : '?'}v=2`}
+        src={`${withBase(item.imagePath)}${item.imagePath.includes('?') ? '&' : '?'}v=2`}
         alt={name || item.id}
         className="product-img"
         loading="lazy"

@@ -7,6 +7,7 @@ import { getTranslation, t } from '../i18n/translations.js';
 import { formatBoxPrice } from '../utils/formatters.js';
 import { PrintIcon } from './Icons.jsx';
 import { downloadA4Pdf, shareOrDownloadA4Pdf } from '../utils/pdfGenerator.js';
+import { withBase } from '../utils/assetUrl.js';
 
 function A4ItemImage({ item, lang, name }) {
   const [imgError, setImgError] = useState(false);
@@ -16,7 +17,7 @@ function A4ItemImage({ item, lang, name }) {
     return (
       <div className="a4-item-img-wrap">
         <img
-          src={item.imagePath}
+          src={withBase(item.imagePath)}
           alt={name}
           className="a4-item-img"
           onError={() => setImgError(true)}
@@ -27,7 +28,7 @@ function A4ItemImage({ item, lang, name }) {
   return (
     <div className="a4-item-placeholder">
       <img
-        src="/assets/brand/logo.png"
+        src={withBase('/assets/brand/logo.png')}
         alt="Fuconsa"
         className="a4-placeholder-logo"
         onError={(e) => {

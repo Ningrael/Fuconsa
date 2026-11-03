@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { withBase } from '../utils/assetUrl.js';
 
 export function CoverAvatar() {
   const [imgError, setImgError] = useState(false);
@@ -6,7 +7,7 @@ export function CoverAvatar() {
     <div className="cover-avatar" aria-label="Logo Fuconsa">
       {!imgError ? (
         <img
-          src="/assets/brand/logo.png"
+          src={withBase('/assets/brand/logo.png')}
           alt="Fuconsa"
           className="cover-logo-img"
           onError={() => setImgError(true)}

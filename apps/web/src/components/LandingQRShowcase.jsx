@@ -61,7 +61,7 @@ function InstallAppBanner({ lang }) {
 export function LandingQRShowcase({ lang }) {
   const [qrSvg, setQrSvg] = useState('');
   const currentUrl = typeof window !== 'undefined' && window.location?.origin
-    ? window.location.origin
+    ? window.location.href.split('#')[0].split('?')[0]
     : '';
 
   useEffect(() => {
