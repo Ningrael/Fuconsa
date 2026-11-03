@@ -5,8 +5,8 @@ services:
       dockerfile: apps/api/Dockerfile
     container_name: fuconsa_api
     restart: always
-    ports:
-      - "4000:4000"
+    expose:
+      - "4000"
     environment:
       - NODE_ENV=production
       - PORT=4000
