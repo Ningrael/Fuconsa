@@ -13,6 +13,7 @@ Las Etapas 1 a 6 están completadas y verificadas con **68/68 pruebas automatiza
 - [x] **ETAPA 5A:** Saneamiento de `catalog.json`, Placeholder Oficial SVG, ruta `/assets/` en API y Docker base.
 - [x] **ETAPA 5B:** Frontend con `ErrorBoundary` (*Pantalla Siempre Viva*), tarjetas con logo en productos sin foto e impresión A4 de sección completa.
 - [x] **ETAPA 6:** Blindaje de Auto-Arranque en VPS (`fuconsa.service`, `healthchecks` y rotación de logs), Publicación en GitHub (`https://github.com/Ningrael/Fuconsa` en ramas `main` y `development`), Puesta en marcha local en puertos 4000 y 5173, y 68/68 tests en verde.
+- [x] **ETAPA 7:** Procesamiento de Estudio Fotográfico en las `506` fotografías WebP (recorte de fondo con canal alfa suave, auto-encuadre uniforme a `640×480` y realce de nitidez/color) + Rediseño Visual Moderno con Atmósfera Dinámica por Mundo, Cabecera Ejecutiva con miniaturas de producto recortadas y Ficha de Producto de alto contraste comercial.
 
 ---
 

@@ -72,7 +72,7 @@ export function App() {
 
   return (
     <ErrorBoundary lang={lang}>
-      <div className="app-container">
+      <div className="app-container" data-sector={catalog.sector || 'all'}>
         <CoverQRCard lang={lang} currentSector={catalog.sector} onSelectSector={catalog.setSector} />
         <CatalogSection
           catalog={catalog}

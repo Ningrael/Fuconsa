@@ -1,18 +1,40 @@
 :root {
-  --brand-primary: #0F2942;
-  --brand-secondary: #1E4976;
-  --brand-bg-screen: #F8FAFC;
+  --brand-primary: #1E3A8A;
+  --brand-secondary: #0284C7;
+  --brand-bg-screen: #F1F5F9;
   --brand-bg-print: #FFFFFF;
-  --brand-text: #1E293B;
+  --brand-text: #0F172A;
   --brand-muted: #64748B;
-  --brand-accent-horeca: #0F2942;
-  --brand-accent-super: #1E4976;
-  --brand-accent-latinos: #B45309;
-  --brand-accent-acai: #4A154B;
-  --brand-accent-acai-alt: #2E6F40;
-  --card-radius: 4px;
+  --brand-accent-horeca: #0284C7;
+  --brand-accent-super: #253B91;
+  --brand-accent-latinos: #D97706;
+  --brand-accent-acai: #7E22CE;
+  --brand-accent-acai-alt: #16A34A;
+  --sector-accent: #0284C7;
+  --sector-gradient: linear-gradient(135deg, #09192F 0%, #173568 55%, #0284C7 100%);
+  --card-radius: 16px;
   --card-border: #E2E8F0;
-  --card-shadow: 0 1px 3px rgba(15, 41, 66, 0.06);
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 4px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+[data-sector="horeca"] {
+  --sector-accent: #0284C7;
+  --sector-gradient: linear-gradient(135deg, #06162E 0%, #0C3B66 55%, #0284C7 100%);
+}
+
+[data-sector="supermercados"] {
+  --sector-accent: #253B91;
+  --sector-gradient: linear-gradient(135deg, #131C4E 0%, #253B91 55%, #3B82F6 100%);
+}
+
+[data-sector="latinos"] {
+  --sector-accent: #D97706;
+  --sector-gradient: linear-gradient(135deg, #431407 0%, #9A3412 55%, #D97706 100%);
+}
+
+[data-sector="acai"] {
+  --sector-accent: #9333EA;
+  --sector-gradient: linear-gradient(135deg, #2E073F 0%, #581C87 60%, #15803D 100%);
 }
 
 *, *::before, *::after {
@@ -22,8 +44,9 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--brand-bg-screen);
+  background-image: radial-gradient(circle at 50% 0%, #E0E7FF 0%, #F1F5F9 55%);
   color: var(--brand-text);
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;

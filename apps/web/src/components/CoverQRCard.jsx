@@ -55,19 +55,31 @@ function SectorsList({ lang, currentSector, onSelectSector }) {
     <nav className="sectors-nav" aria-label="Sectores comerciales">
       <button
         type="button"
-        className={`sector-chip ${!currentSector ? 'active' : ''}`}
+        className={`sector-chip sector-chip-all ${!currentSector ? 'active' : ''}`}
         onClick={() => onSelectSector('')}
       >
-        {t('allSectors', lang)}
+        <span className="sector-chip-title">{t('allSectors', lang)}</span>
       </button>
       {SECTORS.map((sec) => (
         <button
           key={sec.id}
           type="button"
-          className={`sector-chip ${currentSector === sec.id ? 'active' : ''}`}
+          className={`sector-chip sector-card-${sec.id} ${currentSector === sec.id ? 'active' : ''}`}
           onClick={() => onSelectSector(sec.id)}
         >
-          {t(sec.key, lang)}
+          <span className="sector-chip-text">
+            <span className="sector-chip-title">{t(sec.key, lang)}</span>
+            {sec.tag ? <small className="sector-chip-sub" aria-hidden="true">{sec.tag}</small> : null}
+          </span>
+          {sec.img ? (
+            <img
+              src={sec.img}
+              alt=""
+              aria-hidden="true"
+              className="sector-chip-thumb"
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            />
+          ) : null}
         </button>
       ))}
     </nav>
@@ -77,14 +89,18 @@ function SectorsList({ lang, currentSector, onSelectSector }) {
 export function CoverQRCard({ lang, currentSector, onSelectSector }) {
   return (
     <header className="cover-card">
-      <div className="cover-header">
-        <CoverAvatar />
-        <div className="cover-info">
-          <h1>{CONTACT_INFO.fullName}</h1>
-          <p>{t('commercialRole', lang)}</p>
+      <div className="cover-top-row">
+        <div className="cover-header">
+          <CoverAvatar />
+          <div className="cover-info">
+            <span className="cover-eyebrow">CATÁLOGO COMERCIAL INTERACTIVO</span>
+            <h1>{CONTACT_INFO.fullName}</h1>
+            <p>{t('commercialRole', lang)}</p>
+            <span className="cover-phone-badge">{CONTACT_INFO.phoneDisplay}</span>
+          </div>
         </div>
+        <ContactButtons lang={lang} />
       </div>
-      <ContactButtons lang={lang} />
       <SectorsList
         lang={lang}
         currentSector={currentSector}

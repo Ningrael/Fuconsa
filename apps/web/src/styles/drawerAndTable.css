@@ -1,16 +1,18 @@
 .compact-table-section {
   background: #FFFFFF;
   border: 1px solid var(--card-border);
-  border-radius: var(--card-radius);
-  padding: 16px;
-  margin-top: 24px;
+  border-radius: 18px;
+  padding: 20px;
+  margin-top: 28px;
+  box-shadow: var(--card-shadow);
 }
 
 .compact-table-title {
   font-size: 16px;
-  font-weight: 700;
-  color: var(--brand-primary);
-  margin-bottom: 12px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 14px;
+  letter-spacing: -0.2px;
 }
 
 .table-responsive {
@@ -25,29 +27,42 @@
 }
 
 .data-table th {
-  background: var(--brand-bg-screen);
-  color: var(--brand-muted);
+  background: #F8FAFC;
+  color: #475569;
   text-align: left;
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--card-border);
-  font-weight: 600;
+  padding: 10px 14px;
+  border-bottom: 2px solid #E2E8F0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
 }
 
 .data-table td {
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--card-border);
+  padding: 10px 14px;
+  border-bottom: 1px solid #F1F5F9;
   color: var(--brand-text);
+  font-weight: 500;
+}
+
+.data-table tr:hover td {
+  background: #F8FAFC;
 }
 
 .selection-drawer {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #FFFFFF;
-  border-top: 2px solid var(--brand-primary);
-  box-shadow: 0 -4px 16px rgba(15, 41, 66, 0.15);
-  padding: 14px 24px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 780px;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(14px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  padding: 14px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,10 +76,10 @@
 }
 
 .selection-badge {
-  background: var(--brand-primary);
+  background: var(--sector-accent);
   color: #FFFFFF;
-  font-weight: 700;
-  padding: 4px 10px;
+  font-weight: 800;
+  padding: 5px 12px;
   border-radius: 9999px;
   font-size: 14px;
 }
@@ -72,30 +87,35 @@
 .selection-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .btn-secondary {
-  padding: 8px 16px;
-  border: 1px solid var(--card-border);
-  background: #FFFFFF;
-  border-radius: var(--card-radius);
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-radius: 10px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .btn-primary {
-  padding: 8px 18px;
+  padding: 9px 18px;
   border: none;
-  background: var(--brand-primary);
+  background: var(--sector-accent);
   color: #FFFFFF;
-  border-radius: var(--card-radius);
-  font-size: 14px;
-  font-weight: 600;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
 }
 
 .empty-state {
   text-align: center;
-  padding: 48px 16px;
+  padding: 56px 20px;
   color: var(--brand-muted);
+  background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px dashed #CBD5E1;
 }
