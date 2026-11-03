@@ -4,7 +4,7 @@ Requires=docker.service
 After=network-online.target docker.service
 
 [Service]
-Type=oneshot
+Type=forking
 RemainAfterExit=yes
 WorkingDirectory=/opt/fuconsa
 ExecStart=/usr/bin/docker compose up -d --build --remove-orphans
