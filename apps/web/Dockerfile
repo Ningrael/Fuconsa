@@ -2,12 +2,12 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package.json ./
 COPY packages/lib/package.json ./packages/lib/
 COPY apps/api/package.json ./apps/api/
 COPY apps/web/package.json ./apps/web/
 
-RUN npm ci
+RUN npm install
 
 COPY packages/lib ./packages/lib
 COPY apps/web ./apps/web
