@@ -8,7 +8,8 @@
 
 - **Repositorio GitHub:** [https://github.com/Ningrael/Fuconsa](https://github.com/Ningrael/Fuconsa)
 - **Ramas:** `main` (despliegue en VPS) y `development` (desarrollo e integración).
-- **Cobertura de Pruebas:** 75/75 pruebas automatizadas en verde (100% éxito en `lib`, `api` y `web`).
+- **Cobertura de Pruebas:** 76/76 pruebas automatizadas en verde (100% éxito en `lib`, `api` y `web`).
+- **URL Producción VPS:** `http://173.249.14.107/catalogo/` (o `http://173.249.14.107/fuconsa`)
 - **Servidores Locales Activos:** API en `http://localhost:4000` y Web en `http://localhost:5173`.
 
 ---
