@@ -13,10 +13,17 @@ function matchesSearch(item, term, lang) {
   return name.includes(normTerm) || brand.includes(normTerm) || id.includes(normTerm) || section.includes(normTerm);
 }
 
+function matchesSector(item, sector) {
+  if (!sector || sector === 'all') return true;
+  if (sector === 'horeca') return item.channel === 'horeca' || item.sector === 'horeca';
+  if (sector === 'supermercados') return item.channel === 'supermercados' || item.sector === 'supermercados';
+  return item.sector === sector;
+}
+
 function filterCatalog(items, filters, lang) {
   const { sector, section, search, onlyWithPhoto } = filters;
   return items.filter((item) => {
-    if (sector && item.sector !== sector) return false;
+    if (!matchesSector(item, sector)) return false;
     if (section && item.section !== section) return false;
     if (onlyWithPhoto && !item.hasPhoto) return false;
     return matchesSearch(item, search, lang);
@@ -67,13 +74,20 @@ export function useCatalog(lang = 'es') {
   const [section, setSection] = useState('');
   const [onlyWithPhoto, setOnlyWithPhoto] = useState(false);
 
+  const handleSetSector = useCallback((newSector) => {
+    setSector(newSector);
+    setSection('');
+  }, []);
+
   const sections = useMemo(() => {
     const set = new Set();
     catalog.forEach((item) => {
-      if (item.section) set.add(item.section);
+      if (matchesSector(item, sector) && item.section) {
+        set.add(item.section);
+      }
     });
     return Array.from(set).sort();
-  }, [catalog]);
+  }, [catalog, sector]);
 
   const filteredItems = useMemo(() => {
     return filterCatalog(catalog, { sector, section, search, onlyWithPhoto }, lang);
@@ -89,7 +103,7 @@ export function useCatalog(lang = 'es') {
     search,
     setSearch,
     sector,
-    setSector,
+    setSector: handleSetSector,
     section,
     setSection,
     sections,

@@ -2,6 +2,7 @@ import React from 'react';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
 
 function LanguageSwitcher({ lang, onChangeLang }) {
+  if (!onChangeLang) return null;
   return (
     <div className="lang-switch" role="group" aria-label="Selector de idioma">
       {SUPPORTED_LANGUAGES.map((code) => (
@@ -49,6 +50,31 @@ function SectionFilter({ section, onChangeSection, sections = [], lang }) {
           </option>
         ))}
       </select>
+    </div>
+  );
+}
+
+function SubcategoryChips({ section, onChangeSection, sections = [], lang }) {
+  if (!sections || sections.length === 0) return null;
+  return (
+    <div className="subcategories-bar" role="navigation" aria-label="Subcategorías">
+      <button
+        type="button"
+        className={`subcat-bar-chip ${!section ? 'active' : ''}`}
+        onClick={() => onChangeSection && onChangeSection('')}
+      >
+        {t('allSections', lang)}
+      </button>
+      {sections.map((sec) => (
+        <button
+          key={sec}
+          type="button"
+          className={`subcat-bar-chip ${section === sec ? 'active' : ''}`}
+          onClick={() => onChangeSection && onChangeSection(sec)}
+        >
+          {sec}
+        </button>
+      ))}
     </div>
   );
 }
@@ -110,10 +136,16 @@ export function CatalogToolbar(props) {
   return (
     <div className="toolbar-container">
       <div className="toolbar-row">
+        {props.onBackToHome ? (
+          <button type="button" onClick={props.onBackToHome} className="btn-back-home">
+            ← Inicio
+          </button>
+        ) : null}
         <SearchBox search={search} onChangeSearch={onChangeSearch} lang={lang} />
         <SectionFilter section={section} onChangeSection={onChangeSection} sections={sections} lang={lang} />
         <LanguageSwitcher lang={lang} onChangeLang={props.onChangeLang} />
       </div>
+      <SubcategoryChips section={section} onChangeSection={onChangeSection} sections={sections} lang={lang} />
       <div className="toolbar-row toolbar-row-actions">
         <ViewModeSwitcher
           onlyWithPhoto={props.onlyWithPhoto}

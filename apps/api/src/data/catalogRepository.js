@@ -52,7 +52,12 @@ function matchesSearch(item, term) {
 }
 
 function filterItem(item, filter) {
-  if (filter.sector && item.sector.toLowerCase() !== filter.sector.toLowerCase()) return false;
+  if (filter.sector) {
+    const sec = filter.sector.toLowerCase();
+    if (sec === 'horeca' && item.channel !== 'horeca' && item.sector.toLowerCase() !== 'horeca') return false;
+    if (sec === 'supermercados' && item.channel !== 'supermercados' && item.sector.toLowerCase() !== 'supermercados') return false;
+    if (sec !== 'horeca' && sec !== 'supermercados' && item.sector.toLowerCase() !== sec) return false;
+  }
   if (filter.section && item.section.toLowerCase() !== filter.section.toLowerCase()) return false;
   if (filter.brand && item.brand.toLowerCase() !== filter.brand.toLowerCase()) return false;
   if (filter.onlyWithPhoto && !item.hasPhoto) return false;

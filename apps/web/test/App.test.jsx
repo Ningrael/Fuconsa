@@ -8,22 +8,30 @@ describe('App Full Integration Flow', () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('API offline')));
   });
 
-  async function renderApp() {
+  async function renderAppAndEnterCatalog() {
     const utils = render(<App />);
     await waitFor(() => {
       expect(screen.getByText('Matías Sosa Marrazzo')).toBeInTheDocument();
     });
+    const enterBtn = screen.getByRole('button', { name: /todos los sectores/i });
+    fireEvent.click(enterBtn);
     return utils;
   }
 
-  it('renders application with default Spanish language and contact card', async () => {
-    await renderApp();
+  it('starts on commercial presentation landing screen without opening catalog automatically', async () => {
+    render(<App />);
+    await waitFor(() => {
+      expect(screen.getByText('Matías Sosa Marrazzo')).toBeInTheDocument();
+    });
     expect(screen.getByText('Comercial Fuconsa en Cataluña')).toBeInTheDocument();
+    expect(screen.queryByRole('searchbox')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /todos los sectores/i }));
+    expect(screen.getByRole('searchbox')).toBeInTheDocument();
     expect(screen.getByText(/Otras referencias disponibles/)).toBeInTheDocument();
   });
 
-  it('allows switching language to Catalan and updates labels', async () => {
-    await renderApp();
+  it('allows switching language from top bar to Catalan and updates labels', async () => {
+    render(<App />);
     const caBtn = screen.getByRole('button', { name: 'CA' });
     fireEvent.click(caBtn);
     await waitFor(() => {
@@ -31,8 +39,8 @@ describe('App Full Integration Flow', () => {
     });
   });
 
-  it('filters catalog items via search input', async () => {
-    await renderApp();
+  it('filters catalog items via search input after selecting a category', async () => {
+    await renderAppAndEnterCatalog();
     const searchInput = screen.getByRole('searchbox');
     fireEvent.change(searchInput, { target: { value: 'Croquetas' } });
     expect(screen.getByText(/Croquetas Artesanas/)).toBeInTheDocument();
@@ -40,20 +48,20 @@ describe('App Full Integration Flow', () => {
   });
 
   it('adds product to custom selection, shows drawer and opens A4 preview', async () => {
-    await renderApp();
+    await renderAppAndEnterCatalog();
     const addBtns = screen.getAllByRole('button', { name: /añadir a selección/i });
     fireEvent.click(addBtns[0]);
     expect(screen.getByText('Selección a Medida')).toBeInTheDocument();
-    const printBtn = screen.getByRole('button', { name: /imprimir a4/i });
+    const printBtn = screen.getByRole('button', { name: /^🖨️ imprimir a4$/i });
     fireEvent.click(printBtn);
-    expect(screen.getByText(/FUCONSA/)).toBeInTheDocument();
+    expect(screen.getByText('FUCONSA')).toBeInTheDocument();
     const closeBtn = screen.getByRole('button', { name: /cerrar/i });
     fireEvent.click(closeBtn);
     expect(screen.queryByText(/Página 1 \/ 1/)).not.toBeInTheDocument();
   });
 
   it('opens A4 section print modal via toolbar print button', async () => {
-    await renderApp();
+    await renderAppAndEnterCatalog();
     const printSectionBtn = screen.getByRole('button', { name: /imprimir sección a4/i });
     fireEvent.click(printSectionBtn);
     expect(screen.getByRole('dialog')).toBeInTheDocument();
@@ -64,7 +72,7 @@ describe('App Full Integration Flow', () => {
   });
 
   it('displays offline banner notice with functional retry button', async () => {
-    await renderApp();
+    await renderAppAndEnterCatalog();
     expect(screen.getByText(/Modo sin conexión/i)).toBeInTheDocument();
     const retryBtn = screen.getByRole('button', { name: /reintentar/i });
     expect(retryBtn).toBeInTheDocument();
