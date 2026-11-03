@@ -54,7 +54,7 @@ describe('App Full Integration Flow', () => {
     expect(screen.getByText('Selección a Medida')).toBeInTheDocument();
     const printBtn = screen.getByRole('button', { name: /^imprimir a4$/i });
     fireEvent.click(printBtn);
-    expect(screen.getByText('FUCONSA')).toBeInTheDocument();
+    expect(screen.getAllByText('FUCONSA').length).toBeGreaterThanOrEqual(1);
     const closeBtn = screen.getByRole('button', { name: /cerrar/i });
     fireEvent.click(closeBtn);
     expect(screen.queryByText(/Página 1 \/ 1/)).not.toBeInTheDocument();

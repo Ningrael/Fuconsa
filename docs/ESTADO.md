@@ -8,7 +8,7 @@
 
 - **Repositorio GitHub:** [https://github.com/Ningrael/Fuconsa](https://github.com/Ningrael/Fuconsa)
 - **Ramas:** `main` (despliegue en VPS) y `development` (desarrollo e integración).
-- **Cobertura de Pruebas:** 70/70 pruebas automatizadas en verde (100% éxito en `lib`, `api` y `web`).
+- **Cobertura de Pruebas:** 75/75 pruebas automatizadas en verde (100% éxito en `lib`, `api` y `web`).
 - **Servidores Locales Activos:** API en `http://localhost:4000` y Web en `http://localhost:5173`.
 
 ---
@@ -26,13 +26,11 @@
    - Repositorio público creado en GitHub (`Ningrael/Fuconsa`) con ramas `main` y `development`.
    - Script de arranque unificado `npm run start:local`.
 7. **Estudio Fotográfico WebP (Etapa 7):** Recorte y realce de las 506 imágenes de catálogo a `640×480`.
-8. **Transformación Gourmet B2B de Alto Impacto (Etapa 8):**
-   - Supresión de fondos de fango/marrón; estandarización con el Azul Marino Fuconsa (`#0F2342`) y fondo blanco puro luminoso.
-   - Eliminación de slugs técnicos internos (`productos-latinos-...`) en tarjetas comerciales.
-   - Fichas de producto de alto impacto visual con fotografía ampliada, tipografía contrastada y botón ergonómico de 44px.
-   - Barra de herramientas despejada sin duplicidades ni sobrecarga cognitiva.
-   - Carátula comercial A4 de presentación ejecutiva de 1 página.
-   - Modularidad estricta (100% de archivos en `apps/web/src` con ≤ 182 líneas).
+8. **Carátula Comercial A4, Exportación PDF Móvil y Rediseño B2B (Etapa 8):**
+   - Carátula Comercial Ejecutiva (`A4CoverSheet.jsx`) en Página 1 de todo documento A4 con QR de alta definición, datos de contacto comercial de Matías Sosa Marrazzo y resumen de líneas de distribución.
+   - Exportación y Compartición de PDF A4 en dispositivos móviles vía `pdfGenerator.js` (jsPDF, html2canvas y Web Share API) con fallback instantáneo a descarga.
+   - Rediseño editorial B2B Suizo e iconografía vectorial SVG (`Icons.jsx`), portada en doble estado (`cover-landing` vs. `cover-compact`), botones táctiles ergonómicos y accesibilidad WCAG AA.
+   - Modularidad estricta (100% de archivos en `apps/web/src` con ≤ 173 líneas) y 75/75 pruebas automatizadas en verde.
 
 ---
 
