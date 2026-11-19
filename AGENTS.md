@@ -93,10 +93,10 @@ El archivo `catalog.json` es un array JSON `[ ... ]` donde cada elemento debe cu
 }
 ```
 
-### 5.2.1 Origen de Datos y Prevención de Duplicados (Web vs. Excel)
+### 5.2.1 Origen de Datos, Volúmenes en Caliente y Prevención de Duplicados
 - **Fuentes duales:** El catálogo se nutre del scraping web (`fucon.es`) y de tarifas en Excel/CSV (`productos-normalizados.csv`).
 - **Prevalencia absoluta de la Web:** Ante cualquier producto equivalente, **la ficha web manda** (incluye fotografía real en WebP, formato comercial explícito, marca y `boxPrice`). Las fichas de Excel son estrictamente complementarias y jamás deben coexistir como duplicados huérfanos sin gramaje/marca.
-- **Inmutabilidad en Docker:** `packages/lib/data/catalog.json` se compila dentro de las imágenes Docker (`apps/web/Dockerfile` y `apps/api/Dockerfile`). Modificar el JSON en disco requiere ejecutar `docker compose up -d --build` para verse reflejado en producción.
+- **Actualización Instantánea sin Recompilar Docker (Volúmenes en Caliente):** `docker-compose.yml` monta `./packages/lib/data` y `./packages/lib/assets` directamente dentro del contenedor `fuconsa_api`, y `catalogRepository.js` lee `packages/lib/data/catalog.json` del disco en cada petición (`GET /api/catalog`). Por tanto, **en cuanto Smith edita `/opt/fuconsa/packages/lib/data/catalog.json` o añade fotos en `/opt/fuconsa/packages/lib/assets/products/`, el cambio se ve al instante en la web sin necesidad de acceso a GitHub ni de recompilar Docker**.
 
 ### 5.3 Reglas de Validación Obligatorias (Testeadas por `npm test`)
 Si alguno de estos campos no respeta estas reglas, `npm test` fallará y bloqueará el despliegue:
@@ -139,28 +139,20 @@ Si alguno de estos campos no respeta estas reglas, `npm test` fallará y bloquea
   1. Guarda la imagen en formato `.webp` (`640x480` recomendado) dentro de `packages/lib/assets/products/nombre-archivo.webp`.
   2. En el producto dentro de `catalog.json`, pon `"hasPhoto": true` y `"imagePath": "/assets/products/nombre-archivo.webp"`.
 
-### 5.5 Flujo Obligatorio de Verificación, GitHub y Despliegue en VPS para Smith
-Cada vez que Smith modifique `packages/lib/data/catalog.json` o cualquier activo en `/opt/fuconsa`, debe ejecutar estos pasos en orden:
+### 5.5 Flujo Obligatorio de Verificación en la VPS para Smith (Sin necesidad de GitHub)
+Como `packages/lib/data` y `packages/lib/assets` están montados por volumen en el contenedor `fuconsa_api`, **Smith NO necesita tener credenciales de GitHub ni reconstruir imágenes Docker** para cambiar precios, productos, fotos o categorías:
 
 ```bash
 cd /opt/fuconsa
 
-# 1. Ejecutar las 88 pruebas automatizadas (verifica que no haya fotos rotas, precios a 0 ni esquemas inválidos)
-npm test
+# 1. Editar /opt/fuconsa/packages/lib/data/catalog.json (y/o fotos en packages/lib/assets/products/)
 
-# 2. Compilar el frontend de producción para confirmar que no hay errores de build
-npm run build
+# 2. Ejecutar las pruebas de integridad del catálogo para asegurar que el JSON es 100% válido
+npm run test:lib
 
-# 3. Guardar y subir los cambios a GitHub (manteniendo main y development sincronizadas)
-git add packages/lib/data/catalog.json packages/lib/assets/
-git commit -m "chore(catalog): actualización de tarifas y productos por Smith"
-git push origin main
-git push origin main:development
-
-# 4. Reconstruir y reiniciar el contenedor en producción
-docker compose up -d --build
-
-# 5. Verificar salud del servicio en vivo
+# 3. Verificar al instante que la API en producción ya sirve el cambio en vivo
 curl -fsS http://localhost:3000/api/health
 ```
+
+> **Nota para Smith:** Solo si en algún momento se modifica código fuente de React (`apps/web/src/`) hace falta ejecutar `docker compose up -d --build`. Para cambios en `catalog.json` o fotografías en `packages/lib/assets/`, el cambio es **inmediato en caliente**.
 

@@ -13,7 +13,9 @@ cd "${APP_DIR}"
 
 echo "==> 1. Sincronizando repositorio con rama main..."
 if [ -d .git ]; then
+  git stash push -m "auto-preserve-smith-catalog-edits" -- packages/lib/data/catalog.json packages/lib/assets/ >/dev/null 2>&1 || true
   git pull origin main
+  git stash pop >/dev/null 2>&1 || true
 fi
 
 echo "==> 2. Levantando contenedores con Docker Compose..."

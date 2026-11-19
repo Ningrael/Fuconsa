@@ -11,6 +11,9 @@ services:
       - NODE_ENV=production
       - PORT=4000
       - HOST=0.0.0.0
+    volumes:
+      - ./packages/lib/data:/app/packages/lib/data:ro
+      - ./packages/lib/assets:/app/packages/lib/assets:ro
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:4000/api/health"]
       interval: 30s

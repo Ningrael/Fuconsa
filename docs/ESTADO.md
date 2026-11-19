@@ -66,14 +66,12 @@ Toda la guía detallada con el esquema JSON exacto y reglas de validación se en
    - Modificar `name.es`, `name.ca`, `name.en` o `format` para nombres y formatos.
    - Modificar `sector` (`"horeca"`, `"supermercados"`, `"latinos"`, `"acai"`), `channel` (`"horeca"` o `"supermercados"`) y `section` para recategorizar productos.
    - Para fotos: `"hasPhoto": true` con `"imagePath": "/assets/products/<archivo>.webp"` (el archivo debe existir en `packages/lib/assets/products/`), o `"hasPhoto": false` con `"imagePath": "/assets/brand/placeholder-product.svg"`.
-2. **Validar, sincronizar con GitHub y publicar en producción:**
-   ```bash
-   cd /opt/fuconsa
-   npm test
-   npm run build
-   git add packages/lib/data/catalog.json packages/lib/assets/
-   git commit -m "chore(catalog): actualización de tarifas y productos por Smith"
-   git push origin main
-   git push origin main:development
-   docker compose up -d --build
-   ```
+2. **Efecto instantáneo en producción (sin GitHub ni recompilar Docker):**
+   - `docker-compose.yml` monta `/opt/fuconsa/packages/lib/data` y `/opt/fuconsa/packages/lib/assets` directamente en el contenedor `fuconsa_api` como volúmenes en caliente.
+   - En cuanto Smith guarda un cambio en `/opt/fuconsa/packages/lib/data/catalog.json` o añade una imagen en `/opt/fuconsa/packages/lib/assets/products/`, **el cambio se ve al instante en la web sin necesidad de acceso a GitHub ni de ejecutar `docker compose build`**.
+   - Solo necesita validar que el JSON cumple las reglas ejecutando:
+     ```bash
+     cd /opt/fuconsa
+     npm run test:lib
+     curl -fsS http://localhost:3000/api/health
+     ```
