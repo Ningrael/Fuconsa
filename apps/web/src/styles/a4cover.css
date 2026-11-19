@@ -1,229 +1,261 @@
-/* Carátula Comercial A4 (Página 1) */
+/* Carátula Comercial A4 — Textura Hielo Institucional Fuconsa, Tarjeta Matías Sosa y QR */
 .a4-cover-sheet {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-top: 6px solid var(--brand-primary, #0F2342);
-  background: #FFFFFF;
+  background-color: #EBF5FC;
+  background-image:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86) 0%, rgba(230, 244, 253, 0.58) 50%, rgba(196, 226, 245, 0.68) 100%),
+    url('/assets/brand/fondo-institucional.webp');
+  background-size: cover;
+  background-position: center;
   box-sizing: border-box;
+  color: #102755;
 }
 
-.a4-cover-header {
-  border-bottom: 2px solid #E2E8F0;
-  padding-bottom: 5mm;
-  margin-bottom: 5mm;
+/* 1. Cabecera Oficial de Marca */
+.a4-cover-masthead {
+  display: flex;
+  flex-direction: column;
 }
 
-.a4-cover-brand {
+.a4-cover-top-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 4mm;
+  justify-content: space-between;
+  gap: 4mm;
+  padding: 5mm 6mm;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #C5DCEB;
+  border-bottom: 3px solid #102755;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16, 39, 85, 0.08);
+}
+
+.a4-cover-logo-wrap {
+  display: flex;
+  align-items: center;
 }
 
 .a4-cover-logo {
-  height: 14mm;
-  max-width: 45mm;
+  height: 18mm;
+  max-width: 68mm;
   width: auto;
   object-fit: contain;
   display: block;
-  flex-shrink: 0;
 }
 
-.a4-cover-brand-title {
-  font-size: 20pt;
-  font-weight: 900;
-  color: var(--brand-primary, #0F2342);
-  letter-spacing: -0.5px;
-  line-height: 1;
-}
-
-.a4-cover-brand-sub {
-  font-size: 8.5pt;
-  font-weight: 600;
-  color: var(--brand-muted, #64748B);
-  margin-top: 1mm;
-}
-
-.a4-cover-proposal-box {
-  background: #F8FAFC;
-  border: 1px solid #CBD5E1;
-  border-left: 4px solid var(--brand-primary, #0F2342);
-  padding: 4mm 6mm;
-  border-radius: 4px;
-}
-
-.a4-cover-proposal-tag {
-  font-size: 8pt;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #64748B;
-  display: block;
-}
-
-.a4-cover-title {
-  font-size: 15pt;
-  font-weight: 800;
-  color: var(--brand-text, #0F172A);
-  margin: 1.5mm 0;
-  letter-spacing: -0.3px;
-}
-
-.a4-cover-items-count {
-  font-size: 8.5pt;
-  color: var(--brand-primary, #0F2342);
-  font-weight: 600;
-}
-
-.a4-cover-rep-card {
-  background: #F1F5F9;
-  border: 1px solid #E2E8F0;
-  border-radius: 4px;
-  padding: 3.5mm 5mm;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 5mm;
-}
-
-.a4-cover-rep-eyebrow {
-  font-size: 7.5pt;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  color: #64748B;
-}
-
-.a4-cover-rep-name {
-  font-size: 12pt;
-  font-weight: 800;
-  color: var(--brand-primary, #0F2342);
-  margin-top: 1mm;
-}
-
-.a4-cover-rep-role {
-  font-size: 8.5pt;
-  color: #475569;
-  font-weight: 500;
-}
-
-.a4-cover-rep-contact {
-  text-align: right;
-  font-size: 8pt;
-  color: #334155;
-  line-height: 1.35;
-}
-
-.a4-cover-sectors {
-  margin-bottom: 5mm;
-}
-
-.a4-cover-sectors-label {
-  font-size: 7.5pt;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  color: #64748B;
-  margin-bottom: 2.5mm;
-}
-
-.a4-cover-sectors-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5mm;
-}
-
-.a4-cover-sector-box {
-  border: 1px solid #E2E8F0;
-  border-left-width: 4px;
-  background: #FFFFFF;
-  padding: 2.5mm 3.5mm;
-  border-radius: 3px;
+.a4-cover-top-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.5mm;
+  align-items: flex-end;
+  gap: 2mm;
 }
 
-.a4-cover-sector-box strong {
+.a4-cover-leader-pill {
+  font-size: 7.2pt;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #102755;
+  background: #E0F2FE;
+  border: 1px solid #7DD3FC;
+  padding: 1.4mm 3.5mm;
+  border-radius: 999px;
+}
+
+.a4-cover-date-text {
   font-size: 8.5pt;
-  color: var(--brand-text, #0F172A);
+  font-weight: 700;
+  color: #315276;
 }
 
-.a4-cover-sector-box small {
-  font-size: 7pt;
-  color: #64748B;
-  line-height: 1.2;
-}
-
-.a4-border-horeca { border-left-color: #0284C7; }
-.a4-border-supermercados { border-left-color: #253B91; }
-.a4-border-latinos { border-left-color: #D97706; }
-.a4-border-acai { border-left-color: #9333EA; }
-
-.a4-cover-qr-box {
-  background: #0F172A;
+/* 2. Protagonista Central: Tarjeta Personal Ejecutiva de Matías Sosa Marrazzo */
+.a4-cover-personal-card {
+  background: linear-gradient(135deg, #0D2149 0%, #173A68 100%);
   color: #FFFFFF;
-  border-radius: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 5px solid #F59E0B;
+  padding: 9mm 9mm;
+  box-shadow: 0 14px 32px rgba(16, 39, 85, 0.22);
+}
+
+.a4-personal-card-header {
+  margin-bottom: 6mm;
+  padding-bottom: 5mm;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.a4-personal-eyebrow {
+  display: block;
+  font-size: 8pt;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #FBBF24;
+  margin-bottom: 2mm;
+}
+
+.a4-personal-name {
+  font-size: 27pt;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.6px;
+  line-height: 1.08;
+}
+
+.a4-personal-role {
+  font-size: 12pt;
+  font-weight: 600;
+  color: #BAE6FD;
+  margin-top: 1.5mm;
+}
+
+.a4-personal-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5mm;
+}
+
+.a4-personal-contact-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
   padding: 4mm 5mm;
   display: flex;
+  flex-direction: column;
+  gap: 1.2mm;
+}
+
+.a4-contact-box-label {
+  font-size: 7pt;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  color: #BAE6FD;
+}
+
+.a4-contact-box-value {
+  font-size: 12pt;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.a4-phone-highlight {
+  font-size: 15pt;
+  color: #4ADE80;
+}
+
+/* 3. Portal QR Grande sobre Cristal Hielo */
+.a4-cover-qr-portal {
+  display: flex;
   align-items: center;
-  gap: 5mm;
-  margin-bottom: 3mm;
+  gap: 8mm;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid #B8D4E8;
+  border-radius: 12px;
+  padding: 7mm 8mm;
+  box-shadow: 0 8px 22px rgba(16, 39, 85, 0.08);
 }
 
 .a4-cover-qr-frame {
   background: #FFFFFF;
-  padding: 1.5mm;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 3mm;
+  border-radius: 10px;
+  border: 2px solid #102755;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(16, 39, 85, 0.12);
 }
 
 .a4-cover-qr-img {
-  width: 30mm;
-  height: 30mm;
+  width: 42mm;
+  height: 42mm;
   object-fit: contain;
   display: block;
 }
 
 .a4-cover-qr-placeholder {
-  width: 30mm;
-  height: 30mm;
+  width: 42mm;
+  height: 42mm;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  color: #0F172A;
+  color: #102755;
 }
 
 .a4-cover-qr-badge {
+  display: inline-block;
   font-size: 7.5pt;
   font-weight: 800;
-  letter-spacing: 1px;
-  color: #38BDF8;
-  display: block;
-  margin-bottom: 1mm;
-}
-
-.a4-cover-qr-info h2 {
-  font-size: 10.5pt;
-  font-weight: 800;
+  letter-spacing: 1.2px;
   color: #FFFFFF;
-  margin: 0 0 1mm 0;
+  background: #0284C7;
+  padding: 1.2mm 3mm;
+  border-radius: 4px;
+  margin-bottom: 2.2mm;
 }
 
-.a4-cover-qr-info p {
-  font-size: 7.5pt;
-  color: #CBD5E1;
-  margin: 0;
-  line-height: 1.3;
+.a4-cover-qr-copy h2 {
+  font-size: 15.5pt;
+  font-weight: 800;
+  color: #102755;
+  margin: 0 0 1.8mm 0;
+}
+
+.a4-cover-qr-copy p {
+  font-size: 10pt;
+  font-weight: 700;
+  color: #1D3C66;
+  margin: 0 0 2.2mm 0;
+  line-height: 1.35;
+}
+
+.a4-cover-qr-subnote {
+  font-size: 8.5pt;
+  color: #315276;
+  line-height: 1.4;
+}
+
+/* 4. Respaldo de Marcas Oficiales al Pie */
+.a4-cover-brands-footer {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid #C5DCEB;
+  border-radius: 10px;
+  padding: 4mm 5mm;
+}
+
+.a4-cover-brands-eyebrow {
+  display: block;
+  font-size: 7.2pt;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  color: #315276;
+  margin-bottom: 2.5mm;
+  text-transform: uppercase;
+}
+
+.brand-logos-compact {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2.2mm;
+}
+
+.brand-logo-plate-compact {
+  width: 100% !important;
+  height: 10.5mm !important;
+  padding: 1.2mm 2.2mm !important;
+  background: #FFFFFF !important;
+  border: 1px solid #D7E5EE !important;
+  border-radius: 5px !important;
+  box-shadow: none !important;
 }
 
 .a4-cover-footer {
-  border-top: 1px solid #E2E8F0;
-  padding-top: 3mm;
+  border-top: 1.5px solid #B8D4E8;
+  padding-top: 2.5mm;
   display: flex;
   justify-content: space-between;
-  font-size: 7.5pt;
-  color: #94A3B8;
+  font-size: 8pt;
+  font-weight: 700;
+  color: #315276;
 }

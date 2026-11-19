@@ -16,13 +16,7 @@ function A4ItemImage({ item, lang, name }) {
   if (showPhoto) {
     return (
       <div className="a4-item-img-wrap">
-        <img
-          src={withBase(item.imagePath)}
-          alt={name}
-          className="a4-item-img"
-          crossOrigin="anonymous"
-          onError={() => setImgError(true)}
-        />
+        <img src={withBase(item.imagePath)} alt={name} className="a4-item-img" crossOrigin="anonymous" onError={() => setImgError(true)} />
       </div>
     );
   }
@@ -33,9 +27,7 @@ function A4ItemImage({ item, lang, name }) {
         alt="Fuconsa"
         className="a4-placeholder-logo"
         crossOrigin="anonymous"
-        onError={(e) => {
-          e.currentTarget.style.display = 'none';
-        }}
+        onError={(e) => { e.currentTarget.style.display = 'none'; }}
       />
       <span className="a4-placeholder-badge">{t('photoComingSoon', lang)}</span>
     </div>
@@ -46,10 +38,21 @@ function A4ItemCard({ item, lang }) {
   const name = getTranslation(item.name, lang);
   return (
     <article className="a4-item-card">
+      <div className="a4-item-top-bar">
+        <span className="a4-item-brand">{item.brand || 'Fuconsa'}</span>
+        <span className="a4-item-code visually-hidden-accessible tabular-nums" title={`${t('a4RefLabel', lang)} ${item.id}`}>
+          {item.id}
+        </span>
+      </div>
       <A4ItemImage item={item} lang={lang} name={name} />
       <div className="a4-item-title">{name}</div>
-      <div className="a4-item-meta">{item.brand} {item.format ? `· ${item.format}` : ''}</div>
-      <div className="a4-item-price tabular-nums">{item.priceText || '—'}</div>
+      <div className="a4-item-meta">{item.format || ''}</div>
+      <div className="a4-item-price-footer">
+        <div className="a4-item-price tabular-nums">{item.priceText || '—'}</div>
+        {item.boxPrice != null ? (
+          <span className="a4-item-box-price tabular-nums">{formatBoxPrice(item.boxPrice)}</span>
+        ) : null}
+      </div>
     </article>
   );
 }
@@ -130,13 +133,27 @@ function openPreWindow() {
   const win = window.open('about:blank', '_blank');
   if (win && win.document) {
     win.document.write(
-      '<div style="font-family:system-ui,-apple-system,sans-serif;padding:48px 24px;text-align:center;color:#0F2342;">' +
-      '<h2 style="margin:0 0 8px 0;font-size:20px;">Fuconsa</h2>' +
-      '<p style="margin:0;color:#64748B;font-size:14px;">Generando documento PDF...</p>' +
-      '</div>'
+      '<div style="font-family:system-ui,-apple-system,sans-serif;padding:48px 24px;text-align:center;color:#0F2342;">'
+      + '<h2 style="margin:0 0 8px 0;font-size:20px;">Fuconsa</h2>'
+      + '<p style="margin:0;color:#64748B;font-size:14px;">Generando documento PDF...</p></div>'
     );
   }
   return win;
+}
+
+async function runPdfExport(containerEl, isBusy, setIsBusy, action) {
+  if (isBusy || !containerEl) return;
+  setIsBusy(true);
+  let preWin = null;
+  try {
+    preWin = openPreWindow();
+    await action(containerEl, preWin);
+  } catch {
+    if (preWin && !preWin.closed) preWin.close();
+    window.print();
+  } finally {
+    setIsBusy(false);
+  }
 }
 
 export function A4PrintDocument(props) {
@@ -148,31 +165,11 @@ export function A4PrintDocument(props) {
     ? paginateCatalog(items, { includeCompactTable: true })
     : paginateSelection(items);
 
-  const handleDownloadPdf = async () => {
-    if (isBusy || !containerRef.current) return;
-    setIsBusy(true);
-    try {
-      const preWin = openPreWindow();
-      await downloadA4Pdf(containerRef.current, `Fuconsa-${documentMode}.pdf`, preWin);
-    } catch {
-      window.print();
-    } finally {
-      setIsBusy(false);
-    }
-  };
-
-  const handleSharePdf = async () => {
-    if (isBusy || !containerRef.current) return;
-    setIsBusy(true);
-    try {
-      const preWin = openPreWindow();
-      await shareOrDownloadA4Pdf(containerRef.current, `Fuconsa-${documentMode}.pdf`, title, preWin);
-    } catch {
-      window.print();
-    } finally {
-      setIsBusy(false);
-    }
-  };
+  const filename = `Fuconsa-${documentMode}.pdf`;
+  const handleDownloadPdf = () => runPdfExport(containerRef.current, isBusy, setIsBusy,
+    (el, preWin) => downloadA4Pdf(el, filename, preWin));
+  const handleSharePdf = () => runPdfExport(containerRef.current, isBusy, setIsBusy,
+    (el, preWin) => shareOrDownloadA4Pdf(el, filename, title, preWin));
 
   return (
     <div className="print-preview-modal" role="dialog" aria-modal="true">

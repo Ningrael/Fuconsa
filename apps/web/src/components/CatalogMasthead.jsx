@@ -1,6 +1,7 @@
 import React from 'react';
-import { SECTORS } from '../constants/sectors.js';
+import { SECTORS, BRAND_LOGOS } from '../constants/sectors.js';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
+import { withBase } from '../utils/assetUrl.js';
 import { ArrowLeftIcon } from './Icons.jsx';
 import { CoverAvatar } from './CoverAvatar.jsx';
 
@@ -34,8 +35,21 @@ export function CatalogMasthead(props) {
             type="button"
             className={`btn-sector-tab sector-tab-${sec.id} ${currentSector === sec.id ? 'active' : ''}`}
             onClick={() => onSelectSector(sec.id)}
+            title={t(sec.key, lang)}
           >
-            {t(sec.key, lang)}
+            {sec.id === 'acai' ? (
+              <>
+                <img
+                  src={withBase(BRAND_LOGOS['Polpa Norte'])}
+                  alt=""
+                  aria-hidden="true"
+                  className="sector-tab-brand-logo"
+                />
+                <span className="visually-hidden-accessible">{t(sec.key, lang)}</span>
+              </>
+            ) : (
+              t(sec.key, lang)
+            )}
           </button>
         ))}
       </nav>

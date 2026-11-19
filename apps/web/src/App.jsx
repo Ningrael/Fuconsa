@@ -10,24 +10,47 @@ import { useSelection } from './hooks/useSelection.js';
 import { DEFAULT_LANGUAGE, t } from './i18n/translations.js';
 
 function CatalogSection(props) {
-  const { catalog, selection, lang, viewMode, setViewMode, onPrintSection, onBackToHome } = props;
+  const {
+    catalog,
+    selection,
+    lang,
+    onChangeLang,
+    activeSectorKey,
+    onSelectSector,
+    onSelectSubcategory,
+    viewMode,
+    setViewMode,
+    onPrintSection,
+    onBackToHome
+  } = props;
   return (
     <>
-      <CatalogToolbar
-        lang={lang}
-        search={catalog.search}
-        onChangeSearch={catalog.setSearch}
-        section={catalog.section}
-        onChangeSection={catalog.setSection}
-        sections={catalog.sections}
-        onlyWithPhoto={catalog.onlyWithPhoto}
-        onTogglePhoto={catalog.setOnlyWithPhoto}
-        viewMode={viewMode}
-        onChangeViewMode={setViewMode}
-        onPrintSection={onPrintSection}
-        selectedCount={selection.count}
-        onBackToHome={onBackToHome}
-      />
+      <div className="unified-catalog-header">
+        <CoverQRCard
+          lang={lang}
+          onChangeLang={onChangeLang}
+          currentSector={activeSectorKey}
+          onSelectSector={onSelectSector}
+          onSelectSubcategory={onSelectSubcategory}
+          isLanding={false}
+          onBackToHome={onBackToHome}
+        />
+        <CatalogToolbar
+          lang={lang}
+          search={catalog.search}
+          onChangeSearch={catalog.setSearch}
+          section={catalog.section}
+          onChangeSection={catalog.setSection}
+          sections={catalog.sections}
+          onlyWithPhoto={catalog.onlyWithPhoto}
+          onTogglePhoto={catalog.setOnlyWithPhoto}
+          viewMode={viewMode}
+          onChangeViewMode={setViewMode}
+          onPrintSection={onPrintSection}
+          selectedCount={selection.count}
+          onBackToHome={onBackToHome}
+        />
+      </div>
       <CatalogGrid
         items={catalog.items}
         lang={lang}
@@ -88,33 +111,40 @@ export function App() {
     <ErrorBoundary lang={lang}>
       <div className="app-container" data-sector={catalog.sector || 'all'}>
         <div className={showPrintModal ? 'no-print' : ''}>
-          <CoverQRCard
-            lang={lang}
-            onChangeLang={setLang}
-            currentSector={activeSectorKey}
-            onSelectSector={handleSelectSector}
-            onSelectSubcategory={handleSelectSubcategory}
-            isLanding={!hasEnteredCatalog}
-            onBackToHome={() => setHasEnteredCatalog(false)}
-          />
-          {hasEnteredCatalog ? (
+          {!hasEnteredCatalog ? (
+            <CoverQRCard
+              lang={lang}
+              onChangeLang={setLang}
+              currentSector={activeSectorKey}
+              onSelectSector={handleSelectSector}
+              onSelectSubcategory={handleSelectSubcategory}
+              isLanding={true}
+              onBackToHome={() => setHasEnteredCatalog(false)}
+            />
+          ) : (
             <CatalogSection
               catalog={catalog}
               selection={selection}
               lang={lang}
+              onChangeLang={setLang}
+              activeSectorKey={activeSectorKey}
+              onSelectSector={handleSelectSector}
+              onSelectSubcategory={handleSelectSubcategory}
               viewMode={viewMode}
               setViewMode={setViewMode}
               onPrintSection={() => openPrint(selection.count > 0 ? 'selection' : 'section')}
               onBackToHome={() => setHasEnteredCatalog(false)}
             />
-          ) : null}
+          )}
         </div>
-        <CustomSelectionDrawer
-          count={selection.count}
-          lang={lang}
-          onClear={selection.clearSelection}
-          onOpenPrint={() => openPrint('selection')}
-        />
+        {hasEnteredCatalog ? (
+          <CustomSelectionDrawer
+            count={selection.count}
+            lang={lang}
+            onClear={selection.clearSelection}
+            onOpenPrint={() => openPrint('selection')}
+          />
+        ) : null}
         <PrintModalContainer
           show={showPrintModal}
           items={printItems}

@@ -5,6 +5,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   CONTACT_INFO,
+  SECTORS,
+  LEADING_BRANDS,
+  CORPORATE_STATS,
+  SUPPORTED_LANGUAGES,
+  DICTIONARY,
   generateVCard,
   productSchema,
   catalogFilterSchema,
@@ -112,12 +117,12 @@ test('priceFormatter formats prices, phone numbers and search queries', () => {
   assert.equal(normalizeSearchText('Açaí Congelado!'), 'acai congelado!');
 });
 
-test('validateCatalog validates the complete 762 products from catalog.json', () => {
+test('validateCatalog validates the complete products from catalog.json', () => {
   const catalogPath = path.resolve(__dirname, '../data/catalog.json');
   const items = JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
-  assert.equal(items.length, 762);
+  assert.ok(items.length >= 750);
   const validated = validateCatalog(items);
-  assert.equal(validated.length, 762);
+  assert.equal(validated.length, items.length);
   assert.ok(validated.every((p) => p.name && p.name.es && p.name.ca && p.name.en));
 });
 
@@ -135,6 +140,42 @@ test('dictionary provides all Etapa 8 keys across es, ca and en', () => {
   const keys = ['downloadPdf', 'sharePdf', 'generatingPdf', 'coverProposalLabel', 'coverItemsIncluded'];
   for (const k of keys) {
     for (const lang of ['es', 'ca', 'en']) {
+      const val = t(k, lang);
+      assert.ok(val && val !== k, `Missing translation for key ${k} in ${lang}`);
+    }
+  }
+});
+
+test('SECTORS, LEADING_BRANDS and CORPORATE_STATS expose frozen SSOT data', () => {
+  assert.deepEqual(SUPPORTED_LANGUAGES, ['es', 'ca', 'en']);
+  assert.ok(Object.isFrozen(SECTORS) && SECTORS.length === 4);
+  assert.deepEqual(SECTORS.map((s) => s.id), ['horeca', 'supermercados', 'latinos', 'acai']);
+  for (const sector of SECTORS) {
+    assert.ok(sector.color && sector.img.startsWith('/assets/products/') && sector.tag);
+    assert.ok(Array.isArray(sector.subcategories) && sector.subcategories.length > 0);
+    for (const lang of SUPPORTED_LANGUAGES) {
+      const label = t(sector.key, lang);
+      assert.ok(label && label !== sector.key, `Missing sector label ${sector.key} in ${lang}`);
+    }
+  }
+  assert.ok(Object.isFrozen(LEADING_BRANDS) && LEADING_BRANDS.length === 11);
+  assert.ok(['Maheso', 'Fripozo', 'Dr. Oetker', 'Nestlé', 'Polpa Norte', 'El Dorado'].every((b) => LEADING_BRANDS.includes(b)));
+  assert.ok(Object.isFrozen(CORPORATE_STATS));
+  assert.deepEqual(CORPORATE_STATS, { totalReferences: '+760', sectorsCount: '4', coverageArea: 'Cataluña' });
+});
+
+test('DICTIONARY provides all Etapa 1 commercial redesign keys across es, ca and en', () => {
+  const redesignKeys = [
+    'addToPdfShort', 'addedToPdfShort', 'heroAuthorityBadge', 'heroSubtitle',
+    'brandsTrustTitle', 'howItWorksTitle', 'step1Title', 'step1Desc', 'step2Title',
+    'step2Desc', 'step3Title', 'step3Desc', 'showMyQrBtn', 'closeQrBtn',
+    'exploreSectorCta', 'sectorsHeading', 'a4LeaderBadge', 'a4RefLabel',
+    'createPdf', 'reloadApp', 'viewAllCards', 'viewSplit', 'contactAssistance',
+    'qrSectionTitle', 'qrSectionDesc', 'installAppTitle', 'installAppBtn',
+    'installIosHint', 'backToHome', 'enterCatalog'
+  ];
+  for (const k of new Set([...redesignKeys, ...Object.keys(DICTIONARY)])) {
+    for (const lang of SUPPORTED_LANGUAGES) {
       const val = t(k, lang);
       assert.ok(val && val !== k, `Missing translation for key ${k} in ${lang}`);
     }

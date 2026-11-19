@@ -1,5 +1,7 @@
 import React from 'react';
 import { SUPPORTED_LANGUAGES, t } from '../i18n/translations.js';
+import { getBrandLogoUrl, SECTION_THUMBNAILS } from '../constants/sectors.js';
+import { withBase } from '../utils/assetUrl.js';
 import { SearchIcon, PrintIcon } from './Icons.jsx';
 
 function LanguageSwitcher({ lang, onChangeLang }) {
@@ -67,7 +69,7 @@ function SectionFilterAccessible({ section, onChangeSection, sections = [], lang
 }
 
 function SubcategoryChips({ section, onChangeSection, sections = [], lang }) {
-  if (!sections || sections.length === 0) return null;
+  if (!sections || sections.length <= 1) return null;
   return (
     <div className="subcategories-bar" role="navigation" aria-label="Subcategorías">
       <button
@@ -77,16 +79,33 @@ function SubcategoryChips({ section, onChangeSection, sections = [], lang }) {
       >
         {t('allSections', lang)}
       </button>
-      {sections.map((sec) => (
-        <button
-          key={sec}
-          type="button"
-          className={`subcat-bar-chip ${section === sec ? 'active' : ''}`}
-          onClick={() => onChangeSection && onChangeSection(sec)}
-        >
-          {sec}
-        </button>
-      ))}
+      {sections.map((sec) => {
+        const logoUrl = getBrandLogoUrl(sec);
+        const thumbUrl = !logoUrl && SECTION_THUMBNAILS ? SECTION_THUMBNAILS[sec] : '';
+        return (
+          <button
+            key={sec}
+            type="button"
+            className={`subcat-bar-chip ${logoUrl ? 'subcat-logo-chip' : ''} ${thumbUrl ? 'subcat-thumb-chip' : ''} ${section === sec ? 'active' : ''}`}
+            onClick={() => onChangeSection && onChangeSection(sec)}
+            title={sec}
+          >
+            {logoUrl ? (
+              <>
+                <img src={withBase(logoUrl)} alt={sec} className="subcat-brand-logo-img" />
+                <span className="visually-hidden-accessible">{sec}</span>
+              </>
+            ) : thumbUrl ? (
+              <>
+                <img src={withBase(thumbUrl)} alt="" aria-hidden="true" className="subcat-family-thumb-img" />
+                <span>{sec}</span>
+              </>
+            ) : (
+              sec
+            )}
+          </button>
+        );
+      })}
     </div>
   );
 }

@@ -16,9 +16,7 @@ function matchesSearch(item, term, lang) {
 
 function matchesSector(item, sector) {
   if (!sector || sector === 'all') return true;
-  if (sector === 'horeca') return item.channel === 'horeca' || item.sector === 'horeca';
-  if (sector === 'supermercados') return item.channel === 'supermercados' || item.sector === 'supermercados';
-  return item.sector === sector;
+  return (item.sector || '').toLowerCase() === sector.toLowerCase();
 }
 
 function filterCatalog(items, filters, lang) {

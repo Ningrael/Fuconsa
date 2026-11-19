@@ -54,3 +54,108 @@ Este documento es normativo para cualquier agente (**Antigravity**, **OpenClaw**
 - Para alcance, arquitectura y guía visual, consulta [PROYECTO.md](docs/PROYECTO.md).
 - Para la tarea activa y planificación, consulta [TASKS.md](TASKS.md).
 - Para el estado entre sesiones, consulta [ESTADO.md](docs/ESTADO.md).
+
+---
+
+## 5. Guía Operativa para Smith (`OpenClaw` en la VPS): Edición de Precios, Productos y Categorías
+
+Esta sección está diseñada específicamente para **Smith (OpenClaw / Clawbot)** operando en la VPS (`/opt/fuconsa`) cuando Matías solicite modificar precios, añadir/quitar productos, cambiar nombres, formatos, fotos o categorías.
+
+### 5.1 Ubicación de la Única Fuente de Verdad del Catálogo
+- **Archivo maestro de productos y tarifas:** `packages/lib/data/catalog.json`
+- **Fotografías de productos (`.webp`):** `packages/lib/assets/products/`
+- **Logotipos oficiales de marcas (`.svg` / `.png`):** `packages/lib/assets/brands/`
+- **Imagen por defecto para productos sin foto:** `/assets/brand/placeholder-product.svg` (`packages/lib/assets/brand/placeholder-product.svg`)
+
+> **Importante:** Nunca edites productos en el frontend (`apps/web`) ni en el backend (`apps/api`). Tanto la API como la web y el generador PDF A4 leen automáticamente desde `packages/lib/data/catalog.json`.
+
+### 5.2 Estructura Exacta de un Producto en `packages/lib/data/catalog.json`
+El archivo `catalog.json` tiene la forma `{ "meta": { ... }, "items": [ ... ] }`. Cada elemento dentro de `"items"` debe cumplir estrictamente este contrato JSON:
+
+```json
+{
+  "id": "fripozo-tequenos-12x1kg",
+  "channel": "horeca",
+  "sector": "horeca",
+  "section": "Platos precocinados",
+  "brand": "Fripozo",
+  "name": {
+    "es": "TEQUEÑOS",
+    "ca": "TEQUEÑOS",
+    "en": "TEQUEÑOS"
+  },
+  "format": "12x1kg",
+  "unitPrice": 9.95,
+  "boxPrice": null,
+  "priceText": "9.95 €",
+  "hasPhoto": true,
+  "imagePath": "/assets/products/tequenos-30g.webp"
+}
+```
+
+### 5.3 Reglas de Validación Obligatorias (Testeadas por `npm test`)
+Si alguno de estos campos no respeta estas reglas, `npm test` fallará y bloqueará el despliegue:
+
+1. **`id`** *(string único, sin espacios)*: identificador en minúsculas separado por guiones (`marca-nombre-formato`). No se muestra al cliente final, pero debe ser único.
+2. **`channel`** *(string)*: solo acepta `"horeca"` o `"supermercados"`.
+   - Usa `"horeca"` para productos de `sector`: `"horeca"`, `"latinos"` o `"acai"`.
+   - Usa `"supermercados"` para productos de `sector`: `"supermercados"`.
+3. **`sector`** *(string)*: define la pestaña principal del catálogo. Solo acepta uno de estos 4 valores:
+   - `"horeca"` — Hostelería y restauración
+   - `"supermercados"` — Grandes marcas de retail/supermercado
+   - `"latinos"` — Productos Latinos
+   - `"acai"` — Mundo Açaí / Polpa Norte (exclusivo para Polpa Norte; no mezclar en Horeca)
+4. **`section`** *(string)*: define la subcategoría o familia dentro del sector:
+   - Si `sector === "horeca"`: `"Pescado y marisco"`, `"Verduras"`, `"Frutas y purés"`, `"Platos precocinados"`.
+   - Si `sector === "supermercados"`: `"Ben & Jerry's"`, `"Buitoni"`, `"Delfín"`, `"Dr. Oetker"`, `"Frigo"`, `"Fripozo"`, `"Häagen-Dazs"`, `"JV"`, `"Maheso"`, `"Nestlé"`.
+   - Si `sector === "latinos"`: `"Productos latinos"`.
+   - Si `sector === "acai"`: `"Açaí"`.
+5. **`name`** *(objeto trilingüe)*: siempre debe incluir las 3 claves `"es"`, `"ca"` y `"en"` con texto limpio (sin guiones tipo slug).
+6. **Precios (`unitPrice`, `boxPrice`, `priceText`)**:
+   - `unitPrice`: número decimal positivo (ej. `7.5` o `10.50`). **Prohibido dejar precios a `0` o `null`** (el test de integridad rechaza tarifas `0.00 €`).
+   - `boxPrice`: número decimal positivo si tiene precio por caja (ej. `40.59`), o `null` si no aplica.
+   - `priceText`: texto formateado que se muestra en la tarjeta y en el PDF. Ejemplos:
+     - Solo unidad/kg: `"7.50 €/ud"`, `"10.50 €/kg"` o `"3.95 €"`.
+     - Unidad + caja: `"7.15 €/kg · 40,59 €/caja"` o `"7.50 €/ud · 7,15 €/caja"`.
+7. **Fotografías (`hasPhoto` e `imagePath`)**:
+   - **Con foto (`"hasPhoto": true`)**: el archivo físico DEBE existir en `packages/lib/assets/products/<archivo>.webp` y `"imagePath"` debe ser `"/assets/products/<archivo>.webp"`.
+   - **Sin foto (`"hasPhoto": false`)**: `"imagePath"` DEBE ser exactamente `"/assets/brand/placeholder-product.svg"`.
+
+### 5.4 Recetas Rápidas para Smith ante Peticiones de Matías
+
+- **Cambiar el precio de un producto:**
+  1. Busca el producto por nombre en `packages/lib/data/catalog.json`.
+  2. Actualiza `unitPrice`, `boxPrice` (si aplica) y `priceText` (manteniendo el formato `"X.XX €"` o `"X.XX €/ud · Y,YY €/caja"`).
+- **Mover un producto de categoría:**
+  1. Cambia `sector`, `channel` y `section` según la tabla de la sección 5.3.
+- **Quitar una foto errónea de un producto:**
+  1. Pon `"hasPhoto": false` y `"imagePath": "/assets/brand/placeholder-product.svg"`.
+- **Poner una foto nueva a un producto:**
+  1. Guarda la imagen en formato `.webp` (`640x480` recomendado) dentro de `packages/lib/assets/products/nombre-archivo.webp`.
+  2. En el producto dentro de `catalog.json`, pon `"hasPhoto": true` y `"imagePath": "/assets/products/nombre-archivo.webp"`.
+
+### 5.5 Flujo Obligatorio de Verificación, GitHub y Despliegue en VPS para Smith
+Cada vez que Smith modifique `packages/lib/data/catalog.json` o cualquier activo en `/opt/fuconsa`, debe ejecutar estos pasos en orden:
+
+```bash
+cd /opt/fuconsa
+
+# 1. Ejecutar las 88 pruebas automatizadas (verifica que no haya fotos rotas, precios a 0 ni esquemas inválidos)
+npm test
+
+# 2. Compilar el frontend de producción para confirmar que no hay errores de build
+npm run build
+
+# 3. Guardar y subir los cambios a GitHub (manteniendo main y development sincronizadas)
+git add packages/lib/data/catalog.json packages/lib/assets/
+git commit -m "chore(catalog): actualización de tarifas y productos por Smith"
+git push origin main
+git push origin main:development
+
+# 4. Reconstruir y reiniciar el contenedor en producción
+docker compose up -d --build
+
+# 5. Verificar salud del servicio en vivo
+curl -fsS http://localhost:3000/api/health
+```
+

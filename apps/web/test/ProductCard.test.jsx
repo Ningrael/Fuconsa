@@ -83,4 +83,24 @@ describe('ProductCard Component', () => {
     fireEvent.error(img);
     expect(screen.getByText('Imagen en preparación')).toBeInTheDocument();
   });
+
+  it('renders product reference code and box price in card', () => {
+    const { container } = render(
+      <ProductCard item={sampleItem} lang="es" isSelected={false} onToggleSelect={() => {}} />
+    );
+    expect(container.querySelector('.product-code')).toHaveTextContent('TEST-01');
+    expect(screen.getByText('62,50 €/caja')).toBeInTheDocument();
+  });
+
+  it('shows explicit PDF button label while preserving accessible aria-label', () => {
+    const { rerender } = render(
+      <ProductCard item={sampleItem} lang="es" isSelected={false} onToggleSelect={() => {}} />
+    );
+    const addBtn = screen.getByRole('button', { name: 'Añadir a selección' });
+    expect(addBtn).toHaveTextContent('+ Añadir a PDF');
+    rerender(<ProductCard item={sampleItem} lang="es" isSelected={true} onToggleSelect={() => {}} />);
+    const removeBtn = screen.getByRole('button', { name: 'Quitar' });
+    expect(removeBtn).toHaveTextContent('✓ En tu PDF');
+    expect(removeBtn).toHaveClass('selected');
+  });
 });

@@ -3,6 +3,7 @@
  */
 
 export * from './constants/contact.js';
+export * from './constants/sectors.js';
 export * from './schemas/productSchema.js';
 export * from './i18n/dictionary.js';
 export * from './pagination/a4Paginator.js';

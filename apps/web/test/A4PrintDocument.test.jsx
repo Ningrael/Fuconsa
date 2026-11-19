@@ -1,7 +1,8 @@
 import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import { A4PrintDocument } from '../src/components/A4PrintDocument.jsx';
+import { LEADING_BRANDS } from '../src/constants/sectors.js';
 
 describe('A4PrintDocument Component', () => {
   const selectedItems = [
@@ -110,5 +111,37 @@ describe('A4PrintDocument Component', () => {
     expect(screen.getByText('Aceite Girasol')).toBeInTheDocument();
     expect(screen.getByText('NO-PHOTO-1')).toBeInTheDocument();
     expect(screen.getByText('Garrafa 5L')).toBeInTheDocument();
+  });
+
+  it('renders executive A4 cover with leader badge, brands, Matias contact and QR block', () => {
+    const { container } = render(
+      <A4PrintDocument items={selectedItems} lang="es" title="Selección a Medida" onClose={() => {}} />
+    );
+    const cover = within(container.querySelector('.a4-cover-sheet'));
+    expect(cover.getByText(/DISTRIBUIDORA LÍDER.*\+760 REFERENCIAS/i)).toBeInTheDocument();
+    expect(cover.getByText('Matías Sosa Marrazzo')).toBeInTheDocument();
+    expect(cover.getByText(/\+34 613 018 609/)).toBeInTheDocument();
+    expect(cover.getByText(/sosamatias@gmail\.com/)).toBeInTheDocument();
+    LEADING_BRANDS.forEach((brand) => {
+      expect(cover.getByText(brand)).toBeInTheDocument();
+    });
+    expect(cover.getByText('ACCESO DIGITAL INTERACTIVO')).toBeInTheDocument();
+    expect(cover.getByText('Escanea mi contacto')).toBeInTheDocument();
+    expect(container.textContent).not.toMatch(/fucon\.es/i);
+  });
+
+  it('renders ref code, format, unit price and optional box price on A4 item cards', () => {
+    const { container } = render(
+      <A4PrintDocument items={selectedItems} lang="es" title="Selección a Medida" onClose={() => {}} />
+    );
+    const refBadge = screen.getByText('SEL-1');
+    expect(refBadge).toHaveClass('a4-item-code');
+    expect(refBadge).toHaveAttribute('title', 'Ref. SEL-1');
+    expect(screen.getByText('Cubeta 5kg')).toBeInTheDocument();
+    expect(screen.getByText('7,90 €/kg')).toBeInTheDocument();
+    expect(container.textContent).not.toMatch(/fucon\.es/i);
+
+    render(<A4PrintDocument items={mixedItems} lang="es" title="Con Caja" onClose={() => {}} />);
+    expect(screen.getByText('17,00 €/caja')).toBeInTheDocument();
   });
 });

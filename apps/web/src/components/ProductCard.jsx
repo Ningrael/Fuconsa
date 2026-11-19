@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { getTranslation, t } from '../i18n/translations.js';
+import { getBrandLogoUrl } from '../constants/sectors.js';
 import { formatBoxPrice } from '../utils/formatters.js';
-import { PlusIcon, CheckIcon } from './Icons.jsx';
 import { withBase } from '../utils/assetUrl.js';
 
 function ProductPlaceholder({ lang }) {
@@ -52,32 +52,56 @@ function ProductPricing({ item }) {
   );
 }
 
+function SelectPdfButton({ isSelected, lang, onClick }) {
+  const actionLabel = isSelected ? t('removeFromSelection', lang) : t('addToSelection', lang);
+
+  return (
+    <button
+      type="button"
+      className={`btn-add-select ${isSelected ? 'selected' : ''}`}
+      onClick={onClick}
+      title={actionLabel}
+      aria-label={actionLabel}
+    >
+      <span className="btn-add-text">
+        {isSelected ? t('addedToPdfShort', lang) : t('addToPdfShort', lang)}
+      </span>
+    </button>
+  );
+}
+
 export function ProductCard({ item, lang, isSelected, onToggleSelect }) {
   const name = getTranslation(item.name, lang);
-  const actionLabel = isSelected ? t('removeFromSelection', lang) : t('addToSelection', lang);
+  const brandLogo = item.brand && !item.brand.toLowerCase().includes('fuconsa')
+    ? getBrandLogoUrl(item.brand)
+    : '';
 
   return (
     <article className={`product-card ${isSelected ? 'selected' : ''}`}>
       <ProductImage item={item} lang={lang} name={name} />
       <div className="product-card-body">
-        {item.brand ? (
+        {item.brand || item.id ? (
           <div className="product-meta-top">
-            <span className="product-brand">{item.brand}</span>
+            {brandLogo ? (
+              <span className="product-brand-logo-pill" title={item.brand}>
+                <img src={withBase(brandLogo)} alt="" aria-hidden="true" className="product-brand-logo-img" />
+                <span className="visually-hidden-accessible">{item.brand}</span>
+              </span>
+            ) : (
+              item.brand ? <span className="product-brand">{item.brand}</span> : null
+            )}
+            {item.id ? <span className="product-code visually-hidden-accessible tabular-nums">{item.id}</span> : null}
           </div>
         ) : null}
         <h2 className="product-name" title={name}>{name}</h2>
         {item.format ? <p className="product-format">{item.format}</p> : null}
         <div className="product-card-footer">
           <ProductPricing item={item} />
-          <button
-            type="button"
-            className={`btn-add-select ${isSelected ? 'selected' : ''}`}
+          <SelectPdfButton
+            isSelected={isSelected}
+            lang={lang}
             onClick={() => onToggleSelect(item)}
-            title={actionLabel}
-            aria-label={actionLabel}
-          >
-            {isSelected ? <CheckIcon size={18} /> : <PlusIcon size={18} />}
-          </button>
+          />
         </div>
       </div>
     </article>

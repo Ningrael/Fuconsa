@@ -1,7 +1,9 @@
 import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import QRCode from 'qrcode';
+import { render, screen, fireEvent, waitFor, within, act } from '@testing-library/react';
 import { CoverQRCard } from '../src/components/CoverQRCard.jsx';
+import { LEADING_BRANDS } from '../src/constants/sectors.js';
 import * as vcardModule from '../src/utils/vcard.js';
 
 describe('CoverQRCard Component', () => {
@@ -51,5 +53,40 @@ describe('CoverQRCard Component', () => {
     expect(container.querySelector('header')).toHaveClass('cover-landing');
     rerender(<CoverQRCard lang="es" currentSector="horeca" onSelectSector={() => {}} isLanding={false} />);
     expect(container.querySelector('header')).toHaveClass('cover-compact');
+  });
+
+  it('renders +760 badge, leading brands, 3-step guide, 4 sectors and single Fuconsa alt', async () => {
+    const qrSpy = vi.spyOn(QRCode, 'toString');
+    const { container } = render(<CoverQRCard lang="es" currentSector="" onSelectSector={() => {}} />);
+    expect(screen.getByText(/\+760 Referencias/i)).toBeInTheDocument();
+    const brandsStrip = within(container.querySelector('.brands-trust-strip'));
+    expect(brandsStrip.getByText('GRANDES MARCAS QUE DISTRIBUIMOS')).toBeInTheDocument();
+    LEADING_BRANDS.forEach((brand) => {
+      expect(brandsStrip.getByText(brand)).toBeInTheDocument();
+    });
+    expect(screen.getByText('1. Elige tu sector')).toBeInTheDocument();
+    expect(screen.getByText('2. Toca «+ Añadir a PDF»')).toBeInTheDocument();
+    expect(screen.getByText('3. Descarga tu PDF A4')).toBeInTheDocument();
+    ['Horeca', 'Supermercados', 'Productos Latinos', 'Mundo Açaí / Polpa Norte'].forEach((sec) => {
+      expect(screen.getByRole('button', { name: sec })).toBeInTheDocument();
+    });
+    expect(screen.getByRole('button', { name: 'Entrar al Catálogo (Todos los sectores)' })).toBeInTheDocument();
+    expect(screen.getAllByAltText('Fuconsa')).toHaveLength(1);
+    await act(async () => { await qrSpy.mock.results[0]?.value; });
+    qrSpy.mockRestore();
+  });
+
+  it('opens and closes fullscreen QR modal via Mostrar mi QR and Cerrar QR', async () => {
+    render(<CoverQRCard lang="es" currentSector="" onSelectSector={() => {}} />);
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /mostrar mi qr/i }));
+    const modal = await screen.findByRole('dialog', { name: /escanea mi contacto/i });
+    expect(within(modal).getByText(/FUCONSA · Matías Sosa Marrazzo/)).toBeInTheDocument();
+    expect(within(modal).getByText('+34 613 018 609 · sosamatias@gmail.com')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(modal.querySelector('.qr-modal-frame svg')).toBeInTheDocument();
+    });
+    fireEvent.click(within(modal).getByRole('button', { name: /cerrar qr/i }));
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 });

@@ -1,22 +1,40 @@
-/* Catalog Masthead inside Catalog View */
+/* Unified Sticky Catalog Header (Masthead + Toolbar in 1 Single Block) */
+
+.unified-catalog-header {
+  position: sticky;
+  top: 10px;
+  z-index: 95;
+  background: rgba(11, 23, 42, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 2.5px solid #38BDF8;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.65);
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.unified-catalog-header .cover-card.cover-compact {
+  margin-bottom: 0;
+}
 
 .catalog-masthead {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
   padding: 10px 16px;
-  background: #0F2342;
-  border-radius: var(--radius-md);
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
-  margin-bottom: 18px;
   flex-wrap: wrap;
 }
 
 .masthead-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .btn-masthead-back {
@@ -25,9 +43,9 @@
   gap: 6px;
   min-height: 36px;
   padding: 0 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-sm);
   font-size: 12.5px;
   font-weight: 700;
@@ -35,14 +53,14 @@
   transition: all 0.14s ease;
 }
 .btn-masthead-back:hover {
-  background: #FFFFFF;
-  color: #0F2342;
-  border-color: #FFFFFF;
+  background: #38BDF8;
+  color: #060D1A;
+  border-color: #38BDF8;
 }
 
 .cover-avatar {
-  width: 84px;
-  height: 40px;
+  width: 82px;
+  height: 36px;
   border-radius: var(--radius-sm);
   background: #FFFFFF;
   color: var(--brand-primary);
@@ -52,9 +70,9 @@
   font-size: 13px;
   font-weight: 800;
   flex-shrink: 0;
-  padding: 4px 8px;
+  padding: 3px 7px;
 }
-.cover-logo-img { max-width: 86%; max-height: 86%; object-fit: contain; }
+.cover-logo-img { max-width: 88%; max-height: 88%; object-fit: contain; }
 .cover-logo-fallback { font-size: 12px; font-weight: 800; letter-spacing: 0.8px; }
 
 .masthead-sector-tabs {
@@ -69,22 +87,40 @@
   min-height: 36px;
   padding: 0 14px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
   color: #CBD5E1;
   font-size: 12.5px;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.12s ease;
+  transition: all 0.14s ease;
 }
 .btn-sector-tab:hover { background: rgba(255, 255, 255, 0.12); color: #FFFFFF; }
 .btn-sector-tab.active {
-  background: #FFFFFF;
-  color: #0F2342;
-  border-color: #FFFFFF;
+  background: #38BDF8;
+  color: #060D1A;
+  border-color: #38BDF8;
   font-weight: 800;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+.btn-sector-tab.sector-tab-acai {
+  background: #FFFFFF;
+  padding: 4px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-sector-tab.sector-tab-acai.active {
+  background: #FFFFFF;
+  border-color: #A855F7;
+  box-shadow: 0 0 0 2px #A855F7, 0 4px 12px rgba(168, 85, 247, 0.35);
+}
+.sector-tab-brand-logo {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .masthead-right {
@@ -94,8 +130,8 @@
 }
 
 .masthead-lang-switch {
-  background: rgba(15, 23, 42, 0.5);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(6, 13, 26, 0.6);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 .masthead-lang-switch .btn-lang { color: #CBD5E1; }
-.masthead-lang-switch .btn-lang.active { background: #FFFFFF; color: #0F2342; }
+.masthead-lang-switch .btn-lang.active { background: #38BDF8; color: #060D1A; }

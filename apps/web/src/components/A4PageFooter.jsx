@@ -4,7 +4,7 @@ import { t } from '../i18n/translations.js';
 export function A4PageFooter({ pageNumber, totalPages, lang }) {
   return (
     <footer className="a4-footer tabular-nums">
-      <span>{t('disclaimerVat', lang)}</span>
+      <span>Fuconsa · Fumats i Congelats S.A.</span>
       <span>
         {t('page', lang)} {pageNumber} / {totalPages}
       </span>

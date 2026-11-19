@@ -50,43 +50,62 @@ export function openOrDownloadPdf(pdf, blob, filename, targetWindow = null) {
   }
 }
 
+function applyClonedA4Styles(clonedDoc) {
+  clonedDoc.querySelectorAll('img').forEach((img) => {
+    img.setAttribute('crossorigin', 'anonymous');
+  });
+  clonedDoc.querySelectorAll('.print-preview-modal, .print-container').forEach((el) => {
+    el.style.overflow = 'visible';
+    el.style.width = 'auto';
+    el.style.padding = '0';
+  });
+  clonedDoc.querySelectorAll('.a4-sheet').forEach((sheet) => {
+    sheet.style.width = '210mm';
+    sheet.style.minWidth = '210mm';
+    sheet.style.maxWidth = '210mm';
+    sheet.style.height = '297mm';
+    sheet.style.minHeight = '297mm';
+    sheet.style.margin = '0';
+    sheet.style.boxSizing = 'border-box';
+    sheet.style.boxShadow = 'none';
+  });
+}
+
+async function renderSheetToPdf(pdf, sheet, index, scale) {
+  if (index > 0) pdf.addPage('a4', 'portrait');
+  const canvas = await html2canvas(sheet, {
+    scale,
+    useCORS: true,
+    allowTaint: false,
+    backgroundColor: '#ffffff',
+    logging: false,
+    scrollX: 0,
+    scrollY: 0,
+    windowWidth: 1024,
+    imageTimeout: 15000,
+    onclone: applyClonedA4Styles
+  });
+  let imgData;
+  let imgFormat = 'JPEG';
+  try {
+    imgData = canvas.toDataURL('image/jpeg', 0.92);
+  } catch {
+    imgData = canvas.toDataURL('image/png');
+    imgFormat = 'PNG';
+  }
+  pdf.addImage(imgData, imgFormat, 0, 0, 210, 297, undefined, 'FAST');
+}
+
 export async function buildA4PdfFile(containerEl, filename = 'Seleccion-Fuconsa-Matias-Sosa.pdf') {
   const sheets = containerEl ? Array.from(containerEl.querySelectorAll('.a4-sheet')) : [];
   if (sheets.length === 0) {
     throw new Error('No A4 sheets found in container');
   }
-
   const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
   const scale = isIOSOrSafari() ? 1.5 : 2;
-
   for (let i = 0; i < sheets.length; i++) {
-    if (i > 0) pdf.addPage('a4', 'portrait');
-    const canvas = await html2canvas(sheets[i], {
-      scale,
-      useCORS: true,
-      allowTaint: false,
-      backgroundColor: '#ffffff',
-      logging: false,
-      scrollX: 0,
-      scrollY: 0,
-      imageTimeout: 15000,
-      onclone: (clonedDoc) => {
-        const imgs = clonedDoc.querySelectorAll('img');
-        imgs.forEach((img) => {
-          img.setAttribute('crossorigin', 'anonymous');
-        });
-      }
-    });
-
-    let imgData;
-    try {
-      imgData = canvas.toDataURL('image/jpeg', 0.92);
-    } catch {
-      imgData = canvas.toDataURL('image/png');
-    }
-    pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
+    await renderSheetToPdf(pdf, sheets[i], i, scale);
   }
-
   const blob = pdf.output('blob');
   const file = typeof File !== 'undefined'
     ? new File([blob], filename, { type: 'application/pdf' })
