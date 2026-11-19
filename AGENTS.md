@@ -70,7 +70,7 @@ Esta sección está diseñada específicamente para **Smith (OpenClaw / Clawbot)
 > **Importante:** Nunca edites productos en el frontend (`apps/web`) ni en el backend (`apps/api`). Tanto la API como la web y el generador PDF A4 leen automáticamente desde `packages/lib/data/catalog.json`.
 
 ### 5.2 Estructura Exacta de un Producto en `packages/lib/data/catalog.json`
-El archivo `catalog.json` tiene la forma `{ "meta": { ... }, "items": [ ... ] }`. Cada elemento dentro de `"items"` debe cumplir estrictamente este contrato JSON:
+El archivo `catalog.json` es un array JSON `[ ... ]` donde cada elemento debe cumplir estrictamente este contrato JSON:
 
 ```json
 {
@@ -92,6 +92,11 @@ El archivo `catalog.json` tiene la forma `{ "meta": { ... }, "items": [ ... ] }`
   "imagePath": "/assets/products/tequenos-30g.webp"
 }
 ```
+
+### 5.2.1 Origen de Datos y Prevención de Duplicados (Web vs. Excel)
+- **Fuentes duales:** El catálogo se nutre del scraping web (`fucon.es`) y de tarifas en Excel/CSV (`productos-normalizados.csv`).
+- **Prevalencia absoluta de la Web:** Ante cualquier producto equivalente, **la ficha web manda** (incluye fotografía real en WebP, formato comercial explícito, marca y `boxPrice`). Las fichas de Excel son estrictamente complementarias y jamás deben coexistir como duplicados huérfanos sin gramaje/marca.
+- **Inmutabilidad en Docker:** `packages/lib/data/catalog.json` se compila dentro de las imágenes Docker (`apps/web/Dockerfile` y `apps/api/Dockerfile`). Modificar el JSON en disco requiere ejecutar `docker compose up -d --build` para verse reflejado en producción.
 
 ### 5.3 Reglas de Validación Obligatorias (Testeadas por `npm test`)
 Si alguno de estos campos no respeta estas reglas, `npm test` fallará y bloqueará el despliegue:

@@ -36,42 +36,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "polpa-norte-acai-puro",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "Açaí PURO",
-      "ca": "Açaí PURO",
-      "en": "Açaí PURO"
-    },
-    "format": "1KG",
-    "unitPrice": 8.19,
-    "boxPrice": null,
-    "priceText": "8.19 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "polpa-norte-acai-zero",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "Açaí ZERO",
-      "ca": "Açaí ZERO",
-      "en": "Açaí ZERO"
-    },
-    "format": "200g",
-    "unitPrice": 2.99,
-    "boxPrice": null,
-    "priceText": "2.99 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "polpa-norte-acasi-con-guarana",
     "channel": "horeca",
     "sector": "acai",
@@ -414,42 +378,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "polpa-norte-pulpa-caja",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "PULPA CAJÁ",
-      "ca": "PULPA CAJÁ",
-      "en": "Pulp CAJÁ"
-    },
-    "format": "100g",
-    "unitPrice": 0.59,
-    "boxPrice": null,
-    "priceText": "0.59 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "polpa-norte-pulpa-caju",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "PULPA CAJÚ",
-      "ca": "PULPA CAJÚ",
-      "en": "Pulp CAJÚ"
-    },
-    "format": "100g",
-    "unitPrice": 0.79,
-    "boxPrice": null,
-    "priceText": "0.79 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "polpa-norte-pulpa-coco",
     "channel": "horeca",
     "sector": "acai",
@@ -486,78 +414,6 @@
     "imagePath": "/assets/products/polpa-norte-pulpa-cupuacu.webp"
   },
   {
-    "id": "polpa-norte-pulpa-graviola",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "PULPA GRAVIOLA",
-      "ca": "PULPA GRAVIOLA",
-      "en": "Pulp GRAVIOLA"
-    },
-    "format": "100g",
-    "unitPrice": 0.82,
-    "boxPrice": null,
-    "priceText": "0.82 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/polpa-norte-pulpa-graviola.webp"
-  },
-  {
-    "id": "polpa-norte-pulpa-mango",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "PULPA MANGO",
-      "ca": "PULPA MANGO",
-      "en": "Pulp MANGO"
-    },
-    "format": "100g",
-    "unitPrice": 0.59,
-    "boxPrice": null,
-    "priceText": "0.59 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/polpa-norte-pulpa-mango-100gr-polpanorte.webp"
-  },
-  {
-    "id": "polpa-norte-pulpa-maracuya",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "PULPA MARACUYA",
-      "ca": "PULPA MARACUYA",
-      "en": "Pulp Passion Fruit"
-    },
-    "format": "100g",
-    "unitPrice": 1.33,
-    "boxPrice": null,
-    "priceText": "1.33 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/polpa-norte-pulpa-maracuya-100gr-polpanorte.webp"
-  },
-  {
-    "id": "polpa-norte-pulpa-pina",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "PULPA PIÑA",
-      "ca": "PULPA pinya",
-      "en": "Pulp Pineapple"
-    },
-    "format": "100g",
-    "unitPrice": 0.69,
-    "boxPrice": null,
-    "priceText": "0.69 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "polpa-norte-pulpa-pina-y-menta",
     "channel": "horeca",
     "sector": "acai",
@@ -574,24 +430,6 @@
     "priceText": "0.69 €",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "polpa-norte-pulpa-acerola",
-    "channel": "horeca",
-    "sector": "acai",
-    "section": "Açaí",
-    "brand": "Polpa Norte",
-    "name": {
-      "es": "Pulpa Acerola",
-      "ca": "Pulpa Acerola",
-      "en": "Pulp Acerola"
-    },
-    "format": "100G",
-    "unitPrice": 0.75,
-    "boxPrice": null,
-    "priceText": "0.75 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/polpa-norte-pulpa-acerola.webp"
   },
   {
     "id": "polpa-norte-pulpa-caju-100gr-polpanorte",
@@ -864,24 +702,6 @@
     "imagePath": "/assets/products/fuconsa-pizza-ristorante-sin-gluten.webp"
   },
   {
-    "id": "fuconsa-pizza-rustica",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Dr. Oetker",
-    "brand": "Dr. Oetker",
-    "name": {
-      "es": "PIZZA RUSTICA",
-      "ca": "PIZZA RUSTICA",
-      "en": "PIZZA RUSTICA"
-    },
-    "format": "Estándar",
-    "unitPrice": 4.69,
-    "boxPrice": null,
-    "priceText": "4.69 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-arandanos",
     "channel": "horeca",
     "sector": "horeca",
@@ -898,42 +718,6 @@
     "priceText": "6.90 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-arandanos.webp"
-  },
-  {
-    "id": "fuconsa-frambuesa",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Frutas y purés",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "FRAMBUESA",
-      "ca": "FRAMBUESA",
-      "en": "FRAMBUESA"
-    },
-    "format": "10X1KG",
-    "unitPrice": 9.5,
-    "boxPrice": null,
-    "priceText": "9.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-frambuesa.webp"
-  },
-  {
-    "id": "fuconsa-fresa",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Frutas y purés",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "FRESA",
-      "ca": "maduixa",
-      "en": "Strawberry"
-    },
-    "format": "5X1KG",
-    "unitPrice": 4.5,
-    "boxPrice": null,
-    "priceText": "4.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-fresa-1kg.webp"
   },
   {
     "id": "fuconsa-frutos-del-bosque",
@@ -954,24 +738,6 @@
     "imagePath": "/assets/products/fuconsa-mix-frutos-rojos-2-5kg-crops.webp"
   },
   {
-    "id": "fuconsa-mango-dados",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Frutas y purés",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "MANGO DADOS",
-      "ca": "MANGO DADOS",
-      "en": "MANGO Diced"
-    },
-    "format": "6X1KG",
-    "unitPrice": 4.5,
-    "boxPrice": null,
-    "priceText": "4.50 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-moras",
     "channel": "horeca",
     "sector": "horeca",
@@ -988,24 +754,6 @@
     "priceText": "6.50 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-moras.webp"
-  },
-  {
-    "id": "fuconsa-pure-frambuesa-boiron",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Frutas y purés",
-    "brand": "Boiron",
-    "name": {
-      "es": "PURE FRAMBUESA BOIRON",
-      "ca": "PURE FRAMBUESA BOIRON",
-      "en": "PURE FRAMBUESA BOIRON"
-    },
-    "format": "6X1KG",
-    "unitPrice": 12.5,
-    "boxPrice": null,
-    "priceText": "12.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-pure-frambuesa-boiron.webp"
   },
   {
     "id": "fuconsa-pure-fresa-boiron",
@@ -1044,24 +792,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-pure-maracuya-boiron",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Frutas y purés",
-    "brand": "Boiron",
-    "name": {
-      "es": "PURE MARACUYA BOIRON",
-      "ca": "PURE MARACUYA BOIRON",
-      "en": "PURE Passion Fruit BOIRON"
-    },
-    "format": "6X1KG",
-    "unitPrice": 10.25,
-    "boxPrice": null,
-    "priceText": "10.25 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-pure-maracuya-boiron.webp"
-  },
-  {
     "id": "fuconsa-pure-pina-boiron",
     "channel": "horeca",
     "sector": "horeca",
@@ -1098,42 +828,6 @@
     "imagePath": "/assets/products/fuconsa-boniato-frito-farm-frits.webp"
   },
   {
-    "id": "fuconsa-patata-brava-farm-frites",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "PATATA BRAVA FARM FRITES",
-      "ca": "PATATA BRAVA FARM FRITES",
-      "en": "PATATA BRAVA FARM FRITES"
-    },
-    "format": "10X1KG",
-    "unitPrice": 2.25,
-    "boxPrice": null,
-    "priceText": "2.25 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-patata-brava-farm-frites.webp"
-  },
-  {
-    "id": "fuconsa-patata-brava-lutosa",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "PATATA BRAVA LUTOSA",
-      "ca": "PATATA BRAVA LUTOSA",
-      "en": "PATATA BRAVA LUTOSA"
-    },
-    "format": "4X2,5KG",
-    "unitPrice": 2.75,
-    "boxPrice": null,
-    "priceText": "2.75 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-patata-frita-con-piel-lutosa",
     "channel": "horeca",
     "sector": "horeca",
@@ -1168,42 +862,6 @@
     "priceText": "1.69 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-patata-frita-farm-frits.webp"
-  },
-  {
-    "id": "fuconsa-patata-frita-lutosa",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "PATATA FRITA LUTOSA",
-      "ca": "PATATA FRITA LUTOSA",
-      "en": "PATATA FRITA LUTOSA"
-    },
-    "format": "10X1KG",
-    "unitPrice": 2.25,
-    "boxPrice": null,
-    "priceText": "2.25 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-patata-frita-lutosa.webp"
-  },
-  {
-    "id": "fuconsa-patata-frita-tex-mex-farm-frits",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "PATATA FRITA TEX-MEX FARM FRITS",
-      "ca": "PATATA FRITA TEX-MEX FARM FRITS",
-      "en": "PATATA FRITA TEX-MEX FARM FRITS"
-    },
-    "format": "5X2,5",
-    "unitPrice": 2.65,
-    "boxPrice": null,
-    "priceText": "2.65 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-patata-frita-tex-mex-farm-frits.webp"
   },
   {
     "id": "fuconsa-patata-gajo-lutosa",
@@ -2034,24 +1692,6 @@
     "imagePath": "/assets/products/fuconsa-tiras-de-poton-6kg-peso-liquido.webp"
   },
   {
-    "id": "fuconsa-tubo-pota-extra",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "Tubo pota extra",
-      "ca": "Tub pota extra",
-      "en": "Tubo pota extra"
-    },
-    "format": "Formato estándar",
-    "unitPrice": 9.9,
-    "boxPrice": null,
-    "priceText": "9.90 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-tubo-pota-extra-sin-glaseo-8kg",
     "channel": "horeca",
     "sector": "horeca",
@@ -2140,42 +1780,6 @@
     "priceText": "6.49 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-puntilla-limpio-6kg-peso-liquido.webp"
-  },
-  {
-    "id": "fuconsa-atun",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ATUN",
-      "ca": "tonyina",
-      "en": "Tuna"
-    },
-    "format": "Estándar",
-    "unitPrice": 3.25,
-    "boxPrice": null,
-    "priceText": "3.25 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-bacalao",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "BACALAO",
-      "ca": "BACALAO",
-      "en": "Cod"
-    },
-    "format": "Estándar",
-    "unitPrice": 4.45,
-    "boxPrice": null,
-    "priceText": "4.45 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-bacalao.webp"
   },
   {
     "id": "fuconsa-filete-de-dorada",
@@ -2268,24 +1872,6 @@
     "imagePath": "/assets/products/fuconsa-sepia-limpia.webp"
   },
   {
-    "id": "fuconsa-almeja-blanca",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ALMEJA BLANCA",
-      "ca": "ALMEJA BLANCA",
-      "en": "ALMEJA BLANCA"
-    },
-    "format": "Estándar",
-    "unitPrice": 3.75,
-    "boxPrice": null,
-    "priceText": "3.75 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-almeja-marron",
     "channel": "horeca",
     "sector": "horeca",
@@ -2320,42 +1906,6 @@
     "priceText": "10.90 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-anilla-pota",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ANILLA POTA",
-      "ca": "ANILLA POTA",
-      "en": "ANILLA POTA"
-    },
-    "format": "Estándar",
-    "unitPrice": 5.25,
-    "boxPrice": null,
-    "priceText": "5.25 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-anilla-pota.webp"
-  },
-  {
-    "id": "fuconsa-anilla-pota-extra-silomar",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ANILLA POTA EXTRA SILOMAR",
-      "ca": "ANILLA POTA EXTRA SILOMAR",
-      "en": "ANILLA POTA EXTRA SILOMAR"
-    },
-    "format": "Estándar",
-    "unitPrice": 9.5,
-    "boxPrice": null,
-    "priceText": "9.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-anilla-pota-extra-silomar.webp"
   },
   {
     "id": "fuconsa-anilla-pota-extra-silomar-c-p",
@@ -2464,42 +2014,6 @@
     "priceText": "18.50 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-bogavante-canada-500-600",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "BOGAVANTE CANADA 500/600",
-      "ca": "BOGAVANTE CANADA 500/600",
-      "en": "BOGAVANTE CANADA 500/600"
-    },
-    "format": "Estándar",
-    "unitPrice": 19.5,
-    "boxPrice": null,
-    "priceText": "19.50 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-boqueron-limpio",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "BOQUERON LIMPIO",
-      "ca": "BOQUERON LIMPIO",
-      "en": "BOQUERON LIMPIO"
-    },
-    "format": "Estándar",
-    "unitPrice": 6.5,
-    "boxPrice": null,
-    "priceText": "6.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-boqueron-limpio.webp"
   },
   {
     "id": "fuconsa-buey-de-mar-400-600",
@@ -2628,24 +2142,6 @@
     "imagePath": "/assets/products/fuconsa-calamar-patagonico.webp"
   },
   {
-    "id": "fuconsa-calamar-patagonico-4",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "CALAMAR PATAGONICO 4",
-      "ca": "CALAMAR PATAGONICO 4",
-      "en": "Squid PATAGONICO 4"
-    },
-    "format": "Estándar",
-    "unitPrice": 6.5,
-    "boxPrice": null,
-    "priceText": "6.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-calamar-patagonico-4.webp"
-  },
-  {
     "id": "fuconsa-cangrejo-azul",
     "channel": "horeca",
     "sector": "horeca",
@@ -2660,24 +2156,6 @@
     "unitPrice": 8.9,
     "boxPrice": null,
     "priceText": "8.90 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-cigala-0",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "CIGALA 0",
-      "ca": "CIGALA 0",
-      "en": "CIGALA 0"
-    },
-    "format": "Estándar",
-    "unitPrice": 29,
-    "boxPrice": null,
-    "priceText": "29.00 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
@@ -2880,24 +2358,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-filete-bacalao-100-extra",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "FILETE BACALAO 100+ EXTRA",
-      "ca": "FILETE BACALAO 100+ EXTRA",
-      "en": "FILETE Cod 100+ EXTRA"
-    },
-    "format": "Estándar",
-    "unitPrice": 12.5,
-    "boxPrice": null,
-    "priceText": "12.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-filete-bacalao-100-extra.webp"
-  },
-  {
     "id": "fuconsa-filete-de-merluza-sin-piel-atlantico",
     "channel": "horeca",
     "sector": "horeca",
@@ -2914,24 +2374,6 @@
     "priceText": "7.95 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-filete-de-merluza-sin-piel-atlantico.webp"
-  },
-  {
-    "id": "fuconsa-filete-de-panga",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "FILETE DE PANGA",
-      "ca": "FILETE DE PANGA",
-      "en": "FILETE DE PANGA"
-    },
-    "format": "1KG",
-    "unitPrice": 4.9,
-    "boxPrice": null,
-    "priceText": "4.90 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
     "id": "fuconsa-filete-de-panga-interfoliado-sin-glaseo",
@@ -2988,24 +2430,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-filete-perca",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "FILETE PERCA",
-      "ca": "FILETE PERCA",
-      "en": "FILETE PERCA"
-    },
-    "format": "Estándar",
-    "unitPrice": 9.5,
-    "boxPrice": null,
-    "priceText": "9.50 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-gamba-en-nido-de-patata",
     "channel": "horeca",
     "sector": "horeca",
@@ -3020,60 +2444,6 @@
     "unitPrice": 3.9,
     "boxPrice": null,
     "priceText": "3.90 €/ud",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-gamba-pelada-10-30",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "GAMBA PELADA 10/30",
-      "ca": "GAMBA PELADA 10/30",
-      "en": "GAMBA PELADA 10/30"
-    },
-    "format": "Estándar",
-    "unitPrice": 9.6,
-    "boxPrice": null,
-    "priceText": "9.60 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-gamba-pelada-50-70",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "GAMBA PELADA 50/70",
-      "ca": "GAMBA PELADA 50/70",
-      "en": "GAMBA PELADA 50/70"
-    },
-    "format": "Estándar",
-    "unitPrice": 7.9,
-    "boxPrice": null,
-    "priceText": "7.90 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-gamba-pelada-70-100",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "GAMBA PELADA 70/100",
-      "ca": "GAMBA PELADA 70/100",
-      "en": "GAMBA PELADA 70/100"
-    },
-    "format": "Estándar",
-    "unitPrice": 6.25,
-    "boxPrice": null,
-    "priceText": "6.25 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
@@ -3110,24 +2480,6 @@
     "unitPrice": 38.5,
     "boxPrice": null,
     "priceText": "38.50 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-gamba-salada-extra",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "GAMBA SALADA EXTRA",
-      "ca": "GAMBA SALADA EXTRA",
-      "en": "GAMBA SALADA EXTRA"
-    },
-    "format": "Estándar",
-    "unitPrice": 14.9,
-    "boxPrice": null,
-    "priceText": "14.90 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
@@ -3240,24 +2592,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-hamburguesa-merluza-y-gambas",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "HAMBURGUESA MERLUZA Y GAMBAS",
-      "ca": "HAMBURGUESA lluç Y GAMBAS",
-      "en": "HAMBURGUESA Hake Y Prawns"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.29,
-    "boxPrice": null,
-    "priceText": "1.29 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-langosta-roja-200-300",
     "channel": "horeca",
     "sector": "horeca",
@@ -3274,24 +2608,6 @@
     "priceText": "36.90 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-langostino-cocido-extra-30-40",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "LANGOSTINO COCIDO EXTRA 30/40",
-      "ca": "LANGOSTINO COCIDO EXTRA 30/40",
-      "en": "King Prawns COCIDO EXTRA 30/40"
-    },
-    "format": "Estándar",
-    "unitPrice": 8.5,
-    "boxPrice": null,
-    "priceText": "8.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-langostino-cocido-extra-30-40.webp"
   },
   {
     "id": "fuconsa-langostino-cocido-extra-40-60",
@@ -3452,42 +2768,6 @@
     "unitPrice": 12.9,
     "boxPrice": null,
     "priceText": "12.90 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-lomo-de-bacalao-jumbo-extra",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "LOMO DE BACALAO JUMBO EXTRA",
-      "ca": "LOMO DE BACALAO JUMBO EXTRA",
-      "en": "LOMO DE Cod JUMBO EXTRA"
-    },
-    "format": "Estándar",
-    "unitPrice": 16.9,
-    "boxPrice": null,
-    "priceText": "16.90 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-lomo-de-bacalao-jumbo-extra.webp"
-  },
-  {
-    "id": "fuconsa-lomo-merluza-atlantico",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "LOMO MERLUZA ATLANTICO",
-      "ca": "LOMO lluç ATLANTICO",
-      "en": "LOMO Hake ATLANTICO"
-    },
-    "format": "Estándar",
-    "unitPrice": 11.5,
-    "boxPrice": null,
-    "priceText": "11.50 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
@@ -3654,24 +2934,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-pulpito-limpio-40-60",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "PULPITO LIMPIO 40/60",
-      "ca": "PULPITO LIMPIO 40/60",
-      "en": "PULPITO LIMPIO 40/60"
-    },
-    "format": "Estándar",
-    "unitPrice": 6.9,
-    "boxPrice": null,
-    "priceText": "6.90 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-pulpo-limpio-3-4",
     "channel": "horeca",
     "sector": "horeca",
@@ -3762,24 +3024,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-rodaja-merluza-extra-atlantico",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "RODAJA MERLUZA EXTRA ATLANTICO",
-      "ca": "RODAJA lluç EXTRA ATLANTICO",
-      "en": "RODAJA Hake EXTRA ATLANTICO"
-    },
-    "format": "Estándar",
-    "unitPrice": 7.95,
-    "boxPrice": null,
-    "priceText": "7.95 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-rodaja-poton-cocido",
     "channel": "horeca",
     "sector": "horeca",
@@ -3816,24 +3060,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-sepia-limpia-india-8-12",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "SEPIA LIMPIA INDIA 8/12",
-      "ca": "sípia LIMPIA INDIA 8/12",
-      "en": "Cuttlefish LIMPIA INDIA 8/12"
-    },
-    "format": "Estándar",
-    "unitPrice": 8.25,
-    "boxPrice": null,
-    "priceText": "8.25 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-sepia-limpia-india-8-12.webp"
-  },
-  {
     "id": "fuconsa-sepia-limpia-marruecos-200-400",
     "channel": "horeca",
     "sector": "horeca",
@@ -3852,42 +3078,6 @@
     "imagePath": "/assets/products/fuconsa-sepia-limpia-marruecos-200-400.webp"
   },
   {
-    "id": "fuconsa-sepia-limpia-marruecos-400-600",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "SEPIA LIMPIA MARRUECOS 400/600",
-      "ca": "sípia LIMPIA MARRUECOS 400/600",
-      "en": "Cuttlefish LIMPIA MARRUECOS 400/600"
-    },
-    "format": "Estándar",
-    "unitPrice": 9.75,
-    "boxPrice": null,
-    "priceText": "9.75 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-sepia-limpia-marruecos-400-600.webp"
-  },
-  {
-    "id": "fuconsa-supremas-de-bacalao-extra",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "SUPREMAS DE BACALAO EXTRA",
-      "ca": "SUPREMAS DE BACALAO EXTRA",
-      "en": "SUPREMAS DE Cod EXTRA"
-    },
-    "format": "Estándar",
-    "unitPrice": 12.9,
-    "boxPrice": null,
-    "priceText": "12.90 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-tellinas",
     "channel": "horeca",
     "sector": "horeca",
@@ -3902,24 +3092,6 @@
     "unitPrice": 5.5,
     "boxPrice": null,
     "priceText": "5.50 €/ud",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-tiras-de-poton",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "TIRAS DE POTON",
-      "ca": "TIRAS DE POTON",
-      "en": "TIRAS DE POTON"
-    },
-    "format": "Estándar",
-    "unitPrice": 5.9,
-    "boxPrice": null,
-    "priceText": "5.90 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
@@ -3958,24 +3130,6 @@
     "priceText": "9.90 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-tubo-de-pota-extra-sin-glaseo.webp"
-  },
-  {
-    "id": "fuconsa-ventresca-de-bacalao-extra",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Pescado y marisco",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "VENTRESCA DE BACALAO EXTRA",
-      "ca": "VENTRESCA DE BACALAO EXTRA",
-      "en": "VENTRESCA DE Cod EXTRA"
-    },
-    "format": "Estándar",
-    "unitPrice": 9.5,
-    "boxPrice": null,
-    "priceText": "9.50 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
     "id": "fuconsa-vieira-1-2-concha-20-30",
@@ -4500,24 +3654,6 @@
     "imagePath": "/assets/products/fuconsa-albondigas-fripozo.webp"
   },
   {
-    "id": "fuconsa-alitas-de-pollo-grill",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ALITAS DE POLLO GRILL",
-      "ca": "ALITAS DE POLLO GRILL",
-      "en": "ALITAS DE POLLO GRILL"
-    },
-    "format": "Estándar",
-    "unitPrice": 6.9,
-    "boxPrice": null,
-    "priceText": "6.90 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-alitas-de-pollo-grill.webp"
-  },
-  {
     "id": "fuconsa-alitas-pollo-halal",
     "channel": "horeca",
     "sector": "horeca",
@@ -4626,24 +3762,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-bunuelo-de-bacalao-extra-masclans",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "BUÑUELO DE BACALAO EXTRA MASCLANS",
-      "ca": "BUÑUELO DE BACALAO EXTRA MASCLANS",
-      "en": "BUÑUELO DE Cod EXTRA MASCLANS"
-    },
-    "format": "Estándar",
-    "unitPrice": 12.5,
-    "boxPrice": null,
-    "priceText": "12.50 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "fuconsa-bunuelo-de-bacalao-priela",
     "channel": "horeca",
     "sector": "horeca",
@@ -4734,42 +3852,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-croqueta-abuela-jamon-priela",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "CROQUETA ABUELA JAMON PRIELA",
-      "ca": "CROQUETA ABUELA JAMON PRIELA",
-      "en": "CROQUETA ABUELA JAMON PRIELA"
-    },
-    "format": "1KG",
-    "unitPrice": 4.5,
-    "boxPrice": null,
-    "priceText": "4.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-croqueta-abuela-jamon-priela.webp"
-  },
-  {
-    "id": "fuconsa-croqueta-brandada-bacalao-meson-priela",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "CROQUETA BRANDADA BACALAO MESON PRIELA",
-      "ca": "CROQUETA BRANDADA BACALAO MESON PRIELA",
-      "en": "CROQUETA BRANDADA Cod MESON PRIELA"
-    },
-    "format": "500g",
-    "unitPrice": 3.95,
-    "boxPrice": null,
-    "priceText": "3.95 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-croqueta-brandada-bacalao-meson-priela.webp"
-  },
-  {
     "id": "fuconsa-croqueta-cocido-maheso",
     "channel": "horeca",
     "sector": "horeca",
@@ -4786,78 +3868,6 @@
     "priceText": "7.90 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-croqueta-cocido-maheso.webp"
-  },
-  {
-    "id": "fuconsa-croqueta-cocido-meson-priela",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "CROQUETA COCIDO MESON PRIELA",
-      "ca": "CROQUETA COCIDO MESON PRIELA",
-      "en": "CROQUETA COCIDO MESON PRIELA"
-    },
-    "format": "500g",
-    "unitPrice": 3.95,
-    "boxPrice": null,
-    "priceText": "3.95 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-croqueta-cocido-meson-priela.webp"
-  },
-  {
-    "id": "fuconsa-croqueta-pollo-campero-meson-priela",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "CROQUETA POLLO CAMPERO MESON PRIELA",
-      "ca": "CROQUETA POLLO CAMPERO MESON PRIELA",
-      "en": "CROQUETA POLLO CAMPERO MESON PRIELA"
-    },
-    "format": "500g",
-    "unitPrice": 3.95,
-    "boxPrice": null,
-    "priceText": "3.95 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-croqueta-pollo-campero-meson-priela.webp"
-  },
-  {
-    "id": "fuconsa-croqueta-rabo-vacuno-meson-priela",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "CROQUETA RABO VACUNO MESON PRIELA",
-      "ca": "CROQUETA RABO VACUNO MESON PRIELA",
-      "en": "CROQUETA RABO VACUNO MESON PRIELA"
-    },
-    "format": "500g",
-    "unitPrice": 3.95,
-    "boxPrice": null,
-    "priceText": "3.95 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-croqueta-rabo-vacuno-meson-priela.webp"
-  },
-  {
-    "id": "fuconsa-croqueta-setas-meson-priela",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "CROQUETA SETAS MESON PRIELA",
-      "ca": "CROQUETA bolets MESON PRIELA",
-      "en": "CROQUETA Mushrooms MESON PRIELA"
-    },
-    "format": "500g",
-    "unitPrice": 3.95,
-    "boxPrice": null,
-    "priceText": "3.95 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-croqueta-setas-meson-priela.webp"
   },
   {
     "id": "fuconsa-empanadilla-atun-96-unidades",
@@ -4896,24 +3906,6 @@
     "imagePath": "/assets/products/fuconsa-fingers-de-pollo-grill-1kg-fripozo.webp"
   },
   {
-    "id": "fuconsa-hamburguesa-pollo-crujiente-halal",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "HAMBURGUESA POLLO CRUJIENTE HALAL",
-      "ca": "HAMBURGUESA POLLO CRUJIENTE HALAL",
-      "en": "HAMBURGUESA POLLO CRUJIENTE HALAL"
-    },
-    "format": "1KG",
-    "unitPrice": 6.5,
-    "boxPrice": null,
-    "priceText": "6.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-hamburguesa-pollo-crujiente-halal.webp"
-  },
-  {
     "id": "fuconsa-langostino-en-tempura-pcs",
     "channel": "horeca",
     "sector": "horeca",
@@ -4928,24 +3920,6 @@
     "unitPrice": 12.9,
     "boxPrice": null,
     "priceText": "12.90 €/kg",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-loncheado-kebab-halal-karadeniz",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "LONCHEADO KEBAB HALAL KARADENIZ",
-      "ca": "LONCHEADO KEBAB HALAL KARADENIZ",
-      "en": "LONCHEADO KEBAB HALAL KARADENIZ"
-    },
-    "format": "1KG",
-    "unitPrice": 9.5,
-    "boxPrice": null,
-    "priceText": "9.50 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
@@ -4966,24 +3940,6 @@
     "priceText": "5.90 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-nugets-de-pollo-fripozo.webp"
-  },
-  {
-    "id": "fuconsa-nuggets-pollo-halal",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "NUGGETS POLLO HALAL",
-      "ca": "NUGGETS POLLO HALAL",
-      "en": "NUGGETS POLLO HALAL"
-    },
-    "format": "1KG",
-    "unitPrice": 6.6,
-    "boxPrice": null,
-    "priceText": "6.60 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-nuggets-pollo-halal.webp"
   },
   {
     "id": "fuconsa-pollo-cajun-fripozo",
@@ -5164,42 +4120,6 @@
     "priceText": "3.35 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-alcachofa-troceada.webp"
-  },
-  {
-    "id": "fuconsa-alcachofa-troceada-natural",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ALCACHOFA TROCEADA NATURAL",
-      "ca": "ALCACHOFA TROCEADA NATURAL",
-      "en": "Artichoke Chopped NATURAL"
-    },
-    "format": "4X2,5KG",
-    "unitPrice": 5.95,
-    "boxPrice": null,
-    "priceText": "5.95 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-alcachofa-troceada-natural.webp"
-  },
-  {
-    "id": "fuconsa-arroz-tres-delicias",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Platos precocinados",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ARROZ TRES DELICIAS",
-      "ca": "ARROZ TRES DELICIAS",
-      "en": "ARROZ TRES DELICIAS"
-    },
-    "format": "1KG",
-    "unitPrice": 3.25,
-    "boxPrice": null,
-    "priceText": "3.25 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-arroz-tres-delicias.webp"
   },
   {
     "id": "fuconsa-aguacate-trozos-1kg-crops",
@@ -5544,42 +4464,6 @@
     "imagePath": "/assets/products/fuconsa-ensaladilla.webp"
   },
   {
-    "id": "fuconsa-ensaladilla-rusa",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ENSALADILLA RUSA",
-      "ca": "ENSALADILLA RUSA",
-      "en": "ENSALADILLA RUSA"
-    },
-    "format": "4X2,5KG",
-    "unitPrice": 1.45,
-    "boxPrice": null,
-    "priceText": "1.45 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-ensaladilla-rusa.webp"
-  },
-  {
-    "id": "fuconsa-esparrago-verde-grueso",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ESPARRAGO VERDE GRUESO",
-      "ca": "ESPARRAGO VERDE GRUESO",
-      "en": "Asparagus VERDE GRUESO"
-    },
-    "format": "5X1",
-    "unitPrice": 6.5,
-    "boxPrice": null,
-    "priceText": "6.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-esparrago-verde-grueso.webp"
-  },
-  {
     "id": "fuconsa-esparrago-verde-mediano",
     "channel": "horeca",
     "sector": "horeca",
@@ -5632,24 +4516,6 @@
     "priceText": "0.89 €",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-espinaca.webp"
-  },
-  {
-    "id": "fuconsa-espinaca-hoja",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "ESPINACA HOJA",
-      "ca": "espinacs HOJA",
-      "en": "Spinach Leaf"
-    },
-    "format": "10X1KG",
-    "unitPrice": 1.6,
-    "boxPrice": null,
-    "priceText": "1.60 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-espinaca-hoja.webp"
   },
   {
     "id": "fuconsa-espinaca-hoja-porcion",
@@ -5758,24 +4624,6 @@
     "priceText": "4.68 €/kg",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-fresa-1kg.webp"
-  },
-  {
-    "id": "fuconsa-garrofon",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "GARROFON",
-      "ca": "GARROFON",
-      "en": "GARROFON"
-    },
-    "format": "10X1KG",
-    "unitPrice": 3.45,
-    "boxPrice": null,
-    "priceText": "3.45 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-garrofon.webp"
   },
   {
     "id": "fuconsa-guacamole",
@@ -5940,42 +4788,6 @@
     "imagePath": "/assets/products/fuconsa-habas.webp"
   },
   {
-    "id": "fuconsa-habas-baby",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "HABAS BABY",
-      "ca": "HABAS BABY",
-      "en": "HABAS BABY"
-    },
-    "format": "5X2KG",
-    "unitPrice": 3.75,
-    "boxPrice": null,
-    "priceText": "3.75 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-habas-baby.webp"
-  },
-  {
-    "id": "fuconsa-habas-mini-baby",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "HABAS MINI BABY",
-      "ca": "HABAS MINI BABY",
-      "en": "HABAS MINI BABY"
-    },
-    "format": "10X1KG",
-    "unitPrice": 8.9,
-    "boxPrice": null,
-    "priceText": "8.90 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-habas-mini-baby.webp"
-  },
-  {
     "id": "fuconsa-habas-baby-2kg-crops",
     "channel": "horeca",
     "sector": "horeca",
@@ -6010,42 +4822,6 @@
     "priceText": "9.26 €/ud",
     "hasPhoto": true,
     "imagePath": "/assets/products/fuconsa-habas-mini-baby-1kg.webp"
-  },
-  {
-    "id": "fuconsa-judia-superfina",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "JUDIA SUPERFINA",
-      "ca": "JUDIA SUPERFINA",
-      "en": "JUDIA SUPERFINA"
-    },
-    "format": "4X2,5KG",
-    "unitPrice": 1.99,
-    "boxPrice": null,
-    "priceText": "1.99 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-judia-superfina.webp"
-  },
-  {
-    "id": "fuconsa-judia-verde-plana",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "JUDIA VERDE PLANA",
-      "ca": "JUDIA VERDE PLANA",
-      "en": "JUDIA VERDE PLANA"
-    },
-    "format": "4X2,5KG",
-    "unitPrice": 1.75,
-    "boxPrice": null,
-    "priceText": "1.75 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-judia-verde-plana.webp"
   },
   {
     "id": "fuconsa-judia-verde-redonda",
@@ -6138,24 +4914,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "fuconsa-menestra-especial",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "MENESTRA ESPECIAL",
-      "ca": "MENESTRA ESPECIAL",
-      "en": "MENESTRA ESPECIAL"
-    },
-    "format": "4X2,5KG",
-    "unitPrice": 2.39,
-    "boxPrice": null,
-    "priceText": "2.39 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-menestra-especial.webp"
-  },
-  {
     "id": "fuconsa-mezcla-de-setas-con-boletus",
     "channel": "horeca",
     "sector": "horeca",
@@ -6172,24 +4930,6 @@
     "priceText": "5.90 €/kg",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fuconsa-mezcla-setas",
-    "channel": "horeca",
-    "sector": "horeca",
-    "section": "Verduras",
-    "brand": "Fuconsa",
-    "name": {
-      "es": "MEZCLA SETAS",
-      "ca": "MEZCLA bolets",
-      "en": "MEZCLA Mushrooms"
-    },
-    "format": "5X1KG",
-    "unitPrice": 4.5,
-    "boxPrice": null,
-    "priceText": "4.50 €/kg",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fuconsa-mezcla-setas.webp"
   },
   {
     "id": "fuconsa-mango-1kg-crops",
@@ -7344,24 +6084,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "delfin-muslitos-de-cangrejo",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Delfín",
-    "brand": "Delfín",
-    "name": {
-      "es": "MUSLITOS DE CANGREJO",
-      "ca": "MUSLITOS DE CANGREJO",
-      "en": "MUSLITOS DE CANGREJO"
-    },
-    "format": "250g",
-    "unitPrice": 2.5,
-    "boxPrice": null,
-    "priceText": "2.50 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/delfin-muslitos-de-cangrejo.webp"
-  },
-  {
     "id": "delfin-muslitos-de-cangrejo-delfin-250gr",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -7398,24 +6120,6 @@
     "imagePath": "/assets/products/delfin-palitos-de-cangrejo.webp"
   },
   {
-    "id": "delfin-preparado-para-paella",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Delfín",
-    "brand": "Delfín",
-    "name": {
-      "es": "PREPARADO PARA PAELLA",
-      "ca": "PREPARADO PARA PAELLA",
-      "en": "PREPARADO PARA PAELLA"
-    },
-    "format": "400g",
-    "unitPrice": 2.75,
-    "boxPrice": null,
-    "priceText": "2.75 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/delfin-preparado-para-paella.webp"
-  },
-  {
     "id": "delfin-palitos-de-cangrejo-delfin-250gr",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -7450,24 +6154,6 @@
     "priceText": "3.03 €/ud",
     "hasPhoto": true,
     "imagePath": "/assets/products/delfin-preparado-para-paella-delfin-400gr.webp"
-  },
-  {
-    "id": "delfin-sepia-limpia",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Delfín",
-    "brand": "Delfín",
-    "name": {
-      "es": "SEPIA LIMPIA",
-      "ca": "sípia LIMPIA",
-      "en": "Cuttlefish LIMPIA"
-    },
-    "format": "Estándar",
-    "unitPrice": 4.5,
-    "boxPrice": null,
-    "priceText": "4.50 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/delfin-sepia-limpia.webp"
   },
   {
     "id": "delfin-sepia-limpia-delfin",
@@ -8190,24 +6876,6 @@
     "imagePath": "/assets/products/frigo-dracula-frigo-180g-x6.webp"
   },
   {
-    "id": "frigo-ferrero-rocher-classic",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Frigo",
-    "brand": "Frigo",
-    "name": {
-      "es": "FERRERO ROCHER CLASSIC",
-      "ca": "FERRERO ROCHER CLASSIC",
-      "en": "FERRERO ROCHER CLASSIC"
-    },
-    "format": "3U",
-    "unitPrice": 3.9,
-    "boxPrice": null,
-    "priceText": "3.90 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/frigo-ferrero-rocher-classic.webp"
-  },
-  {
     "id": "frigo-kinder-bueno-avellana",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -8278,24 +6946,6 @@
     "priceText": "4.90 €",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "frigo-mini-magnum-6-2",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Frigo",
-    "brand": "Frigo",
-    "name": {
-      "es": "MINI MAGNUM 6+2",
-      "ca": "MINI MAGNUM 6+2",
-      "en": "MINI MAGNUM 6+2"
-    },
-    "format": "Estándar",
-    "unitPrice": 3.75,
-    "boxPrice": null,
-    "priceText": "3.75 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/frigo-mini-magnum-6-2.webp"
   },
   {
     "id": "frigo-magnum-after-dinner-frigo-232g",
@@ -8496,42 +7146,6 @@
     "imagePath": "/assets/products/frigo-yogur-y-frutos-del-bosque-carte-dor-frigo-900-ml.webp"
   },
   {
-    "id": "fripozo-albondigas",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "ALBONDIGAS",
-      "ca": "mandonguilles",
-      "en": "Meatballs"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.45,
-    "boxPrice": null,
-    "priceText": "2.45 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fripozo-alitas-de-pollo-bbq",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "ALITAS DE POLLO BBQ",
-      "ca": "ALITAS DE POLLO BBQ",
-      "en": "ALITAS DE POLLO BBQ"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.59,
-    "boxPrice": null,
-    "priceText": "2.59 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-alitas-de-pollo-bbq.webp"
-  },
-  {
     "id": "fripozo-arroz-marisco",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -8548,24 +7162,6 @@
     "priceText": "1.95 €",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fripozo-arroz-tres-delicias",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "ARROZ TRES DELICIAS",
-      "ca": "ARROZ TRES DELICIAS",
-      "en": "ARROZ TRES DELICIAS"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.95,
-    "boxPrice": null,
-    "priceText": "1.95 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-arroz-tres-delicias.webp"
   },
   {
     "id": "fripozo-albondigas-carne-fripozo-500g",
@@ -8640,24 +7236,6 @@
     "imagePath": "/assets/products/fripozo-arroz-tres-delicias-fripozo-500g.webp"
   },
   {
-    "id": "fripozo-bacon-queso",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "BACON/QUESO",
-      "ca": "BACON/QUESO",
-      "en": "BACON/QUESO"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.59,
-    "boxPrice": null,
-    "priceText": "1.59 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-bacon-queso.webp"
-  },
-  {
     "id": "fripozo-barbacoa-bites",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -8712,24 +7290,6 @@
     "imagePath": "/assets/products/fripozo-bacon-y-queso-400gr-fripozo.webp"
   },
   {
-    "id": "fripozo-calamar-romana",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "CALAMAR ROMANA",
-      "ca": "CALAMAR ROMANA",
-      "en": "Squid ROMANA"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.75,
-    "boxPrice": null,
-    "priceText": "2.75 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-calamar-romana.webp"
-  },
-  {
     "id": "fripozo-canelon-super-precio-1-05",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -8766,24 +7326,6 @@
     "imagePath": "/assets/products/fripozo-chedar-bites-2-30.webp"
   },
   {
-    "id": "fripozo-cordon-bleu",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "CORDON BLEU",
-      "ca": "CORDON BLEU",
-      "en": "CORDON BLEU"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.6,
-    "boxPrice": null,
-    "priceText": "2.60 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-cordon-bleu.webp"
-  },
-  {
     "id": "fripozo-crispy-chicken-mex",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -8818,78 +7360,6 @@
     "priceText": "2.40 €",
     "hasPhoto": true,
     "imagePath": "/assets/products/fripozo-crispy-cicken-origin.webp"
-  },
-  {
-    "id": "fripozo-croquetas-bacalao",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "CROQUETAS BACALAO",
-      "ca": "CROQUETAS BACALAO",
-      "en": "Croquettes Cod"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.29,
-    "boxPrice": null,
-    "priceText": "1.29 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-croquetas-bacalao.webp"
-  },
-  {
-    "id": "fripozo-croquetas-jamon",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "CROQUETAS JAMON",
-      "ca": "CROQUETAS JAMON",
-      "en": "Croquettes JAMON"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.29,
-    "boxPrice": null,
-    "priceText": "1.29 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-croquetas-jamon.webp"
-  },
-  {
-    "id": "fripozo-croquetas-pollo",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "CROQUETAS POLLO",
-      "ca": "CROQUETAS POLLO",
-      "en": "Croquettes POLLO"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.29,
-    "boxPrice": null,
-    "priceText": "1.29 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-croquetas-pollo.webp"
-  },
-  {
-    "id": "fripozo-crounchy-de-gouda",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "CROUNCHY DE GOUDA",
-      "ca": "CROUNCHY DE GOUDA",
-      "en": "CROUNCHY DE GOUDA"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.6,
-    "boxPrice": null,
-    "priceText": "2.60 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-crounchy-de-gouda.webp"
   },
   {
     "id": "fripozo-calamar-a-la-romana-fripozo-400g",
@@ -9252,24 +7722,6 @@
     "imagePath": "/assets/products/fripozo-kebab-fusion-fripozo-320g.webp"
   },
   {
-    "id": "fripozo-masa-de-hojaldre",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "MASA DE HOJALDRE",
-      "ca": "MASA DE HOJALDRE",
-      "en": "MASA DE HOJALDRE"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.49,
-    "boxPrice": null,
-    "priceText": "2.49 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-masa-de-hojaldre.webp"
-  },
-  {
     "id": "fripozo-masa-de-hojaldre-fripozo-500g",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -9286,24 +7738,6 @@
     "priceText": "2.59 €/ud",
     "hasPhoto": true,
     "imagePath": "/assets/products/fripozo-masa-de-hojaldre-fripozo-500g.webp"
-  },
-  {
-    "id": "fripozo-nacho-guacamole",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "NACHO GUACAMOLE",
-      "ca": "NACHO GUACAMOLE",
-      "en": "NACHO GUACAMOLE"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.6,
-    "boxPrice": null,
-    "priceText": "2.60 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-nacho-guacamole.webp"
   },
   {
     "id": "fripozo-nacho-queso",
@@ -9576,24 +8010,6 @@
     "imagePath": "/assets/products/fripozo-preparado-huevos-rotos-fripozo-315g.webp"
   },
   {
-    "id": "fripozo-rabas-de-calamar",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "RABAS DE CALAMAR",
-      "ca": "RABAS DE CALAMAR",
-      "en": "RABAS DE Squid"
-    },
-    "format": "Estándar",
-    "unitPrice": 3.5,
-    "boxPrice": null,
-    "priceText": "3.50 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-rabas-de-calamar.webp"
-  },
-  {
     "id": "fripozo-revuelto-esparrago",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -9666,24 +8082,6 @@
     "imagePath": "/assets/products/fripozo-revuelto-gambas-400gr-fripozo.webp"
   },
   {
-    "id": "fripozo-san-jacobos",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "SAN JACOBOS",
-      "ca": "SAN JACOBOS",
-      "en": "SAN JACOBOS"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.59,
-    "boxPrice": null,
-    "priceText": "1.59 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-san-jacobos.webp"
-  },
-  {
     "id": "fripozo-solomillo-kentucky",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -9754,24 +8152,6 @@
     "priceText": "2.60 €",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "fripozo-tequenos",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Fripozo",
-    "brand": "Fripozo",
-    "name": {
-      "es": "TEQUEÑOS",
-      "ca": "TEQUEÑOS",
-      "en": "Cheese Fingers (Tequeños)"
-    },
-    "format": "Estándar",
-    "unitPrice": 4.9,
-    "boxPrice": null,
-    "priceText": "4.90 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/fripozo-tequenos.webp"
   },
   {
     "id": "fripozo-thai-noodles",
@@ -10278,24 +8658,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "maheso-base-pizza",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Maheso",
-    "brand": "Maheso",
-    "name": {
-      "es": "BASE PIZZA .",
-      "ca": "BASE PIZZA .",
-      "en": "BASE PIZZA ."
-    },
-    "format": "3U",
-    "unitPrice": 1.95,
-    "boxPrice": null,
-    "priceText": "1.95 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "maheso-base-para-pizza-x3-maheso",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -10512,42 +8874,6 @@
     "imagePath": "/assets/products/maheso-croquetas-cocido-1kg-maheso.webp"
   },
   {
-    "id": "maheso-lasana-4-quesos",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Maheso",
-    "brand": "Maheso",
-    "name": {
-      "es": "LASAÑA 4 QUESOS",
-      "ca": "LASAÑA 4 QUESOS",
-      "en": "LASAÑA 4 QUESOS"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.86,
-    "boxPrice": null,
-    "priceText": "1.86 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/maheso-lasana-4-quesos.webp"
-  },
-  {
-    "id": "maheso-lasana-atun",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Maheso",
-    "brand": "Maheso",
-    "name": {
-      "es": "LASAÑA ATUN",
-      "ca": "LASAÑA tonyina",
-      "en": "LASAÑA Tuna"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.9,
-    "boxPrice": null,
-    "priceText": "2.90 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/maheso-lasana-atun.webp"
-  },
-  {
     "id": "maheso-lasana-bbq",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -10566,24 +8892,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "maheso-lasana-bolonesa",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Maheso",
-    "brand": "Maheso",
-    "name": {
-      "es": "LASAÑA BOLOÑESA",
-      "ca": "LASAÑA BOLOÑESA",
-      "en": "LASAÑA BOLOÑESA"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.69,
-    "boxPrice": null,
-    "priceText": "1.69 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/maheso-lasana-bolonesa.webp"
-  },
-  {
     "id": "maheso-lasana-pulled-pork",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -10600,24 +8908,6 @@
     "priceText": "1.95 €",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "maheso-lasana-vegetal",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Maheso",
-    "brand": "Maheso",
-    "name": {
-      "es": "LASAÑA VEGETAL",
-      "ca": "LASAÑA VEGETAL",
-      "en": "LASAÑA VEGETAL"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.5,
-    "boxPrice": null,
-    "priceText": "2.50 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/maheso-lasana-vegetal.webp"
   },
   {
     "id": "maheso-lasana-4-quesos-maheso-300g",
@@ -10760,24 +9050,6 @@
     "unitPrice": 3.25,
     "boxPrice": null,
     "priceText": "3.25 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "maheso-porras-tostadora",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Maheso",
-    "brand": "Maheso",
-    "name": {
-      "es": "PORRAS TOSTADORA",
-      "ca": "PORRAS TOSTADORA",
-      "en": "PORRAS TOSTADORA"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.4,
-    "boxPrice": null,
-    "priceText": "2.40 €",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
@@ -10926,24 +9198,6 @@
     "imagePath": "/assets/products/maheso-rollitos-primavera-maheso-225g.webp"
   },
   {
-    "id": "maheso-tempura-verduras",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Maheso",
-    "brand": "Maheso",
-    "name": {
-      "es": "TEMPURA VERDURAS",
-      "ca": "TEMPURA verdures",
-      "en": "TEMPURA Vegetables"
-    },
-    "format": "Estándar",
-    "unitPrice": 2.45,
-    "boxPrice": null,
-    "priceText": "2.45 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/maheso-tempura-verduras.webp"
-  },
-  {
     "id": "maheso-tempura-verduras-maheso-350g",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -11025,24 +9279,6 @@
       "es": "CONO EXTREME PEANUT X6",
       "ca": "CONO EXTREME PEANUT X6",
       "en": "CONO EXTREME PEANUT X6"
-    },
-    "format": "Estándar",
-    "unitPrice": 4.6,
-    "boxPrice": null,
-    "priceText": "4.60 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "nestle-cono-extreme-vainilla-x6",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Nestlé",
-    "brand": "Nestlé",
-    "name": {
-      "es": "CONO EXTREME VAINILLA X6",
-      "ca": "CONO EXTREME VAINILLA X6",
-      "en": "CONO EXTREME VAINILLA X6"
     },
     "format": "Estándar",
     "unitPrice": 4.6,
@@ -11340,42 +9576,6 @@
     "imagePath": "/assets/products/nestle-kit-kat-vainilla-y-cacao-nestle-253g.webp"
   },
   {
-    "id": "nestle-maxibon-cookie",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Nestlé",
-    "brand": "Nestlé",
-    "name": {
-      "es": "MAXIBON COOKIE .",
-      "ca": "MAXIBON COOKIE .",
-      "en": "MAXIBON COOKIE ."
-    },
-    "format": "4U",
-    "unitPrice": 4.99,
-    "boxPrice": null,
-    "priceText": "4.99 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "nestle-maxibon-jungly",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Nestlé",
-    "brand": "Nestlé",
-    "name": {
-      "es": "MAXIBON JUNGLY .",
-      "ca": "MAXIBON JUNGLY .",
-      "en": "MAXIBON JUNGLY ."
-    },
-    "format": "4U",
-    "unitPrice": 4.99,
-    "boxPrice": null,
-    "priceText": "4.99 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
     "id": "nestle-maxibon-nata",
     "channel": "supermercados",
     "sector": "supermercados",
@@ -11423,24 +9623,6 @@
       "en": "Maxibon Stranger Things"
     },
     "format": "Estándar",
-    "unitPrice": 4.25,
-    "boxPrice": null,
-    "priceText": "4.25 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "nestle-maxibon-waffle",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Nestlé",
-    "brand": "Nestlé",
-    "name": {
-      "es": "Maxibon Waffle .",
-      "ca": "Maxibon Waffle .",
-      "en": "Maxibon Waffle ."
-    },
-    "format": "4U",
     "unitPrice": 4.25,
     "boxPrice": null,
     "priceText": "4.25 €",
@@ -11734,24 +9916,6 @@
     "priceText": "5.06 €/ud",
     "hasPhoto": true,
     "imagePath": "/assets/products/nestle-nuii-white-chocolate-and-scandinavian-cranberries-nestle-201g.webp"
-  },
-  {
-    "id": "nestle-oreo-stick",
-    "channel": "supermercados",
-    "sector": "supermercados",
-    "section": "Nestlé",
-    "brand": "Nestlé",
-    "name": {
-      "es": "OREO STICK",
-      "ca": "OREO STICK",
-      "en": "OREO STICK"
-    },
-    "format": "Estándar",
-    "unitPrice": 4.6,
-    "boxPrice": null,
-    "priceText": "4.60 €",
-    "hasPhoto": false,
-    "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
     "id": "nestle-oreo-cones-nestle-270g",
@@ -12060,24 +10224,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "productos-latinos-aji-amarillo",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "AJI AMARILLO",
-      "ca": "AJI AMARILLO",
-      "en": "AJI AMARILLO"
-    },
-    "format": "500g",
-    "unitPrice": 2.75,
-    "boxPrice": null,
-    "priceText": "2.75 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-aji-amarillo.webp"
-  },
-  {
     "id": "productos-latinos-aji-limo",
     "channel": "supermercados",
     "sector": "latinos",
@@ -12112,42 +10258,6 @@
     "priceText": "5.25 €",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "productos-latinos-arepa-amarilla",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "AREPA AMARILLA",
-      "ca": "AREPA AMARILLA",
-      "en": "AREPA AMARILLA"
-    },
-    "format": "500g",
-    "unitPrice": 1.55,
-    "boxPrice": null,
-    "priceText": "1.55 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-arepa-amarilla.webp"
-  },
-  {
-    "id": "productos-latinos-arepa-blanca",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "AREPA BLANCA",
-      "ca": "AREPA BLANCA",
-      "en": "AREPA BLANCA"
-    },
-    "format": "500g",
-    "unitPrice": 1.55,
-    "boxPrice": null,
-    "priceText": "1.55 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-arepa-blanca.webp"
   },
   {
     "id": "productos-latinos-arepa-casera",
@@ -12274,60 +10384,6 @@
     "priceText": "1.71 €/ud",
     "hasPhoto": true,
     "imagePath": "/assets/products/productos-latinos-arepa-blanca-el-dorado-450g.webp"
-  },
-  {
-    "id": "productos-latinos-choclo-desgranado",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "CHOCLO DESGRANADO",
-      "ca": "CHOCLO DESGRANADO",
-      "en": "CHOCLO DESGRANADO"
-    },
-    "format": "500g",
-    "unitPrice": 2.49,
-    "boxPrice": null,
-    "priceText": "2.49 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-choclo-desgranado.webp"
-  },
-  {
-    "id": "productos-latinos-choclo-entero",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "CHOCLO ENTERO",
-      "ca": "CHOCLO ENTERO",
-      "en": "CHOCLO ENTERO"
-    },
-    "format": "500g",
-    "unitPrice": 2.59,
-    "boxPrice": null,
-    "priceText": "2.59 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-choclo-entero.webp"
-  },
-  {
-    "id": "productos-latinos-choclo-troceado",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "CHOCLO TROCEADO",
-      "ca": "CHOCLO TROCEADO",
-      "en": "CHOCLO TROCEADO"
-    },
-    "format": "500g",
-    "unitPrice": 2.49,
-    "boxPrice": null,
-    "priceText": "2.49 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-choclo-troceado.webp"
   },
   {
     "id": "productos-latinos-chorizo-centro-americano",
@@ -12562,24 +10618,6 @@
     "priceText": "9.95 €",
     "hasPhoto": false,
     "imagePath": "/assets/brand/placeholder-product.svg"
-  },
-  {
-    "id": "productos-latinos-gandules",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "GANDULES",
-      "ca": "GANDULES",
-      "en": "GANDULES"
-    },
-    "format": "500g",
-    "unitPrice": 2.18,
-    "boxPrice": null,
-    "priceText": "2.18 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-gandules.webp"
   },
   {
     "id": "productos-latinos-gandules-el-plebeyo-500g",
@@ -13014,42 +11052,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "productos-latinos-pulpa-fresa",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "PULPA FRESA",
-      "ca": "PULPA maduixa",
-      "en": "Pulp Strawberry"
-    },
-    "format": "250g",
-    "unitPrice": 1.29,
-    "boxPrice": null,
-    "priceText": "1.29 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-pulpa-fresa.webp"
-  },
-  {
-    "id": "productos-latinos-pulpa-guanabana",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "PULPA GUANABANA",
-      "ca": "PULPA GUANABANA",
-      "en": "Pulp GUANABANA"
-    },
-    "format": "250g",
-    "unitPrice": 1.69,
-    "boxPrice": null,
-    "priceText": "1.69 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-pulpa-guanabana.webp"
-  },
-  {
     "id": "productos-latinos-pulpa-limon",
     "channel": "supermercados",
     "sector": "latinos",
@@ -13068,42 +11070,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "productos-latinos-pulpa-lucuma",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "PULPA LUCUMA",
-      "ca": "PULPA LUCUMA",
-      "en": "Pulp LUCUMA"
-    },
-    "format": "250g",
-    "unitPrice": 2.4,
-    "boxPrice": null,
-    "priceText": "2.40 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-pulpa-lucuma.webp"
-  },
-  {
-    "id": "productos-latinos-pulpa-lulo",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "PULPA LULO",
-      "ca": "PULPA LULO",
-      "en": "Pulp LULO"
-    },
-    "format": "250g",
-    "unitPrice": 1.39,
-    "boxPrice": null,
-    "priceText": "1.39 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-pulpa-lulo.webp"
-  },
-  {
     "id": "productos-latinos-pulpa-mango",
     "channel": "supermercados",
     "sector": "latinos",
@@ -13120,78 +11086,6 @@
     "priceText": "1.29 €",
     "hasPhoto": true,
     "imagePath": "/assets/products/productos-latinos-pulpa-mango.webp"
-  },
-  {
-    "id": "productos-latinos-pulpa-maracuya-con-pepa",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "PULPA MARACUYA CON PEPA",
-      "ca": "PULPA MARACUYA CON PEPA",
-      "en": "Pulp Passion Fruit CON PEPA"
-    },
-    "format": "Estándar",
-    "unitPrice": 1.59,
-    "boxPrice": null,
-    "priceText": "1.59 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-pulpa-maracuya-con-pepa.webp"
-  },
-  {
-    "id": "productos-latinos-pulpa-mora",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "PULPA MORA",
-      "ca": "PULPA MORA",
-      "en": "Pulp MORA"
-    },
-    "format": "250g",
-    "unitPrice": 1.59,
-    "boxPrice": null,
-    "priceText": "1.59 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-pulpa-mora.webp"
-  },
-  {
-    "id": "productos-latinos-pulpa-tamarindo",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "PULPA TAMARINDO",
-      "ca": "PULPA TAMARINDO",
-      "en": "Pulp TAMARINDO"
-    },
-    "format": "250g",
-    "unitPrice": 1.59,
-    "boxPrice": null,
-    "priceText": "1.59 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-pulpa-tamarindo.webp"
-  },
-  {
-    "id": "productos-latinos-pulpa-tomate-arbol",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "PULPA TOMATE ARBOL",
-      "ca": "PULPA TOMATE ARBOL",
-      "en": "Pulp TOMATE ARBOL"
-    },
-    "format": "250g",
-    "unitPrice": 1.49,
-    "boxPrice": null,
-    "priceText": "1.49 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-pulpa-tomate-arbol.webp"
   },
   {
     "id": "productos-latinos-panca-de-choclo-el-plebeyo-350g",
@@ -13446,24 +11340,6 @@
     "imagePath": "/assets/brand/placeholder-product.svg"
   },
   {
-    "id": "productos-latinos-rocoto",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "ROCOTO",
-      "ca": "ROCOTO",
-      "en": "ROCOTO"
-    },
-    "format": "500g",
-    "unitPrice": 2.75,
-    "boxPrice": null,
-    "priceText": "2.75 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-rocoto.webp"
-  },
-  {
     "id": "productos-latinos-rocoto-el-plebeyo-500g",
     "channel": "supermercados",
     "sector": "latinos",
@@ -13570,24 +11446,6 @@
     "priceText": "5.60 €",
     "hasPhoto": true,
     "imagePath": "/assets/products/productos-latinos-tequenos.webp"
-  },
-  {
-    "id": "productos-latinos-yuca-cortada",
-    "channel": "supermercados",
-    "sector": "latinos",
-    "section": "Productos latinos",
-    "brand": "Productos Latinos",
-    "name": {
-      "es": "YUCA CORTADA",
-      "ca": "YUCA CORTADA",
-      "en": "YUCA CORTADA"
-    },
-    "format": "500g",
-    "unitPrice": 1.85,
-    "boxPrice": null,
-    "priceText": "1.85 €",
-    "hasPhoto": true,
-    "imagePath": "/assets/products/productos-latinos-yuca-cortada.webp"
   },
   {
     "id": "productos-latinos-yuca-trozos",

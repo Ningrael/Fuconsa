@@ -120,7 +120,7 @@ test('priceFormatter formats prices, phone numbers and search queries', () => {
 test('validateCatalog validates the complete products from catalog.json', () => {
   const catalogPath = path.resolve(__dirname, '../data/catalog.json');
   const items = JSON.parse(fs.readFileSync(catalogPath, 'utf-8'));
-  assert.ok(items.length >= 750);
+  assert.ok(items.length >= 600);
   const validated = validateCatalog(items);
   assert.equal(validated.length, items.length);
   assert.ok(validated.every((p) => p.name && p.name.es && p.name.ca && p.name.en));
